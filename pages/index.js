@@ -1,15 +1,18 @@
-import Head from 'next/head'
 
-// import { Inter } from '@next/font/google'
-// const inter = Inter({ subsets: ['latin'] })
+import Head from 'next/head'
+import { Container, Grid, Col } from '../components/layout'
+
+import { Lora } from '@next/font/google'
+const lora = Lora({ subsets: ['latin'] })
+
 
 
 export default function Home() {
   return (
     <>
       <HtmlHead />
-      <main>
-        <h1 className="font-mono text-4xl">Hello World</h1>
+      <main className={lora.className}>
+        <Percobaan1 />
       </main>
     </>
   )
@@ -34,6 +37,28 @@ function HtmlHead () {
   )
 }
 
+function Percobaan1 () {
+  return (
+    <section className='w-full bg-blue-300'>
+
+      <Container className='bg-red-300'>
+        <h1 className="text-4xl">Hello World</h1>
+      </Container>
+
+      <Container className='bg-red-300'>
+        <Grid>
+          <Col className=''>
+            <div className="w-full h-20 bg-green-300">wk</div>
+          </Col>
+          <Col className='col-span-4'>
+            <div className="w-full h-20 bg-green-500">wk</div>
+          </Col>
+        </Grid>
+      </Container>
+
+    </section>
+  )
+}
 
 
 
