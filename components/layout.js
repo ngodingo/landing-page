@@ -48,16 +48,25 @@ export function Col ({id, className, children}) {
 
 /*
   layout.js khusus untuk elemen layout
-
   
   Container
   - ada 2 tipe width (fluid dan default)
 
   Grid 
   - default width
-  - default column breakpoints
+  - jumlah kolom 4/8/12 menyesuaikan viewport 
 
   Col
+  - kolom2 pada grid
 
   references: https://github.com/hymos-two/forzanove-beta/blob/main/components/grid.js
+
+
+
+  tailwind viewport list (default)
+  - sm: 640px  & higher
+  - md: 768px  & higher
+  - lg: 1024px & higher
+  - xl: 1280px & higher
+
 */
