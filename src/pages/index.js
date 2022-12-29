@@ -2,6 +2,9 @@
 import Head from 'next/head'
 import { Container, Grid, Col } from '../components/layout'
 
+import Image from 'next/image'
+import sampleImage from '../../public/img/microsoft.jpg'
+
 import { Lora } from '@next/font/google'
 const lora = Lora({ subsets: ['latin'] })
 
@@ -39,19 +42,31 @@ function HtmlHead () {
 
 function Percobaan1 () {
   return (
-    <section className='w-full bg-blue-300'>
+    <section className="w-full bg-blue-300">
 
-      <Container className='bg-red-300'>
+      <Container className="bg-red-300">
         <h1 className="text-4xl">Hello World</h1>
       </Container>
 
-      <Container className='bg-red-300'>
+      <Container className="bg-red-300">
         <Grid>
-          <Col className=''>
+          <Col className="">
             <div className="w-full h-20 bg-green-300">wk</div>
           </Col>
-          <Col className='col-span-4'>
+          <Col className="col-span-4">
             <div className="w-full h-20 bg-green-500">wk</div>
+          </Col>
+        </Grid>
+      </Container>
+
+      <Container>
+        <Grid>
+          <Col className="col-span-10">
+            <Image 
+              src={sampleImage} 
+              alt="sample image"
+              loading="lazy"
+            />
           </Col>
         </Grid>
       </Container>
