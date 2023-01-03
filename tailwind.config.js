@@ -11,8 +11,8 @@ module.exports = {
       },
       fontSize: {
         'display-1': ['64px', '150%'],
-        'display-2': ['48px', '180%'],
-        'display-3': ['44px', '140%'],
+        'display-2': ['48px', '150%'],
+        'display-3': ['44px', '150%'],
         'heading-1': ['40px', '140%'],
         'heading-2': ['36px', '140%'],
         'heading-3': ['32px', '140%'],
