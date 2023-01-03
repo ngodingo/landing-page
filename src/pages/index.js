@@ -12,8 +12,6 @@ import sampleImage from '../../public/img/microsoft.jpg'
 import { Lexend_Deca } from '@next/font/google'
 
 const lexend_deca = Lexend_Deca({
-  weight: ['400', '500', '600', '700'],
-  style: ['normal'],
   subsets: ['latin'],
   variable: '--font-lexend-deca'
 })
@@ -57,7 +55,7 @@ function Percobaan1 () {
     <section className="w-full bg-blue-300">
 
       <Container className="bg-red-300">
-        <h1 className="font-lexend-deca text-display-1">Hello World a e</h1>
+        <h1 className="font-lexend-deca text-display-2 font-semibold">Hello World a e</h1>
       </Container>
 
       <Container className="bg-red-300">
