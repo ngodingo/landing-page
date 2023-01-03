@@ -2,30 +2,19 @@
 import Head from 'next/head'
 import { Container, Grid, Col } from '../components/layout'
 
-
 // images
 import Image from 'next/image'
 import sampleImage from '../../public/img/microsoft.jpg'
 
 
-// fonts
-import { Lexend_Deca } from '@next/font/google'
-
-const lexend_deca = Lexend_Deca({
-  subsets: ['latin'],
-  variable: '--font-lexend-deca'
-})
-
-
-
 export default function Home() {
-  console.log(lexend_deca)
 
   return (
     <>
       <HtmlHead />
-      <main className={lexend_deca.variable}>
-        <Percobaan1 />
+      <main>
+        <Hero />
+        {/* <Percobaan1 /> */}
       </main>
     </>
   )
@@ -49,6 +38,33 @@ function HtmlHead () {
     </Head>
   )
 }
+
+function Hero () {
+  return (
+    <section className="w-full">
+      <Container>
+        <div className="w-full h-screen grid place-content-center">
+          <div>
+            <h1 className="font-lexend-deca text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
+              Learn Together, Make <br className='hidden sm:inline' />
+              it Flexible
+            </h1>
+          </div>
+          <div className="flex justify-center gap-x-2">
+            <div className="w-20 h-9  bg-primary-50"></div>
+            <div className="w-20 h-9  bg-primary-50"></div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+
+
+
+
+
 
 function Percobaan1 () {
   return (
