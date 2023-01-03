@@ -14,7 +14,6 @@ export default function Home() {
       <HtmlHead />
       <main>
         <Hero />
-        {/* <Percobaan1 /> */}
       </main>
     </>
   )
@@ -41,9 +40,10 @@ function HtmlHead () {
 
 function Hero () {
   return (
-    <section className="w-full">
+    <section className="relative w-full">
+
       <Container>
-        <div className="w-full h-screen grid place-content-center">
+        <div className="w-full h-[90vh] grid place-content-center">
           <div>
             <h1 className="font-lexend-deca text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
               Learn Together, Make <br className='hidden sm:inline' />
@@ -51,11 +51,20 @@ function Hero () {
             </h1>
           </div>
           <div className="flex justify-center gap-x-2">
-            <div className="w-20 h-9  bg-primary-50"></div>
-            <div className="w-20 h-9  bg-primary-50"></div>
+            <div className="w-20 h-9  bg-primary-30"></div>
+            <div className="w-20 h-9  bg-primary-30"></div>
           </div>
+          
         </div>
       </Container>
+
+      <div id="_background" className="absolute w-full h-[90vh] -z-10 top-0 grid place-items-center overflow-hidden">
+        <div className="min-w-full flex justify-center md:items-center lg:gap-x-8">
+          <div className="w-48 h-48 lg:w-56 lg:h-56 bg-primary-50/[.6] rounded-full blur-2xl"></div>
+          <div className="w-80 h-80 lg:w-96 lg:h-96 bg-accent-50/[.6] rounded-full blur-3xl"></div>
+        </div>
+      </div>
+
     </section>
   )
 }
