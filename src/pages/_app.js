@@ -7,9 +7,12 @@ const lexend_deca = Lexend_Deca({
   variable: '--font-lexend-deca'
 })
 
+
 export default function App({ Component, pageProps }) {
+  const globalTwStyles = `${lexend_deca.variable} font-lexend-deca selection:bg-accent-10`
+
   return (
-    <div className={lexend_deca.variable}>
+    <div className={globalTwStyles}>
       <Component {...pageProps} />
     </div>
   )

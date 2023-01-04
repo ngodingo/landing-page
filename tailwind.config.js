@@ -18,6 +18,7 @@ module.exports = {
         'heading-1': ['40px', '140%'],
         'heading-2': ['36px', '140%'],
         'heading-3': ['32px', '140%'],
+        'heading-4': ['24px', '140%'],
         // body
         'body-1':    ['20px', '180%'],
         'body-2':    ['16px', '180%'],

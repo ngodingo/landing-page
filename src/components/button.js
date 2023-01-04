@@ -17,7 +17,7 @@ export function Button ({text, href, theme, className}) {
   }
 
   const defaultClassName = {
-    common: 'block h-12 px-6 py-2.5 rounded-3xl font-lexend-deca font-body-2 font-bold box-border duration-[50ms]',
+    common: 'block h-12 px-6 py-2.5 rounded-3xl font-body-2 font-bold box-border duration-[50ms]',
     normal: 'mt-1 ml-1',
     hover: 'group-hover:m-0 group-hover:mb-1 group-hover:mr-1',
     active: 'group-active:m-0 group-active:mt-1 group-active:ml-1',

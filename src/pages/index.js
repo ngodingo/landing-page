@@ -10,13 +10,14 @@ import teamworkImg from '../../public/img/teamwork.svg'
 
 
 export default function Home() {
-
   return (
     <>
       <HtmlHead />
       <main>
         <HeroSection />
-        <AboutUsSection />
+        <AboutUs />
+        <VisiMisi />
+        <Characteristic />
       </main>
     </>
   )
@@ -48,7 +49,7 @@ function HeroSection () {
       <Container>
         <div className="w-full h-[90vh] grid place-content-center pt-[8vh]">
           <div>
-            <h1 className="font-lexend-deca text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
+            <h1 className="text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
               Learn Together, Make <br className='hidden sm:inline' />
               it Flexible
             </h1>
@@ -72,12 +73,12 @@ function HeroSection () {
 }
 
 
-function AboutUsSection () {
+function AboutUs () {
   return (
-    <section>
+    <section className="pb-24">
       <Container>
         <Grid className="gap-y-8 lg:gap-x-5">
-          <Col className="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-6 xl:col-span-7">
+          <Col size="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-6 xl:col-span-7">
             <div className="w-full sm:px-14 md:px-0 lg:px-6 xl:px-12">
               <Image 
                 className="w-full"
@@ -86,12 +87,12 @@ function AboutUsSection () {
                 loading="lazy" />
             </div>
           </Col>
-          <Col className="col-span-4 sm:col-span-8 lg:col-span-6 xl:col-span-5">
+          <Col size="col-span-4 sm:col-span-8 lg:col-span-6 xl:col-span-5">
             <div className="w-full h-full grid place-content-center place-items-center text-center lg:place-items-start lg:text-left ">
-              <h2 className="font-lexend-deca text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
                 About Us
               </h2>
-              <p className="font-lexend-deca text-body-2 lg:text-body-1 font-normal text-secondary-50 mt-4">
+              <p className="text-body-2 lg:text-body-1 font-normal text-secondary-50 mt-4">
                 Ngodingo, sebuah kata yang diambil dari bahasa jawa yang apabila diartikan dalam bahasa Indonesia 
                 senada dengan ngodinglah! yang sesuai dengan esensi dari komunitas ini yaitu tentang berkarya melalui coding
               </p>
@@ -105,6 +106,111 @@ function AboutUsSection () {
 }
 
 
+function VisiMisi () {
+  const visiMisi = {
+    visi: 'Membentuk ekosistem mahasiswa yang semangat berkarya melalui coding untuk dapat bermanfaat bagi masyarakat sekitar.',
+    misi: [
+      'Memberikan fasilitas untuk para anggota dapat belajar bersama tentang coding dengan kurikulum yang setara dengan kebutuhan industri',
+      'Memberikan peluang untuk para anggota untuk dapat mengimplementasikan keilmuan coding yang telah dipelajari, melalui karya yang muncul dari keresahan masyarakat sekitar, kemudian mensosialisasikan karyanya untuk dapat digunakan.',
+      'Menyalurkan anggota ke project berbayar untuk dapat mendapat penghasilan dari hasil kerja kerasnya sendiri',
+    ]
+  }
+
+  return (
+    <section>
+      {/**/}
+      <Container className="md:hidden">
+        <div className="w-full h-full text-center">
+          <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+            Visi dan Misi
+          </h2>
+        </div>
+      </Container>
+      {/**/}
+      <Container>
+        <Grid className="gap-x-4 lg:gap-x-5">
+          <Col size="col-span-4 md:col-span-2 lg:col-start-2 lg:col-span-3" className="hidden md:block">
+            <div className="w-full h-full">
+              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+                Visi
+              </h2>
+            </div>
+          </Col>
+          <Col size="col-span-4 md:col-span-6 lg:col-span-8">
+            <div className="w-full h-full">
+              <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4">
+                <span className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 border-2 border-primary-50 rounded-full"></span>
+                <span className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 lg:pb-12">{visiMisi.visi}</span>
+              </div>
+            </div>
+          </Col>
+        </Grid>
+      </Container>
+      {/**/}
+      <Container>
+        <Grid className="gap-x-4 lg:gap-x-5">
+          <Col size="col-span-4 md:col-span-2 lg:col-start-2 lg:col-span-3" className="hidden md:block">
+            <div className="w-full h-full">
+              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+                Misi
+              </h2>
+            </div>
+          </Col>
+          <Col size="col-span-4 md:col-span-6 lg:col-span-8">
+            <div className="w-full h-full">
+              {visiMisi.misi.map((value, i) => (
+              <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4" key={i}>
+                <span className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 bg-primary-50 rounded-full text-body-3 lg:text-heading-4 font-semibold text-white">{i+1}</span>
+                <span className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 lg:pb-12">{value}</span>
+              </div>
+              ))}
+            </div>
+          </Col>
+        </Grid>
+      </Container>
+      {/**/}
+    </section>
+  )
+}
+
+
+function Characteristic () {
+
+  const characteristics = [
+    {
+      title: 'Exciting & Fun',
+      desc: 'Berkumpul dan berkolaborasi untuk menghasilkan karya yang diharapkan ada nilai manfaat untuk orang lain',
+      icon: '',
+    },
+    {
+      title: 'Flexible',
+      desc: 'Karena anggotanya adalah mahasiswa, maka jadwal serta agenda kegiatan kedepan juga akan lebih banyak menyesuaikan dengan kesibukan sebagai mahasiswa.',
+      icon: '',
+    },
+    {
+      title: 'Professional & Responsible',
+      desc: 'Walaupun status anggota masih mahasiswa, namun kami akan bertanggung jawab dan bersikap profesional atas semua karya dan project yang diamanahkan kepada kami',
+      icon: '',
+    }
+  ]
+
+  return;
+}
+
+
+
+function BlogSection () {
+  return (
+    <section></section>
+  )
+}
+
+
+
+
+
+
+
 
 
 function Test1 () {
@@ -112,7 +218,7 @@ function Test1 () {
     <section className="w-full bg-blue-300">
 
       <Container className="bg-red-300">
-        <h1 className="font-lexend-deca text-display-2 font-semibold">Hello World a e</h1>
+        <h1 className="text-display-2 font-semibold">Hello World a e</h1>
       </Container>
 
       <Container className="bg-red-300">

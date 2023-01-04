@@ -32,12 +32,12 @@ export function Grid ({id, className, children}) {
 
 
 
-export function Col ({id, className, children}) {
+export function Col ({id, className, size, children}) {
 
   return (
     <div 
       id={id}
-      className={className} >
+      className={`${className} ${size}`} >
         {children}
     </div>
   )
