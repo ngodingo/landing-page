@@ -54,8 +54,8 @@ function HeroSection () {
             </h1>
           </div>
           <div className="flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9">
-            <Button theme="primary" text="Join Us" href="#join-us" />
-            <Button theme="secondary" text="Learn More" href="#home" />
+            <Button theme="primary" text="Join Us" href="#1" />
+            <Button theme="secondary" text="Learn More" href="#2" />
           </div>
         </div>
       </Container>
@@ -91,10 +91,11 @@ function AboutUsSection () {
               <h2 className="font-lexend-deca text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
                 About Us
               </h2>
-              <p className="font-lexend-deca text-body-2 lg:text-body-2 font-normal text-secondary-50 mt-2">
-                Ngodingo, sebuah kata yang diambil dari bahasa jawa yang apabila diartikan dalam bahasa Indonesia senada dengan ngodinglah! yang sesuai dengan esensi dari komunitas ini yaitu tentang berkarya melalui coding
+              <p className="font-lexend-deca text-body-2 lg:text-body-1 font-normal text-secondary-50 mt-4">
+                Ngodingo, sebuah kata yang diambil dari bahasa jawa yang apabila diartikan dalam bahasa Indonesia 
+                senada dengan ngodinglah! yang sesuai dengan esensi dari komunitas ini yaitu tentang berkarya melalui coding
               </p>
-              <Button href="#" theme="primary" text="Learn More" className="mt-6"/>
+              <Button href="#" theme="primary" text="Learn More" className="mt-7"/>
             </div>
           </Col>
         </Grid>
