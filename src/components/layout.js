@@ -3,7 +3,7 @@ export function Container ({id, className, children, fluid}) {
 
   const isFluidWidth = fluid
     ? 'w-full'
-    : 'container m-auto px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]'
+    : 'container m-auto px-5 sm:px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]'
 
   return (
     <div 
@@ -19,7 +19,7 @@ export function Container ({id, className, children, fluid}) {
 export function Grid ({id, className, children}) {
 
   const defaultClassName = `w-full grid`
-  const defaultCols = 'grid-cols-4 sm:grid-cols-8 md:grid-cols-12'
+  const defaultCols = 'grid-cols-4 md:grid-cols-8 lg:grid-cols-12'
 
   return (
     <div

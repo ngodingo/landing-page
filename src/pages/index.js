@@ -6,6 +6,7 @@ import { Button } from '../components/button'
 // images
 import Image from 'next/image'
 import sampleImage from '../../public/img/microsoft.jpg'
+import teamworkImg from '../../public/img/teamwork.svg'
 
 
 export default function Home() {
@@ -14,7 +15,8 @@ export default function Home() {
     <>
       <HtmlHead />
       <main>
-        <Hero />
+        <HeroSection />
+        <AboutUsSection />
       </main>
     </>
   )
@@ -39,19 +41,19 @@ function HtmlHead () {
   )
 }
 
-function Hero () {
+function HeroSection () {
   return (
     <section className="relative w-full">
 
       <Container>
-        <div className="w-full h-[90vh] grid place-content-center">
+        <div className="w-full h-[90vh] grid place-content-center pt-[8vh]">
           <div>
             <h1 className="font-lexend-deca text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
               Learn Together, Make <br className='hidden sm:inline' />
               it Flexible
             </h1>
           </div>
-          <div className="flex justify-center gap-x-2 mt-9">
+          <div className="flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9">
             <Button theme="primary" text="Join Us" href="#join-us" />
             <Button theme="secondary" text="Learn More" href="#home" />
           </div>
@@ -59,7 +61,7 @@ function Hero () {
       </Container>
 
       <div id="_background" className="absolute w-full h-[90vh] -z-10 top-0 grid place-items-center overflow-hidden">
-        <div className="min-w-full flex justify-center md:items-center lg:gap-x-8">
+        <div className="min-w-full flex justify-center md:items-center md:gap-x-8">
           <div className="w-48 h-48 lg:w-56 lg:h-56 bg-primary-50/[.6] rounded-full blur-2xl"></div>
           <div className="w-80 h-80 lg:w-96 lg:h-96 bg-accent-50/[.6] rounded-full blur-3xl"></div>
         </div>
@@ -70,7 +72,36 @@ function Hero () {
 }
 
 
-
+function AboutUsSection () {
+  return (
+    <section>
+      <Container>
+        <Grid className="gap-y-8 lg:gap-x-5">
+          <Col className="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-6 xl:col-span-7">
+            <div className="w-full sm:px-14 md:px-0 lg:px-6 xl:px-12">
+              <Image 
+                className="w-full"
+                src={teamworkImg} 
+                alt="teamwork"
+                loading="lazy" />
+            </div>
+          </Col>
+          <Col className="col-span-4 sm:col-span-8 lg:col-span-6 xl:col-span-5">
+            <div className="w-full h-full grid place-content-center place-items-center text-center lg:place-items-start lg:text-left ">
+              <h2 className="font-lexend-deca text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+                About Us
+              </h2>
+              <p className="font-lexend-deca text-body-2 lg:text-body-2 font-normal text-secondary-50 mt-2">
+                Ngodingo, sebuah kata yang diambil dari bahasa jawa yang apabila diartikan dalam bahasa Indonesia senada dengan ngodinglah! yang sesuai dengan esensi dari komunitas ini yaitu tentang berkarya melalui coding
+              </p>
+              <Button href="#" theme="primary" text="Learn More" className="mt-6"/>
+            </div>
+          </Col>
+        </Grid>
+      </Container>
+    </section>
+  )
+}
 
 
 
