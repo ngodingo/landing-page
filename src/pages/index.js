@@ -75,7 +75,7 @@ function Hero () {
 
 
 
-function Percobaan1 () {
+function Test1 () {
   return (
     <section className="w-full bg-blue-300">
 

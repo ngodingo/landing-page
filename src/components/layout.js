@@ -3,7 +3,7 @@ export function Container ({id, className, children, fluid}) {
 
   const isFluidWidth = fluid
     ? 'w-full'
-    : 'm-auto px-5 sm:px-0 sm:max-w-[620px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'
+    : 'container m-auto px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]'
 
   return (
     <div 
