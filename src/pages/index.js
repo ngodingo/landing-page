@@ -1,12 +1,17 @@
 // components
 import Head from 'next/head'
+import Image from 'next/image'
 import { Container, Grid, Col } from '../components/layout'
 import { Button } from '../components/button'
 
+
 // images
-import Image from 'next/image'
-import sampleImage from '../../public/img/microsoft.jpg'
 import teamworkImg from '../../public/img/teamwork.svg'
+// icons
+import coffeeIcon from '../../public/icons/characteristic/coffee.svg'
+import smartIcon from '../../public/icons/characteristic/smart.svg'
+import timeIcon from '../../public/icons/characteristic/time.svg'
+
 
 
 export default function Home() {
@@ -184,33 +189,39 @@ function Characteristic () {
     {
       title: 'Exciting & Fun',
       desc: 'Berkumpul dan berkolaborasi untuk menghasilkan karya yang diharapkan ada nilai manfaat untuk orang lain',
-      icon: '',
+      icon: coffeeIcon,
     },
     {
       title: 'Flexible',
       desc: 'Karena anggotanya adalah mahasiswa, maka jadwal serta agenda kegiatan kedepan juga akan lebih banyak menyesuaikan dengan kesibukan sebagai mahasiswa.',
-      icon: '',
+      icon: timeIcon,
     },
     {
       title: 'Professional & Responsible',
       desc: 'Walaupun status anggota masih mahasiswa, namun kami akan bertanggung jawab dan bersikap profesional atas semua karya dan project yang diamanahkan kepada kami',
-      icon: '',
+      icon: smartIcon,
     }
   ]
 
   return (
     <section className="py-9 md:py-12 lg:py-14 xl:py-20">
-      <Container fluid className="bg-primary-50">
-        <Grid>
+      <Container fluid className="bg-primary-50 py-16 lg:py-32">
+        <Grid className="gap-y-16">
           {characteristics.map((value, i) => (
-          <Col size="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-4" key={i}>
-            <div className="w-full h-full p-4 grid place-content-start text-center">
-              <h3 className="text-heading-4 lg:text-heading-3 font-semibold text-primary-10">{value.title}</h3>
+          <Col size="col-span-4 md:col-span-8 lg:col-span-4" key={i}>
+            <div className="max-w-[380px] sm:max-w-[480px] px-4 lg:px-7 m-auto text-center grid gap-y-4">
+              <Image
+                className="w-12 h-12 lg:w-[76px] lg:h-[76px] m-auto"
+                src={value.icon} 
+                alt="icon" 
+              />
+              <h3 className="text-heading-4 lg:text-heading-3 font-semibold text-primary-10">
+                <span className="lg:h-24 lg:grid lg:place-items-center">{value.title}</span>
+              </h3>
               <p className="text-body-3 lg:text-body-2 font-normal text-primary-10 opacity-60">{value.desc}</p>
             </div>
           </Col>
           ))}
-
         </Grid>
       </Container>
     </section>
