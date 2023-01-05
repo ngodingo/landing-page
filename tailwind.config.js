@@ -28,7 +28,7 @@ module.exports = {
       colors: {
         // ocean blue
         primary: {
-          10: '#9396EC',
+          10: '#E9EAFB',
           30: '#5C61D6',
           50: '#4045BF',
           70: '#3D408F',

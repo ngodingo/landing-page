@@ -202,11 +202,15 @@ function Characteristic () {
     <section className="py-9 md:py-12 lg:py-14 xl:py-20">
       <Container fluid className="bg-primary-50">
         <Grid>
-          <Col size="col-span-4 md:col-span-4 md:col-start-3 lg:col-span-3 lg:col-start-1">
-            <div className="w-full h-full p-4 grid place-content-center place-items-center">
-              <h3>Hello World</h3>
+          {characteristics.map((value, i) => (
+          <Col size="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-4" key={i}>
+            <div className="w-full h-full p-4 grid place-content-start text-center">
+              <h3 className="text-heading-4 lg:text-heading-3 font-semibold text-primary-10">{value.title}</h3>
+              <p className="text-body-3 lg:text-body-2 font-normal text-primary-10 opacity-60">{value.desc}</p>
             </div>
           </Col>
+          ))}
+
         </Grid>
       </Container>
     </section>
@@ -215,9 +219,12 @@ function Characteristic () {
 
 
 
+
 function BlogSection () {
   return (
-    <section></section>
+    <section>
+      hello world
+    </section>
   )
 }
 
