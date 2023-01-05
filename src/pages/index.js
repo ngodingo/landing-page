@@ -14,22 +14,19 @@ export default function Home() {
     <>
       <HtmlHead />
       <main>
+        {/* <Navbar /> */}
         <HeroSection />
         <AboutUs />
         <VisiMisi />
         <Characteristic />
+        {/* <BlogSection /> */}
+        {/* <Projects /> */}
+        {/* <Footer /> */}
       </main>
     </>
   )
 }
 
-
-/*
- - html head
- - navbar
- - section 123
- - footer
-*/
 
 function HtmlHead () {
   return (
@@ -42,12 +39,15 @@ function HtmlHead () {
   )
 }
 
+
 function HeroSection () {
+  const defaultSize = 'w-full min-h-[480px] h-[85vh] max-h-[768px]'
+
   return (
-    <section className="relative w-full">
+    <section className="relative">
 
       <Container>
-        <div className="w-full h-[90vh] grid place-content-center pt-[8vh]">
+        <div className={`${defaultSize} grid place-content-center pt-[8vh]`}>
           <div>
             <h1 className="text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
               Learn Together, Make <br className='hidden sm:inline' />
@@ -61,10 +61,10 @@ function HeroSection () {
         </div>
       </Container>
 
-      <div id="_background" className="absolute w-full h-[90vh] -z-10 top-0 grid place-items-center overflow-hidden">
+      <div role="background" className={`absolute ${defaultSize} -z-10 top-0 grid place-items-center overflow-hidden`}>
         <div className="min-w-full flex justify-center md:items-center md:gap-x-8">
-          <div className="w-48 h-48 lg:w-56 lg:h-56 bg-primary-50/[.6] rounded-full blur-2xl"></div>
-          <div className="w-80 h-80 lg:w-96 lg:h-96 bg-accent-50/[.6] rounded-full blur-3xl"></div>
+          <span role="blurred-circle" className="w-48 h-48 lg:w-56 lg:h-56 bg-primary-50/[.6] rounded-full blur-2xl"></span>
+          <span role="blurred-circle" className="w-80 h-80 lg:w-96 lg:h-96 bg-accent-50/[.6] rounded-full blur-3xl"></span>
         </div>
       </div>
 
@@ -75,7 +75,7 @@ function HeroSection () {
 
 function AboutUs () {
   return (
-    <section className="pb-24">
+    <section className="py-9 md:py-12 lg:py-14 xl:py-20">
       <Container>
         <Grid className="gap-y-8 lg:gap-x-5">
           <Col size="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-6 xl:col-span-7">
@@ -108,16 +108,16 @@ function AboutUs () {
 
 function VisiMisi () {
   const visiMisi = {
-    visi: 'Membentuk ekosistem mahasiswa yang semangat berkarya melalui coding untuk dapat bermanfaat bagi masyarakat sekitar.',
+    visi: 'Membentuk ekosistem mahasiswa yang semangat berkarya melalui coding untuk dapat bermanfaat bagi masyarakat sekitar',
     misi: [
       'Memberikan fasilitas untuk para anggota dapat belajar bersama tentang coding dengan kurikulum yang setara dengan kebutuhan industri',
-      'Memberikan peluang untuk para anggota untuk dapat mengimplementasikan keilmuan coding yang telah dipelajari, melalui karya yang muncul dari keresahan masyarakat sekitar, kemudian mensosialisasikan karyanya untuk dapat digunakan.',
+      'Memberikan peluang untuk para anggota untuk dapat mengimplementasikan keilmuan coding yang telah dipelajari, melalui karya yang muncul dari keresahan masyarakat sekitar, kemudian mensosialisasikan karyanya untuk dapat digunakan',
       'Menyalurkan anggota ke project berbayar untuk dapat mendapat penghasilan dari hasil kerja kerasnya sendiri',
     ]
   }
 
   return (
-    <section>
+    <section className="py-9 md:py-12 lg:py-14 xl:py-20">
       {/**/}
       <Container className="md:hidden">
         <div className="w-full h-full text-center">
@@ -127,20 +127,22 @@ function VisiMisi () {
         </div>
       </Container>
       {/**/}
-      <Container>
-        <Grid className="gap-x-4 lg:gap-x-5">
+      <Container className="mt-4">
+        <Grid>
           <Col size="col-span-4 md:col-span-2 lg:col-start-2 lg:col-span-3" className="hidden md:block">
-            <div className="w-full h-full">
-              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+            <div className="w-full h-full relative">
+              <span role="stepper-dash-horizontal" className="absolute w-full border-t-[3px] border-dashed border-primary-30 md:top-[15px] lg:top-[23px] -z-10"></span>
+              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90 w-max pr-6 bg-white">
                 Visi
               </h2>
             </div>
           </Col>
           <Col size="col-span-4 md:col-span-6 lg:col-span-8">
-            <div className="w-full h-full">
+            <div className="w-full h-full relative">
+              <span role="stepper-dash-vertical" className="absolute h-full border-l-[3px] border-dashed border-primary-30 left-[15px] lg:left-[23px] -z-10"></span>
               <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4">
-                <span className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 border-2 border-primary-50 rounded-full"></span>
-                <span className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 lg:pb-12">{visiMisi.visi}</span>
+                <span role="stepper-circle" className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 bg-white border-[3px] border-primary-50 rounded-full"></span>
+                <p className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 md:pb-10 lg:pb-14 xl:pb-18">{visiMisi.visi}</p>
               </div>
             </div>
           </Col>
@@ -148,20 +150,22 @@ function VisiMisi () {
       </Container>
       {/**/}
       <Container>
-        <Grid className="gap-x-4 lg:gap-x-5">
+        <Grid>
           <Col size="col-span-4 md:col-span-2 lg:col-start-2 lg:col-span-3" className="hidden md:block">
-            <div className="w-full h-full">
-              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
+            <div className="w-full h-full relative">
+              <span role="stepper-dash-horizontal" className="absolute w-full border-t-[3px] border-dashed border-primary-30 md:top-[15px] lg:top-[23px] -z-10"></span>
+              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90 w-max pr-4 bg-white">
                 Misi
               </h2>
             </div>
           </Col>
           <Col size="col-span-4 md:col-span-6 lg:col-span-8">
-            <div className="w-full h-full">
+            <div className="w-full h-full relative">
+              <span role="stepper-dash-vertical" className="absolute h-full border-l-[3px] border-dashed border-primary-30 left-[15px] lg:left-[23px] -z-10"></span>
               {visiMisi.misi.map((value, i) => (
-              <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4" key={i}>
-                <span className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 bg-primary-50 rounded-full text-body-3 lg:text-heading-4 font-semibold text-white">{i+1}</span>
-                <span className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 lg:pb-12">{value}</span>
+              <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4 last:bg-white group" key={i}>
+                <span role="stepper-circle" className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 bg-primary-50 rounded-full text-body-3 lg:text-heading-4 font-semibold text-white">{i+1}</span>
+                <p className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 lg:pb-12 group-last:pb-0">{value}</p>
               </div>
               ))}
             </div>
@@ -194,7 +198,19 @@ function Characteristic () {
     }
   ]
 
-  return;
+  return (
+    <section className="py-9 md:py-12 lg:py-14 xl:py-20">
+      <Container fluid className="bg-primary-50">
+        <Grid>
+          <Col size="col-span-4 md:col-span-4 md:col-start-3 lg:col-span-3 lg:col-start-1">
+            <div className="w-full h-full p-4 grid place-content-center place-items-center">
+              <h3>Hello World</h3>
+            </div>
+          </Col>
+        </Grid>
+      </Container>
+    </section>
+  )
 }
 
 
