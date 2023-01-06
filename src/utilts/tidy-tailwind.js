@@ -14,10 +14,25 @@ export function tidyTw (objTwClassName) {
   }
 
   let result = ''
-  
+
   getAllObjValues(objTwClassName)
 
   return result;
 }
 
 
+
+/* 
+  TIDY-TAILWIND
+  tidy up tailwind className
+
+  - usage:
+    <div className = tidyTw({
+      key: value,
+      key: value,
+      key: {
+        key: value,
+        key: value,
+      }
+    })>hello world</div>
+*/
