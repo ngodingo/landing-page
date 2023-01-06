@@ -72,7 +72,7 @@ function Navbar () {
   ]
 
   return (
-    <nav className='fixed w-full z-10 bg-white/60 backdrop-blur-md'>
+    <nav className='fixed w-full z-10 bg-white/70 backdrop-blur-md'>
       <Container>
         <div className="flex w-full h-16 justify-between">
           <div className="h-full">
@@ -288,13 +288,9 @@ function Characteristic () {
 function BlogSection () {
   return (
     <section>
-      hello world
     </section>
   )
 }
-
-
-
 
 
 
