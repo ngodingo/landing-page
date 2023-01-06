@@ -27,12 +27,13 @@ export function tidyTw (objTwClassName) {
   tidy up tailwind className
 
   - usage:
-    <div className = tidyTw({
+    <div className={tidyTw({
       key: value,
       key: value,
       key: {
         key: value,
         key: value,
       }
-    })>hello world</div>
+    })} 
+    >hello world</div>
 */
