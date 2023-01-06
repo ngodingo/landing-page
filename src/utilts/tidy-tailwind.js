@@ -1,19 +1,21 @@
 
 export function tidyTw (objTwClassName) {
   
-  function getObjValues (obj) {
+  // get all object values
+  function getAllObjValues (obj) {
     for (var key in obj) {
-        if (typeof obj[key] === 'object') {
-            getObjValues(obj[key])
-        } else {
-            result += obj[key]
-            result += ' '
-        }
+      if (typeof obj[key] === 'object') {
+        getObjValues(obj[key])
+      } else {
+        result += obj[key]
+        result += ' '
+      }
     }
   }
 
   let result = ''
-  getObjValues(objTwClassName)
+  
+  getAllObjValues(objTwClassName)
 
   return result;
 }
