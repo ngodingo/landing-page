@@ -1,3 +1,25 @@
+import { tidyTw } from "../utilts/tidy-tailwind"
+
+
+export function Section ({id, className, children}) {
+  return (
+    <section 
+      id={id} 
+      className={tidyTw({
+        layout: {
+          bs: 'py-9',
+          md: 'md:py-12',
+          lg: 'lg:py-14',
+          xl: 'xl:py-20',
+        },
+        custom: className,
+      })}
+    >
+      {children}
+    </section>
+  )
+}
+
 
 export function Container ({id, className, children, fluid}) {
 
