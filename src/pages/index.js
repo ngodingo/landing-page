@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { Container, Grid, Col } from '../components/layout'
 import { Button } from '../components/button'
 
+// utilts
+import { tidyTw } from '../utilts/tidy-tailwind'
 
 // images
 import teamworkImg from '../../public/img/teamwork.svg'
@@ -135,35 +137,142 @@ function HeroSection () {
 function AboutUs () {
   return (
     <section id="about" className="py-9 md:py-12 lg:py-14 xl:py-20">
-      <Container>
-        <Grid className="gap-y-8 lg:gap-x-5">
-          <Col size="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-6 xl:col-span-7">
-            <div className="m-auto max-w-[420px] md:max-w-full md:px-8 lg:px-6 xl:px-12">
-              <Image 
-                className="w-full"
-                src={teamworkImg} 
-                alt="teamwork"
-                loading="lazy" 
-              />
-            </div>
-          </Col>
-          <Col size="col-span-4 sm:col-span-8 lg:col-span-6 xl:col-span-5">
-            <div className="w-full h-full grid place-content-center place-items-center text-center lg:place-items-start lg:text-left ">
-              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
-                About Us
-              </h2>
-              <p className="text-body-2 lg:text-body-1 font-normal text-secondary-50 mt-4">
-                Ngodingo, sebuah kata yang diambil dari bahasa jawa yang apabila diartikan dalam bahasa Indonesia 
-                senada dengan ngodinglah! yang sesuai dengan esensi dari komunitas ini yaitu tentang berkarya melalui coding
-              </p>
-              <Button href="#" theme="primary" text="Learn More" className="mt-7"/>
-            </div>
-          </Col>
-        </Grid>
-      </Container>
+
+        <Container>
+
+            <Grid
+              className={tidyTw({
+                layout: {
+                  common: 'gap-y-8',
+                  lg: 'lg:gap-x-5',
+                }
+              })}
+            >
+                        
+                <Col 
+                  className={tidyTw({
+                    size: {
+                      bs: 'col-span-4',
+                      md: 'md:col-span-6 md:col-start-2',
+                      lg: 'lg:col-span-6',
+                      xl: 'xl:col-span-7',
+                    }
+                  })} 
+                >
+
+                    <div 
+                      className={tidyTw({
+                        size: {
+                          bs: 'max-w-[420px]',
+                          md: 'md:max-w-full',
+                        },
+                        layout: {
+                          common: 'm-auto',
+                          md: 'md:px-8',
+                          lg: 'lg:px-6',
+                          xl: 'xl:px-12',
+                        }
+                      })}
+                    >
+
+                        <Image 
+                          src={teamworkImg} 
+                          alt="teamwork"
+                          loading="lazy" 
+                          className={tidyTw({
+                            size: {
+                              common: 'w-full',
+                            }
+                          })}
+                        />
+
+                    </div>
+
+                </Col>
+
+                <Col 
+                  className={tidyTw({
+                    size: {
+                      bs: 'col-span-4',
+                      sm: 'sm:col-span-8',
+                      lg: 'lg:col-span-6',
+                      xl: 'xl:col-span-5',
+                    }
+                  })}
+                >
+
+                    <div 
+                      className={tidyTw({
+                        size: {
+                          common: 'w-full h-full',
+                        },
+                        layout: {
+                          common: 'grid place-content-center',
+                          bs: 'place-items-center',
+                          lg: 'lg:place-items-start',
+                        },
+                        typography: {
+                          bs: 'text-center',
+                          lg: 'lg:text-left',
+                        },
+                      })}
+                    >
+
+                        <h2 
+                          className={tidyTw({
+                            typography: {
+                              common: 'font-semibold text-secondary-90',
+                              bs: 'text-heading-3',
+                              lg: 'lg:text-heading-1',
+                            }
+                          })} 
+                        >
+                        About Us
+                        </h2>
+
+                        <p 
+                          className={tidyTw({
+                            typography: {
+                              common: 'font-normal text-secondary-50',
+                              bs: 'text-body-2',
+                              lg: 'lg:text-body-1',
+                            },
+                            layout: {
+                              common: 'mt-4',
+                            },
+                          })} 
+                        >
+                        Ngodingo, sebuah kata yang diambil dari bahasa jawa 
+                        yang apabila diartikan dalam bahasa Indonesia 
+                        senada dengan ngodinglah! yang sesuai dengan esensi dari 
+                        komunitas ini yaitu tentang berkarya melalui coding
+                        </p>
+
+                        <Button 
+                          href="#" 
+                          theme="primary" 
+                          text="Learn More" 
+                          className={tidyTw({
+                            layout: {
+                              common: 'mt-7',
+                            }
+                          })}
+                        />
+
+                    </div>
+
+                </Col>
+
+            </Grid>
+
+        </Container>
+
     </section>
   )
 }
+
+
+
 
 
 function VisiMisi () {
