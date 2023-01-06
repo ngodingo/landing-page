@@ -8,7 +8,7 @@ import { tidyTw } from '../utilts/tidy-tailwind'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Container, Grid, Col } from '../components/layout'
+import { Section, Container, Grid, Col } from '../components/layout'
 import { Button } from '../components/button'
 
 // images
@@ -134,111 +134,105 @@ function HeroSection () {
 
         <Container>
 
-          <div 
-            className={tidyTw({
-              layout: {
-                size: wrapperSize,
-                common: 'grid place-content-center pt-[8vh]',
-              }
-            })}
-          >
-
-            <div>
-
-              <h1 
-                className={tidyTw({
-                  typography: {
-                    common: 'font-semibold text-secondary-90 text-center',
-                    bs: 'text-display-3',
-                    sm: 'sm:text-display-2',
-                    md: 'md:text-display-1',
-                  }
-                })}
-              >
-              Learn Together, Make <br className='hidden sm:inline' />
-              it Flexible
-              </h1>
-
-            </div>
-
             <div 
               className={tidyTw({
-                layout: {
-                  common: 'flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9',
-                }
+                size: wrapperSize,
+                layout: 'grid place-content-center pt-[8vh]',
               })}
             >
 
-                <Button 
-                  theme="primary" 
-                  href="#1"
-                  text="Join Us"  
-                />
+                <div>
 
-                <Button 
-                  theme="secondary"  
-                  href="#2"
-                  text="Learn More" 
-                />
+                    <h1 
+                      className={tidyTw({
+                        typography: {
+                          common: 'font-semibold text-secondary-90 text-center',
+                          bs: 'text-display-3',
+                          sm: 'sm:text-display-2',
+                          md: 'md:text-display-1',
+                        }
+                      })}
+                    >
+                      Learn Together, Make <br className='hidden sm:inline' />
+                      it Flexible
+                    </h1>
+
+                </div>
+
+                <div 
+                  className={tidyTw({
+                    layout: 'flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9',
+                  })}
+                >
+
+                    <Button 
+                      theme="primary" 
+                      href="#1"
+                      text="Join Us"  
+                    />
+
+                      <Button 
+                      theme="secondary"  
+                      href="#2"
+                      text="Learn More" 
+                    />
+
+                </div>
 
             </div>
-
-          </div>
 
         </Container>
 
         <div 
           role="background" 
           className={tidyTw({
+            size: wrapperSize,
             layout: {
-              size: wrapperSize,
               position: 'absolute -z-10 top-0',
               display: 'grid place-items-center overflow-hidden',
             }
           })}
         >
 
-          <div 
-            className={tidyTw({
-              size: {
-                common: 'min-w-full',
-              },
-              layout: {
-                common: 'flex justify-center',
-                md: 'md:items-center md:gap-x-8',
-              }
-            })}
-          >
-
-            <span 
-              role="blurred-circle" 
+            <div 
               className={tidyTw({
-                size: {
-                  bs: 'w-48 h-48',
-                  lg: 'lg:w-56 lg:h-56',
-                },
-                style: {
-                  shape: 'rounded-full',
-                  color: 'bg-primary-50/[.6] blur-2xl',
+                size:'min-w-full',
+                layout: {
+                  common: 'flex justify-center',
+                  md: 'md:items-center md:gap-x-8',
                 }
               })}
-            />
+            >
 
-            <span 
-              role="blurred-circle" 
-              className={tidyTw({
-                size: {
-                  bs: 'w-80 h-80',
-                  lg: 'lg:w-96 lg:h-96',
-                },
-                style: {
-                  shape: 'rounded-full',
-                  color: 'bg-accent-50/[.6] blur-3xl',
-                }
-              })}
-            />
-          
-          </div>
+                <span 
+                  role="blurred-circle" 
+                  className={tidyTw({
+                    size: {
+                      bs: 'w-48 h-48',
+                      lg: 'lg:w-56 lg:h-56',
+                    },
+                    style: {
+                      shape: 'rounded-full',
+                      color: 'bg-primary-50/[.6] blur-2xl',
+                    }
+                  })}
+                />
+
+                <span 
+                  role="blurred-circle" 
+                  className={tidyTw({
+                    size: {
+                      bs: 'w-80 h-80',
+                      lg: 'lg:w-96 lg:h-96',
+                    },
+                    style: {
+                      shape: 'rounded-full',
+                      color: 'bg-accent-50/[.6] blur-3xl',
+                    }
+                  })}
+                />
+            
+            </div>
         
         </div>
 
@@ -272,17 +266,7 @@ function AboutUs () {
 
   return (
 
-    <section 
-      id="about" 
-      className={tidyTw({
-        layout: {
-          bs: 'py-9',
-          md: 'md:py-12',
-          lg: 'lg:py-14',
-          xl: 'xl:py-20',
-        }
-      })}
-    >
+    <Section id="about" >
 
         <Container>
 
@@ -326,9 +310,7 @@ function AboutUs () {
                           alt="teamwork"
                           loading="lazy" 
                           className={tidyTw({
-                            size: {
-                              common: 'w-full',
-                            }
+                            size: 'w-full',
                           })}
                         />
 
@@ -349,9 +331,7 @@ function AboutUs () {
 
                     <div 
                       className={tidyTw({
-                        size: {
-                          common: 'w-full h-full',
-                        },
+                        size: 'w-full h-full',
                         layout: {
                           common: 'grid',
                           bs: 'place-items-center',
@@ -373,7 +353,7 @@ function AboutUs () {
                             }
                           })} 
                         >
-                        About Us
+                          About Us
                         </h2>
 
                         <p 
@@ -383,15 +363,13 @@ function AboutUs () {
                               bs: 'text-body-2',
                               lg: 'lg:text-body-1',
                             },
-                            layout: {
-                              common: 'mt-4',
-                            },
+                            layout: 'mt-4',
                           })} 
                         >
-                        Ngodingo, sebuah kata yang diambil dari bahasa jawa 
-                        yang apabila diartikan dalam bahasa Indonesia 
-                        senada dengan ngodinglah! yang sesuai dengan esensi dari 
-                        komunitas ini yaitu tentang berkarya melalui coding
+                          Ngodingo, sebuah kata yang diambil dari bahasa jawa 
+                          yang apabila diartikan dalam bahasa Indonesia 
+                          senada dengan ngodinglah! yang sesuai dengan esensi dari 
+                          komunitas ini yaitu tentang berkarya melalui coding
                         </p>
 
                         <Button 
@@ -399,9 +377,7 @@ function AboutUs () {
                           theme="primary" 
                           text="Learn More" 
                           className={tidyTw({
-                            layout: {
-                              common: 'mt-7',
-                            }
+                            layout: 'mt-7',
                           })}
                         />
 
@@ -413,7 +389,7 @@ function AboutUs () {
 
         </Container>
 
-    </section>
+    </Section>
 
   )
 }
@@ -433,7 +409,7 @@ function VisiMisi () {
   }
 
   return (
-    <section className="py-9 md:py-12 lg:py-14 xl:py-20">
+    <Section>
       {/**/}
       <Container className="md:hidden">
         <div className="w-full h-full text-center">
@@ -489,11 +465,32 @@ function VisiMisi () {
         </Grid>
       </Container>
       {/**/}
-    </section>
+    </Section>
   )
 }
 
+/*
+  CHARACTERISTIC
 
+  structure:
+  ------------------
+  -section
+    -container
+      -div
+        -div
+          -image
+          -h3
+          -p
+        -div
+          -image
+          -h3
+          -p
+        -div
+          -image
+          -h3
+          -p
+  ------------------
+*/
 function Characteristic () {
 
   const characteristics = [
@@ -515,25 +512,100 @@ function Characteristic () {
   ]
 
   return (
-    <section className="py-9 md:py-12 lg:py-14 xl:py-20">
-      <Container fluid className="bg-primary-50 py-16 lg:py-32">
-        <div className="flex flex-col items-center gap-y-14 lg:flex-row lg:items-start lg:justify-evenly">
-          {characteristics.map((value, i) => (
-          <div className="basis-1/3 max-w-[380px] sm:max-w-[480px] h-max px-4 lg:px-8 text-center grid gap-y-5" key={i}>
-            <Image
-              className="w-12 h-12 lg:w-[76px] lg:h-[76px] m-auto"
-              src={value.icon} 
-              alt="icon" 
-            />
-            <h3 className="text-heading-4 lg:text-heading-3 font-semibold text-primary-10">
-              <span className="lg:h-24 lg:grid lg:place-items-center">{value.title}</span>
-            </h3>
-            <p className="text-body-3 lg:text-body-2 font-normal text-primary-10 opacity-60">{value.desc}</p>
-          </div>
-          ))}
-        </div>
-      </Container>
-    </section>
+    <Section>
+
+        <Container 
+          fluid 
+          className={tidyTw({
+            style: 'bg-primary-50',
+            layout: {
+              bs: 'py-16',
+              lg: 'lg:py-32'
+            }
+          })}
+        >
+
+            <div 
+              className={tidyTw({
+                layout: {
+                  common: 'flex gap-y-14',
+                  bs: 'flex-col items-center',
+                  lg: 'lg:flex-row lg:items-start lg:justify-evenly',
+                }
+              })}
+            >
+            
+                {characteristics.map((value, i) => (
+                  <div 
+                    key={i}
+                    className={tidyTw({
+                      size: {
+                        common: 'h-max',
+                        bs: 'max-w-[380px]',
+                        sm: 'sm:max-w-[480px]',
+                      },
+                      layout: {
+                        common: 'grid gap-y-5',
+                        bs: 'px-4',
+                        lg: 'lg:px-8 basis-1/3',
+                      },
+                      typography: 'text-center'
+                    })}
+                  >
+
+                      <Image
+                        src={value.icon} 
+                        alt="icon" 
+                        className={tidyTw({
+                          size: {
+                            bs: 'w-12 h-12',
+                            lg: 'lg:w-[76px] lg:h-[76px]',
+                          },
+                          layout: 'm-auto'
+                        })}
+                      />
+
+                      <h3 
+                        className={tidyTw({
+                          typography: {
+                            common: 'font-semibold text-primary-10',
+                            bs: 'text-heading-4',
+                            lg: 'lg:text-heading-3',
+                          }
+                        })}
+                      >
+
+                          <span 
+                            className={tidyTw({
+                              lgSize: 'lg:h-24',
+                              lgLayout: 'lg:grid lg:place-items-center',
+                            })}
+                          >
+                            {value.title}
+                          </span>
+
+                      </h3>
+
+                      <p 
+                        className={tidyTw({
+                          typography: {
+                            common: 'font-normal text-primary-10 opacity-60',
+                            bs: 'text-body-3',
+                            lg: 'lg:text-body-2',
+                          }
+                        })}
+                      >
+                        {value.desc}
+                      </p>
+                    
+                  </div>
+                ))}
+
+            </div>
+
+        </Container>
+
+    </Section>
   )
 
 }
