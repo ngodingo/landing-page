@@ -1,4 +1,8 @@
+// hooks
 import { useState } from 'react'
+
+// utilts
+import { tidyTw } from '../utilts/tidy-tailwind'
 
 // components
 import Head from 'next/head'
@@ -7,11 +11,9 @@ import Link from 'next/link'
 import { Container, Grid, Col } from '../components/layout'
 import { Button } from '../components/button'
 
-// utilts
-import { tidyTw } from '../utilts/tidy-tailwind'
-
 // images
 import teamworkImg from '../../public/img/teamwork.svg'
+
 // icons
 import coffeeIcon from '../../public/icons/characteristic/coffee.svg'
 import smartIcon from '../../public/icons/characteristic/smart.svg'
@@ -101,42 +103,186 @@ function Navbar () {
 }
 
 
+/*
+  HERO
+
+  structure:
+  ------------------
+  -section
+    -container
+      -div
+        -div
+          -h1
+        -div
+          -button
+          -button
+    -div background
+      -div
+        -span circle
+        -span circle
+  ------------------
+*/
+
+
 function HeroSection () {
-  const defaultSize = 'w-full min-h-[480px] h-[85vh] max-h-[768px]'
+
+  const wrapperSize = 'w-full min-h-[480px] h-[85vh] max-h-[768px]'
 
   return (
+
     <section className="relative">
 
-      <Container>
-        <div className={`${defaultSize} grid place-content-center pt-[8vh]`}>
-          <div>
-            <h1 className="text-display-3 sm:text-display-2 md:text-display-1 font-semibold text-secondary-90 text-center">
+        <Container>
+
+          <div 
+            className={tidyTw({
+              layout: {
+                size: wrapperSize,
+                common: 'grid place-content-center pt-[8vh]',
+              }
+            })}
+          >
+
+            <div>
+
+              <h1 
+                className={tidyTw({
+                  typography: {
+                    common: 'font-semibold text-secondary-90 text-center',
+                    bs: 'text-display-3',
+                    sm: 'sm:text-display-2',
+                    md: 'md:text-display-1',
+                  }
+                })}
+              >
               Learn Together, Make <br className='hidden sm:inline' />
               it Flexible
-            </h1>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9">
-            <Button theme="primary" text="Join Us" href="#1" />
-            <Button theme="secondary" text="Learn More" href="#2" />
-          </div>
-        </div>
-      </Container>
+              </h1>
 
-      <div role="background" className={`absolute ${defaultSize} -z-10 top-0 grid place-items-center overflow-hidden`}>
-        <div className="min-w-full flex justify-center md:items-center md:gap-x-8">
-          <span role="blurred-circle" className="w-48 h-48 lg:w-56 lg:h-56 bg-primary-50/[.6] rounded-full blur-2xl"></span>
-          <span role="blurred-circle" className="w-80 h-80 lg:w-96 lg:h-96 bg-accent-50/[.6] rounded-full blur-3xl"></span>
+            </div>
+
+            <div 
+              className={tidyTw({
+                layout: {
+                  common: 'flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9',
+                }
+              })}
+            >
+
+                <Button 
+                  theme="primary" 
+                  href="#1"
+                  text="Join Us"  
+                />
+
+                <Button 
+                  theme="secondary"  
+                  href="#2"
+                  text="Learn More" 
+                />
+
+            </div>
+
+          </div>
+
+        </Container>
+
+        <div 
+          role="background" 
+          className={tidyTw({
+            layout: {
+              size: wrapperSize,
+              position: 'absolute -z-10 top-0',
+              display: 'grid place-items-center overflow-hidden',
+            }
+          })}
+        >
+
+          <div 
+            className={tidyTw({
+              size: {
+                common: 'min-w-full',
+              },
+              layout: {
+                common: 'flex justify-center',
+                md: 'md:items-center md:gap-x-8',
+              }
+            })}
+          >
+
+            <span 
+              role="blurred-circle" 
+              className={tidyTw({
+                size: {
+                  bs: 'w-48 h-48',
+                  lg: 'lg:w-56 lg:h-56',
+                },
+                style: {
+                  shape: 'rounded-full',
+                  color: 'bg-primary-50/[.6] blur-2xl',
+                }
+              })}
+            />
+
+            <span 
+              role="blurred-circle" 
+              className={tidyTw({
+                size: {
+                  bs: 'w-80 h-80',
+                  lg: 'lg:w-96 lg:h-96',
+                },
+                style: {
+                  shape: 'rounded-full',
+                  color: 'bg-accent-50/[.6] blur-3xl',
+                }
+              })}
+            />
+          
+          </div>
+        
         </div>
-      </div>
 
     </section>
   )
 }
 
 
+
+/*
+  ABOUT US
+
+  structure:
+  ------------------
+  -section
+    -container
+      -grid
+        -col
+          -div
+            -image
+        -col
+          -div
+            -h2
+            -p
+            -button
+  ------------------
+*/
+
+
 function AboutUs () {
+
   return (
-    <section id="about" className="py-9 md:py-12 lg:py-14 xl:py-20">
+
+    <section 
+      id="about" 
+      className={tidyTw({
+        layout: {
+          bs: 'py-9',
+          md: 'md:py-12',
+          lg: 'lg:py-14',
+          xl: 'xl:py-20',
+        }
+      })}
+    >
 
         <Container>
 
@@ -207,9 +353,9 @@ function AboutUs () {
                           common: 'w-full h-full',
                         },
                         layout: {
-                          common: 'grid place-content-center',
+                          common: 'grid',
                           bs: 'place-items-center',
-                          lg: 'lg:place-items-start',
+                          lg: 'lg:place-items-start lg:place-content-center',
                         },
                         typography: {
                           bs: 'text-center',
@@ -268,6 +414,7 @@ function AboutUs () {
         </Container>
 
     </section>
+
   )
 }
 
