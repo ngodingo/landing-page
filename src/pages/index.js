@@ -1,6 +1,9 @@
+import { useState } from 'react'
+
 // components
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Container, Grid, Col } from '../components/layout'
 import { Button } from '../components/button'
 
@@ -14,12 +17,13 @@ import timeIcon from '../../public/icons/characteristic/time.svg'
 
 
 
+
 export default function Home() {
   return (
     <>
       <HtmlHead />
-      <main>
-        {/* <Navbar /> */}
+      <main className="scroll-smooth">
+        <Navbar />
         <HeroSection />
         <AboutUs />
         <VisiMisi />
@@ -41,6 +45,56 @@ function HtmlHead () {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
+  )
+}
+
+
+function Navbar () {
+  const [isOpen, setOpen] = useState(false)
+
+  const menus = [
+    {
+      name: 'About',
+      url: '#about',
+    },
+    {
+      name: 'Blog',
+      url: '#blog',
+    },
+    {
+      name: 'Portfolio',
+      url: '#portfolio',
+    },
+    {
+      name: 'Contact',
+      url: '#contact',
+    },
+  ]
+
+  return (
+    <nav className='fixed w-full z-10 bg-white/60 backdrop-blur-md'>
+      <Container>
+        <div className="flex w-full h-16 justify-between">
+          <div className="h-full">
+            logo
+          </div>
+          <div className="h-full flex">
+            {menus.map(menu => (
+              <Link
+                href={menu.url}
+                className="block h-full py-4 px-5 group" >
+                <span className="text-body-2 text-secondary-90 group-hover:text-accent-50">
+                  {menu.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="h-full flex">
+            icon
+          </div>
+        </div>
+      </Container>
+    </nav>
   )
 }
 
@@ -80,16 +134,17 @@ function HeroSection () {
 
 function AboutUs () {
   return (
-    <section className="py-9 md:py-12 lg:py-14 xl:py-20">
+    <section id="about" className="py-9 md:py-12 lg:py-14 xl:py-20">
       <Container>
         <Grid className="gap-y-8 lg:gap-x-5">
           <Col size="col-span-4 md:col-span-6 md:col-start-2 lg:col-span-6 xl:col-span-7">
-            <div className="w-full sm:px-14 md:px-0 lg:px-6 xl:px-12">
+            <div className="m-auto max-w-[420px] md:max-w-full md:px-8 lg:px-6 xl:px-12">
               <Image 
                 className="w-full"
                 src={teamworkImg} 
                 alt="teamwork"
-                loading="lazy" />
+                loading="lazy" 
+              />
             </div>
           </Col>
           <Col size="col-span-4 sm:col-span-8 lg:col-span-6 xl:col-span-5">
@@ -206,26 +261,25 @@ function Characteristic () {
   return (
     <section className="py-9 md:py-12 lg:py-14 xl:py-20">
       <Container fluid className="bg-primary-50 py-16 lg:py-32">
-        <Grid className="gap-y-16">
+        <div className="flex flex-col items-center gap-y-14 lg:flex-row lg:items-start lg:justify-evenly">
           {characteristics.map((value, i) => (
-          <Col size="col-span-4 md:col-span-8 lg:col-span-4" key={i}>
-            <div className="max-w-[380px] sm:max-w-[480px] px-4 lg:px-7 m-auto text-center grid gap-y-4">
-              <Image
-                className="w-12 h-12 lg:w-[76px] lg:h-[76px] m-auto"
-                src={value.icon} 
-                alt="icon" 
-              />
-              <h3 className="text-heading-4 lg:text-heading-3 font-semibold text-primary-10">
-                <span className="lg:h-24 lg:grid lg:place-items-center">{value.title}</span>
-              </h3>
-              <p className="text-body-3 lg:text-body-2 font-normal text-primary-10 opacity-60">{value.desc}</p>
-            </div>
-          </Col>
+          <div className="basis-1/3 max-w-[380px] sm:max-w-[480px] h-max px-4 lg:px-8 text-center grid gap-y-5" key={i}>
+            <Image
+              className="w-12 h-12 lg:w-[76px] lg:h-[76px] m-auto"
+              src={value.icon} 
+              alt="icon" 
+            />
+            <h3 className="text-heading-4 lg:text-heading-3 font-semibold text-primary-10">
+              <span className="lg:h-24 lg:grid lg:place-items-center">{value.title}</span>
+            </h3>
+            <p className="text-body-3 lg:text-body-2 font-normal text-primary-10 opacity-60">{value.desc}</p>
+          </div>
           ))}
-        </Grid>
+        </div>
       </Container>
     </section>
   )
+
 }
 
 
