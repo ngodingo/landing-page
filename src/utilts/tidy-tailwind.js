@@ -18,7 +18,7 @@ export function tidyTw (objTwClassName) {
     return str
       .replace(/(\r\n|\n|\r)/gm, '')
       .replace(/\s+/g, ' ').trim()
-      .replace(/bs:/g,'')
+      .replace(/bs:/g, '')
   }
 
 
