@@ -47,8 +47,9 @@ export function tidyTw (objTwClassName) {
           key: value,
         },
         key: `
-          value
-          value
+          bs:value
+          md:value
+          xl:value
         `,
       })} 
     >
