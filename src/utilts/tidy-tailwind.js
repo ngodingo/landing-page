@@ -13,9 +13,19 @@ export function tidyTw (objTwClassName) {
     }
   }
 
+  // remove line breaks and extra spaces
+  function tidyUpString (str) {
+    return str
+      .replace(/(\r\n|\n|\r)/gm, '')
+      .replace(/\s+/g, ' ').trim()
+  }
+
+
+  // exec
   let result = ''
 
   getAllObjValues(objTwClassName)
+  result = tidyUpString(result)
 
   return result;
 }
@@ -27,13 +37,20 @@ export function tidyTw (objTwClassName) {
   tidy up tailwind className
 
   - usage:
-    <div className={tidyTw({
-      key: value,
-      key: value,
-      key: {
+    <div 
+      className={tidyTw({
         key: value,
         key: value,
-      }
-    })} 
-    >hello world</div>
+        key: {
+          key: value,
+          key: value,
+        },
+        key: `
+          value
+          value
+        `,
+      })} 
+    >
+      hello world
+    </div>
 */
