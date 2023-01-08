@@ -21,36 +21,36 @@ export function AboutUs () {
 
             <Grid
               className={tidyTw({
-                layout: {
-                  common: 'gap-y-8',
-                  lg: 'lg:gap-x-5',
-                }
+                layout: `
+                  == gap-y-8
+                  lg:gap-x-5
+                `,
               })}
             >
                         
                 <Col 
                   className={tidyTw({
-                    size: {
-                      bs: 'col-span-4',
-                      md: 'md:col-span-6 md:col-start-2',
-                      lg: 'lg:col-span-6',
-                      xl: 'xl:col-span-7',
-                    }
+                    size: `
+                      == col-span-4
+                      md:col-span-6 md:col-start-2
+                      lg:col-span-6
+                      xl:col-span-7
+                    `,
                   })} 
                 >
 
                     <div 
                       className={tidyTw({
-                        size: {
-                          bs: 'max-w-[420px]',
-                          md: 'md:max-w-full',
-                        },
-                        layout: {
-                          common: 'm-auto',
-                          md: 'md:px-8',
-                          lg: 'lg:px-6',
-                          xl: 'xl:px-12',
-                        }
+                        size: `
+                          max-w-[420px]
+                          md:max-w-full
+                        `,
+                        layout: `
+                          m-auto
+                          md:px-8
+                          lg:px-6
+                          xl:px-12
+                        `,
                       })}
                     >
 
@@ -58,9 +58,7 @@ export function AboutUs () {
                           src={teamworkImg} 
                           alt="teamwork"
                           loading="lazy" 
-                          className={tidyTw({
-                            size: 'w-full',
-                          })}
+                          className="w-full"
                         />
 
                     </div>
@@ -69,27 +67,27 @@ export function AboutUs () {
 
                 <Col 
                   className={tidyTw({
-                    size: {
-                      bs: 'col-span-4',
-                      sm: 'sm:col-span-8',
-                      lg: 'lg:col-span-6',
-                      xl: 'xl:col-span-5',
-                    }
+                    size: `
+                      == col-span-4
+                      sm:col-span-8
+                      lg:col-span-6
+                      xl:col-span-5
+                    `,
                   })}
                 >
 
                     <div 
                       className={tidyTw({
                         size: 'w-full h-full',
-                        layout: {
-                          common: 'grid',
-                          bs: 'place-items-center',
-                          lg: 'lg:place-items-start lg:place-content-center',
-                        },
-                        typography: {
-                          bs: 'text-center',
-                          lg: 'lg:text-left',
-                        },
+                        layout: `
+                          grid
+                          == place-items-center
+                          lg:place-items-start lg:place-content-center
+                        `,
+                        typography: `
+                          == text-center
+                          lg:text-left
+                        `,
                       })}
                     >
 
@@ -97,8 +95,10 @@ export function AboutUs () {
                           className={tidyTw({
                             typography: {
                               common: 'font-semibold text-secondary-90',
-                              bs: 'text-heading-3',
-                              lg: 'lg:text-heading-1',
+                              responsive: `
+                                == text-heading-3
+                                lg:text-heading-1
+                              `,
                             }
                           })} 
                         >
@@ -109,8 +109,10 @@ export function AboutUs () {
                           className={tidyTw({
                             typography: {
                               common: 'font-normal text-secondary-50',
-                              bs: 'text-body-2',
-                              lg: 'lg:text-body-1',
+                              responsive: `
+                                == text-body-2
+                                lg:text-body-1
+                              `,
                             },
                             layout: 'mt-4',
                           })} 
@@ -125,9 +127,7 @@ export function AboutUs () {
                           href="#" 
                           theme="primary" 
                           text="Learn More" 
-                          className={tidyTw({
-                            layout: 'mt-7',
-                          })}
+                          className="mt-7"
                         />
 
                     </div>

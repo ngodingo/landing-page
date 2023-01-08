@@ -7,6 +7,7 @@ import { Section, Container, Grid, Col } from '../../components/layout'
 
 
 export function VisiMisi () {
+
   const visiMisi = {
     visi: 'Membentuk ekosistem mahasiswa yang semangat berkarya melalui coding untuk dapat bermanfaat bagi masyarakat sekitar',
     misi: [
@@ -17,62 +18,336 @@ export function VisiMisi () {
   }
 
   return (
+
     <Section>
-      {/**/}
-      <Container className="md:hidden">
-        <div className="w-full h-full text-center">
-          <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90">
-            Visi dan Misi
-          </h2>
-        </div>
-      </Container>
-      {/**/}
-      <Container className="mt-4">
-        <Grid>
-          <Col size="col-span-4 md:col-span-2 lg:col-start-2 lg:col-span-3" className="hidden md:block">
-            <div className="w-full h-full relative">
-              <span role="stepper-dash-horizontal" className="absolute w-full border-t-[3px] border-dashed border-primary-30 md:top-[15px] lg:top-[23px] -z-10"></span>
-              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90 w-max pr-6 bg-white">
-                Visi
-              </h2>
+
+        <Container className="md:hidden">
+
+          <div className="w-full">
+              
+                <h2 
+                  className={tidyTw({
+                    typography: `
+                      font-semibold text-secondary-90 text-center
+                      == text-heading-3
+                      lg:text-heading-1
+                    `,
+                  })}
+                >
+                  Visi dan Misi
+                </h2>
+
             </div>
-          </Col>
-          <Col size="col-span-4 md:col-span-6 lg:col-span-8">
-            <div className="w-full h-full relative">
-              <span role="stepper-dash-vertical" className="absolute h-full border-l-[3px] border-dashed border-primary-30 left-[15px] lg:left-[23px] -z-10"></span>
-              <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4">
-                <span role="stepper-circle" className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 bg-white border-[3px] border-primary-50 rounded-full"></span>
-                <p className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 md:pb-10 lg:pb-14 xl:pb-18">{visiMisi.visi}</p>
-              </div>
-            </div>
-          </Col>
-        </Grid>
-      </Container>
-      {/**/}
-      <Container>
-        <Grid>
-          <Col size="col-span-4 md:col-span-2 lg:col-start-2 lg:col-span-3" className="hidden md:block">
-            <div className="w-full h-full relative">
-              <span role="stepper-dash-horizontal" className="absolute w-full border-t-[3px] border-dashed border-primary-30 md:top-[15px] lg:top-[23px] -z-10"></span>
-              <h2 className="text-heading-3 lg:text-heading-1 font-semibold text-secondary-90 w-max pr-4 bg-white">
-                Misi
-              </h2>
-            </div>
-          </Col>
-          <Col size="col-span-4 md:col-span-6 lg:col-span-8">
-            <div className="w-full h-full relative">
-              <span role="stepper-dash-vertical" className="absolute h-full border-l-[3px] border-dashed border-primary-30 left-[15px] lg:left-[23px] -z-10"></span>
-              {visiMisi.misi.map((value, i) => (
-              <div className="grid grid-cols-[32px_1fr] lg:grid-cols-[48px_1fr] gap-x-4 last:bg-white group" key={i}>
-                <span role="stepper-circle" className="grid place-items-center basis-8 w-8 h-8 lg:w-12 lg:h-12 bg-primary-50 rounded-full text-body-3 lg:text-heading-4 font-semibold text-white">{i+1}</span>
-                <p className="text-body-3 lg:text-body-2 font-normal text-secondary-50 pb-5 lg:pb-12 group-last:pb-0">{value}</p>
-              </div>
-              ))}
-            </div>
-          </Col>
-        </Grid>
-      </Container>
-      {/**/}
+
+        </Container>
+
+        {/**/}
+
+        <Container className="mt-4">
+
+            <Grid>
+
+                <Col
+                  className={tidyTw({
+                    size:`
+                      == col-span-4
+                      md:col-span-2
+                      lg:col-span-3 lg:col-start-2
+                    `,
+                    layout: `
+                      hidden
+                      md:block
+                    `,
+                  })}
+                >
+                  
+                    <div className="w-full relative">
+
+                        <span 
+                          role="stepper-dash-horizontal"
+                          className={tidyTw({
+                            size: 'w-full',
+                            style: 'border-t-[3px] border-dashed border-primary-30',
+                            layout: `
+                              absolute -z-10
+                              md:top-[15px] 
+                              lg:top-[23px]
+                            `,
+                          })}
+                        />
+
+                        <h2
+                          className={tidyTw({
+                            typography: `
+                              font-semibold text-secondary-90
+                              == text-heading-3 
+                              lg:text-heading-1
+                            `,
+                          })}
+                        >
+
+                            <span className="pr-6 bg-white">Visi</span>
+                          
+                        </h2>
+
+                    </div>
+
+                </Col>
+
+                <Col 
+                  size=""
+                  className={tidyTw({
+                    size: `
+                      == col-span-4 
+                      md:col-span-6 
+                      lg:col-span-8
+                    `,
+                  })}
+                >
+
+                    <div className="w-full h-full relative">
+
+                        <span 
+                          role="stepper-dash-vertical"
+                          className={tidyTw({
+                            size: 'h-full',
+                            style: 'border-l-[3px] border-dashed border-primary-30',
+                            layout: `
+                              absolute -z-10
+                              == left-[15px] 
+                              lg:left-[23px]
+                            `,
+                          })}
+                        />
+
+                        <div
+                          className={tidyTw({
+                            layout: `
+                              grid gap-x-4
+                              == grid-cols-[32px_1fr] 
+                              lg:grid-cols-[48px_1fr]
+                              == pb-5 
+                              sm:pb-8
+                              md:pb-10 
+                              lg:pb-14 
+                              xl:pb-18
+                            `,
+                          })}
+                        >
+
+                            <span 
+                              role="stepper-circle-bordered" 
+                              className={tidyTw({
+                                size: 'w-8 h-8 lg:w-12 lg:h-12',
+                                style: 'border-[3px] border-primary-50 bg-white rounded-full',
+                              })}
+                            />
+
+                            <p
+                              className={tidyTw({
+                                typography: `
+                                  font-normal text-secondary-50
+                                  == text-body-3 
+                                  lg:text-body-2
+                                `,
+                              })}
+                            >
+                              {visiMisi.visi}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </Col>
+
+            </Grid>
+
+        </Container>
+
+        {/**/}
+
+        <Container>
+
+            <Grid>
+
+                <Col
+                  className={tidyTw({
+                    size:`
+                      == col-span-4
+                      md:col-span-2
+                      lg:col-span-3 lg:col-start-2
+                    `,
+                    layout: `
+                      hidden
+                      md:block
+                    `,
+                  })}
+                >
+                  
+                    <div className="w-full h-full relative">
+
+                        <span 
+                          role="stepper-dash-horizontal"
+                          className={tidyTw({
+                            size: 'w-full',
+                            style: 'border-t-[3px] border-dashed border-primary-30',
+                            layout: `
+                              absolute -z-10
+                              md:top-[15px] 
+                              lg:top-[23px]
+                            `,
+                          })}
+                        />
+
+                        <h2
+                          className={tidyTw({
+                            typography: `
+                              font-semibold text-secondary-90
+                              == text-heading-3 
+                              lg:text-heading-1
+                            `,
+                          })}
+                        >
+
+                            <span className="pr-6 bg-white">Misi</span>
+                          
+                        </h2>
+
+                    </div>
+
+                </Col>
+
+                <Col 
+                  size=""
+                  className={tidyTw({
+                    size: `
+                      == col-span-4 
+                      md:col-span-6 
+                      lg:col-span-8
+                    `,
+                  })}
+                >
+
+                    <div className="w-full h-full relative">
+
+                        <span 
+                          role="stepper-dash-vertical"
+                          className={tidyTw({
+                            size: 'h-full',
+                            style: 'border-l-[3px] border-dashed border-primary-30',
+                            layout: `
+                              absolute -z-10
+                              == left-[15px] 
+                              lg:left-[23px]
+                            `,
+                          })}
+                        />
+
+                        {visiMisi.misi.map((value, i) => (
+
+                        <div
+                          className={tidyTw({
+                            layout: `
+                              grid gap-x-4
+                              == grid-cols-[32px_1fr] 
+                              lg:grid-cols-[48px_1fr]
+                              == pb-5 
+                              sm:pb-8
+                              md:pb-10 
+                              lg:pb-14 
+                              xl:pb-18
+                              last:pb-0 last:bg-white
+                            `,
+                          })}
+                        >
+
+                            <span 
+                              role="stepper-circle-bordered" 
+                              className={tidyTw({
+                                size: 'w-8 h-8 lg:w-12 lg:h-12',
+                                style: 'bg-primary-50 rounded-full',
+                                layout: 'grid place-items-center',
+                                typography: `
+                                  font-semibold text-white
+                                  == text-body-3 
+                                  lg:text-heading-4 
+                                `,
+                              })}
+                            > 
+                              {i+1}
+                            </span>
+
+                            <p
+                              className={tidyTw({
+                                typography: `
+                                  font-normal text-secondary-50
+                                  == text-body-3 
+                                  lg:text-body-2
+                                `,
+                              })}
+                            >
+                              {value}
+                            </p>
+
+                        </div>
+
+                        ))}
+
+                    </div>
+
+                </Col>
+
+            </Grid>
+
+        </Container>
+
     </Section>
   )
 }
+
+
+
+/*
+  VISI MISI
+
+  structure:
+  ------------------
+  -section
+    -container
+      -div
+        -h2 'visi dan misi'
+    -container
+      -grid
+        -col
+          -div
+            -span dash-horizontal
+            -h2 'visi'
+        -col
+          -div
+            -span dash-vertical
+            -div
+              -span circle
+              -p
+    -container
+      -grid
+        -col
+          -div
+            -span dash-horizontal
+            -h2 'misi'
+        -col
+          -div
+            -span dash-vertical
+            {looping 3
+            -div
+              -span circle
+              -p
+            -div
+              -span circle
+              -p
+            -div
+              -span circle
+              -p
+            }
+  ------------------
+*/

@@ -2,19 +2,19 @@ import { tidyTw } from "../utilts/tidy-tailwind"
 
 
 export function Section ({id, className, children}) {
+
+  const twClassName = tidyTw({
+    layout: `
+      == py-9
+      md:py-12
+      lg:py-14
+      xl:py-20
+    `,
+    custom: className,
+  })
+
   return (
-    <section 
-      id={id} 
-      className={tidyTw({
-        layout: {
-          bs: 'py-9',
-          md: 'md:py-12',
-          lg: 'lg:py-14',
-          xl: 'xl:py-20',
-        },
-        custom: className,
-      })}
-    >
+    <section id={id} className={twClassName} >
       {children}
     </section>
   )
@@ -23,15 +23,32 @@ export function Section ({id, className, children}) {
 
 export function Container ({id, className, children, fluid}) {
 
-  const isFluidWidth = fluid
-    ? 'w-full'
-    : 'container m-auto px-5 sm:px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]'
+  const containerWidth = {
+    fluid: 'w-full',
+    fixed: `
+      container m-auto
+      == px-5
+      sm:px-5
+      md:px-6
+      lg:px-8
+      xl:px-[70px]
+      2xl:px-[198px]
+    `,
+  }
+
+  function getLayout () {
+    return fluid ? containerWidth.fluid : containerWidth.fixed
+  }
+
+
+  const twClassName = tidyTw({
+    layout: getLayout(),
+    custom: className,
+  })
 
   return (
-    <div 
-      id={id}
-      className={`${isFluidWidth} ${className}`} >
-        {children}
+    <div id={id} className={twClassName} >
+      {children}
     </div>
   )
 }
@@ -40,14 +57,19 @@ export function Container ({id, className, children, fluid}) {
 
 export function Grid ({id, className, children}) {
 
-  const defaultClassName = `w-full grid`
-  const defaultCols = 'grid-cols-4 md:grid-cols-8 lg:grid-cols-12'
+  const twClassName = tidyTw({
+    display: 'grid',
+    colsCount: `
+      == grid-cols-4
+      md:grid-cols-8
+      lg:grid-cols-12
+    `,
+    custom: className,
+  })
 
   return (
-    <div
-      id={id}
-      className={`${defaultClassName} ${defaultCols} ${className}`} >
-        {children}
+    <div id={id} className={twClassName} >
+      {children}
     </div>
   )
 }
@@ -64,6 +86,17 @@ export function Col ({id, className, size, children}) {
     </div>
   )
 }
+
+// export function Col ({id, className, children}) {
+
+//   return (
+//     <div 
+//       id={id}
+//       className={className} >
+//         {children}
+//     </div>
+//   )
+// }
 
 
 

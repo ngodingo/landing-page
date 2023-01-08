@@ -9,7 +9,7 @@ import { Button } from '../../components/button'
 
 export function HeroSection () {
 
-  const wrapperSize = 'w-full min-h-[480px] h-[85vh] max-h-[768px]'
+  const wrapperSize = 'w-full h-[85vh] min-h-[480px] max-h-[768px]'
 
   return (
 
@@ -28,12 +28,12 @@ export function HeroSection () {
 
                     <h1 
                       className={tidyTw({
-                        typography: {
-                          common: 'font-semibold text-secondary-90 text-center',
-                          bs: 'text-display-3',
-                          sm: 'sm:text-display-2',
-                          md: 'md:text-display-1',
-                        }
+                        typography: ` 
+                          font-semibold text-secondary-90 text-center
+                          == text-display-3
+                          sm:text-display-2
+                          md:text-display-1 
+                        `,
                       })}
                     >
                       Learn Together, Make <br className='hidden sm:inline' />
@@ -70,48 +70,48 @@ export function HeroSection () {
           role="background" 
           className={tidyTw({
             size: wrapperSize,
-            layout: {
-              position: 'absolute -z-10 top-0',
-              display: 'grid place-items-center overflow-hidden',
-            }
+            layout: `
+              absolute -z-10 top-0
+              grid place-items-center overflow-hidden
+            `,
           })}
         >
 
             <div 
               className={tidyTw({
                 size:'min-w-full',
-                layout: {
-                  common: 'flex justify-center',
-                  md: 'md:items-center md:gap-x-8',
-                }
+                layout: `
+                  flex justify-center
+                  md:items-center md:gap-x-8
+                `,
               })}
             >
 
                 <span 
                   role="blurred-circle" 
                   className={tidyTw({
-                    size: {
-                      bs: 'w-48 h-48',
-                      lg: 'lg:w-56 lg:h-56',
-                    },
-                    style: {
-                      shape: 'rounded-full',
-                      color: 'bg-primary-50/[.6] blur-2xl',
-                    }
+                    size: `
+                      == w-48 h-48
+                      lg:w-56 lg:h-56
+                    `,
+                    style: `
+                      rounded-full
+                      bg-primary-50/[.6] blur-2xl
+                    `,
                   })}
                 />
 
                 <span 
                   role="blurred-circle" 
                   className={tidyTw({
-                    size: {
-                      bs: 'w-80 h-80',
-                      lg: 'lg:w-96 lg:h-96',
-                    },
-                    style: {
-                      shape: 'rounded-full',
-                      color: 'bg-accent-50/[.6] blur-3xl',
-                    }
+                    size: `
+                      == w-80 h-80
+                      lg:w-96 lg:h-96
+                    `,
+                    style: `
+                      rounded-full
+                      bg-accent-50/[.6] blur-3xl
+                    `,
                   })}
                 />
             
@@ -120,6 +120,7 @@ export function HeroSection () {
         </div>
 
     </section>
+    
   )
 }
 

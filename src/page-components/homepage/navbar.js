@@ -35,8 +35,9 @@ export function Navbar () {
             logo
           </div>
           <div className="h-full flex">
-            {menus.map(menu => (
+            {menus.map((menu, i) => (
               <Link
+                key={i}
                 href={menu.url}
                 className="block h-full py-4 px-5 group" >
                 <span className="text-body-2 text-secondary-90 group-hover:text-accent-50">

@@ -33,93 +33,97 @@ export function Characteristic () {
   ]
 
   return (
+
     <Section>
 
         <Container 
           fluid 
           className={tidyTw({
             style: 'bg-primary-50',
-            layout: {
-              bs: 'py-16',
-              lg: 'lg:py-32'
-            }
+            layout: `
+              == py-16
+              lg:py-32
+            `,
           })}
         >
 
             <div 
               className={tidyTw({
-                layout: {
-                  common: 'flex gap-y-14',
-                  bs: 'flex-col items-center',
-                  lg: 'lg:flex-row lg:items-start lg:justify-evenly',
-                }
+                layout: `
+                  flex gap-y-14 
+                  == flex-col items-center
+                  lg:flex-row lg:items-start lg:justify-evenly
+                `,
               })}
             >
             
                 {characteristics.map((value, i) => (
-                  <div 
-                    key={i}
-                    className={tidyTw({
-                      size: {
-                        common: 'h-max',
-                        bs: 'max-w-[380px]',
-                        sm: 'sm:max-w-[480px]',
-                      },
-                      layout: {
-                        common: 'grid gap-y-5',
-                        bs: 'px-4',
-                        lg: 'lg:px-8 basis-1/3',
-                      },
-                      typography: 'text-center'
-                    })}
-                  >
 
-                      <Image
-                        src={value.icon} 
-                        alt="icon" 
-                        className={tidyTw({
-                          size: {
-                            bs: 'w-12 h-12',
-                            lg: 'lg:w-[76px] lg:h-[76px]',
-                          },
-                          layout: 'm-auto'
-                        })}
-                      />
+                    <div 
+                      key={i}
+                      className={tidyTw({
+                        size: `
+                          h-max
+                          == max-w-[380px] 
+                          sm:max-w-[480px]
+                        `,
+                        layout: `
+                          grid gap-y-5 
+                          == px-4
+                          lg:px-8 lg:basis-1/3
+                        `,
+                        typography: 'text-center',
+                      })}
+                    >
 
-                      <h3 
-                        className={tidyTw({
-                          typography: {
-                            common: 'font-semibold text-primary-10',
-                            bs: 'text-heading-4',
-                            lg: 'lg:text-heading-3',
-                          }
-                        })}
-                      >
+                        <Image
+                          src={value.icon} 
+                          alt="icon" 
+                          className={tidyTw({
+                            size: `
+                              == w-12 == h-12
+                              lg:w-[76px] lg:h-[76px]
+                            `,
+                            layout: 'm-auto'
+                          })}
+                        />
 
-                          <span 
-                            className={tidyTw({
-                              lgSize: 'lg:h-24',
-                              lgLayout: 'lg:grid lg:place-items-center',
-                            })}
-                          >
-                            {value.title}
-                          </span>
+                        <h3 
+                          className={tidyTw({
+                            typography: `
+                              font-semibold text-primary-10
+                              == text-heading-4
+                              lg:text-heading-3
+                            `,
+                          })}
+                        >
 
-                      </h3>
+                            <span 
+                              // only for lg screen
+                              className={tidyTw({
+                                size: 'lg:h-24',
+                                layout: 'lg:grid lg:place-items-center',
+                              })}
+                            >
+                              {value.title}
+                            </span>
 
-                      <p 
-                        className={tidyTw({
-                          typography: {
-                            common: 'font-normal text-primary-10 opacity-60',
-                            bs: 'text-body-3',
-                            lg: 'lg:text-body-2',
-                          }
-                        })}
-                      >
-                        {value.desc}
-                      </p>
-                    
-                  </div>
+                        </h3>
+
+                        <p 
+                          className={tidyTw({
+                            typography: `
+                              font-normal text-primary-10/60
+                              == text-body-3
+                              lg:text-body-2
+                            `,
+                          })}
+                        >
+                          {value.desc}
+                        </p>
+                      
+                    </div>
+
                 ))}
 
             </div>
@@ -127,9 +131,10 @@ export function Characteristic () {
         </Container>
 
     </Section>
-  )
 
+  )
 }
+
 
 /*
   CHARACTERISTIC
