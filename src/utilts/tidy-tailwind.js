@@ -48,7 +48,7 @@ export function tidyTw (objTwClassName) {
           key: value,
         },
         key: `
-          bs:value
+          == value
           md:value
           xl:value
         `,
