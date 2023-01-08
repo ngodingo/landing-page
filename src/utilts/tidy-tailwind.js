@@ -13,12 +13,12 @@ export function tidyTw (objTwClassName) {
     }
   }
 
-  // remove line breaks, extra spaces, and 'bs:'
+  // remove line breaks, extra spaces, and 'undefined'
   function tidyUpString (str) {
     return str
       .replace(/(\r\n|\n|\r)/gm, '')
       .replace(/\s+/g, ' ').trim()
-      .replace(/bs:/g, '')
+      .replace(/undefined/g, '')
   }
 
 
