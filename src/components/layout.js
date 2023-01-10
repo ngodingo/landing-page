@@ -4,6 +4,7 @@ import { tidyTw } from "../utilts/tidy-tailwind"
 export function Section ({id, className, children}) {
 
   const twClassName = tidyTw({
+    size: 'w-full',
     layout: `
       == py-9
       md:py-12
@@ -14,7 +15,10 @@ export function Section ({id, className, children}) {
   })
 
   return (
-    <section id={id} className={twClassName} >
+    <section 
+      id={id} 
+      className={twClassName} 
+    >
       {children}
     </section>
   )
@@ -47,7 +51,11 @@ export function Container ({id, className, children, fluid}) {
   })
 
   return (
-    <div id={id} className={twClassName} >
+    <div 
+      role="container" 
+      id={id} 
+      className={twClassName} 
+    >
       {children}
     </div>
   )
@@ -55,7 +63,7 @@ export function Container ({id, className, children, fluid}) {
 
 
 
-export function Grid ({id, className, children}) {
+export function Grid ({id, className, customGap, children}) {
 
   const twClassName = tidyTw({
     display: 'grid',
@@ -64,11 +72,19 @@ export function Grid ({id, className, children}) {
       md:grid-cols-8
       lg:grid-cols-12
     `,
+    gap: !customGap && `
+      == gap-x-4
+      xl:gap-x-5
+    `,
     custom: className,
   })
 
   return (
-    <div id={id} className={twClassName} >
+    <div 
+      role="grid" 
+      id={id} 
+      className={twClassName} 
+    >
       {children}
     </div>
   )
@@ -76,33 +92,24 @@ export function Grid ({id, className, children}) {
 
 
 
-export function Col ({id, className, size, children}) {
+export function Col ({id, className, children}) {
 
   return (
     <div 
+      role="column-grid" 
       id={id}
-      className={`${className} ${size}`} >
-        {children}
+      className={className} 
+    >
+      {children}
     </div>
   )
 }
-
-// export function Col ({id, className, children}) {
-
-//   return (
-//     <div 
-//       id={id}
-//       className={className} >
-//         {children}
-//     </div>
-//   )
-// }
 
 
 
 
 /*
-  layout.js khusus untuk elemen layout
+  layout.js
   
   Container
   - ada 2 tipe width (fluid dan default)

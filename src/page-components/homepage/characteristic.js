@@ -34,15 +34,19 @@ export function Characteristic () {
 
   return (
 
-    <Section>
+    <Section 
+      className={tidyTw({
+        style: 'bg-primary-50 selection:bg-secondary-90',
+        layout: 'mt-9'
+      })}
+    >
 
         <Container 
           fluid 
           className={tidyTw({
-            style: 'bg-primary-50',
             layout: `
-              == py-16
-              lg:py-32
+              == py-6
+              lg:py-10
             `,
           })}
         >

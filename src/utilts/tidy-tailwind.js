@@ -1,5 +1,5 @@
 
-export function tidyTw (objTwClassName) {
+export function tidyTw (input) {
   
   // get all object values
   function getAllObjValues (obj) {
@@ -23,10 +23,14 @@ export function tidyTw (objTwClassName) {
   }
 
 
-  // exec
+  // EXEC
+  if (typeof input === 'string' || input instanceof String) {
+    return tidyUpString(input)
+  }
+
   let result = ''
 
-  getAllObjValues(objTwClassName)
+  getAllObjValues(input)
   result = tidyUpString(result)
 
   return result;

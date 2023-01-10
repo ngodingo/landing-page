@@ -69,7 +69,7 @@ export function VisiMisi () {
                             size: 'w-full',
                             style: 'border-t-[3px] border-dashed border-primary-30',
                             layout: `
-                              absolute -z-10
+                              absolute -z-10 -right-5
                               md:top-[15px] 
                               lg:top-[23px]
                             `,
@@ -123,9 +123,7 @@ export function VisiMisi () {
                         <div
                           className={tidyTw({
                             layout: `
-                              grid gap-x-4
-                              == grid-cols-[32px_1fr] 
-                              lg:grid-cols-[48px_1fr]
+                              flex gap-x-4
                               == pb-5 
                               sm:pb-8
                               md:pb-10 
@@ -139,6 +137,7 @@ export function VisiMisi () {
                               role="stepper-circle-bordered" 
                               className={tidyTw({
                                 size: 'w-8 h-8 lg:w-12 lg:h-12',
+                                layout: 'shrink-0 grow-0',
                                 style: 'border-[3px] border-primary-50 bg-white rounded-full',
                               })}
                             />
@@ -193,7 +192,7 @@ export function VisiMisi () {
                             size: 'w-full',
                             style: 'border-t-[3px] border-dashed border-primary-30',
                             layout: `
-                              absolute -z-10
+                              absolute -z-10 -right-5
                               md:top-[15px] 
                               lg:top-[23px]
                             `,
@@ -247,11 +246,10 @@ export function VisiMisi () {
                         {visiMisi.misi.map((value, i) => (
 
                         <div
+                          key={i}
                           className={tidyTw({
                             layout: `
-                              grid gap-x-4
-                              == grid-cols-[32px_1fr] 
-                              lg:grid-cols-[48px_1fr]
+                              flex gap-x-4
                               == pb-5 
                               sm:pb-8
                               md:pb-10 
@@ -267,7 +265,10 @@ export function VisiMisi () {
                               className={tidyTw({
                                 size: 'w-8 h-8 lg:w-12 lg:h-12',
                                 style: 'bg-primary-50 rounded-full',
-                                layout: 'grid place-items-center',
+                                layout: `
+                                  shrink-0 grow-0
+                                  grid place-items-center
+                                `,
                                 typography: `
                                   font-semibold text-white
                                   == text-body-3 

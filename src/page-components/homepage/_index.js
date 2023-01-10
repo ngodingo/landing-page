@@ -5,6 +5,7 @@ import { HeroSection } from "./hero";
 import { AboutUs } from "./about-us";
 import { VisiMisi } from "./visi-misi";
 import { Characteristic } from "./characteristic";
+import { Blog } from "./blogs";
 
 export default function Homepage () {
   return (
@@ -16,7 +17,7 @@ export default function Homepage () {
         <AboutUs />
         <VisiMisi />
         <Characteristic />
-        {/* <BlogSection /> */}
+        <Blog />
         {/* <Projects /> */}
         {/* <Footer /> */}
       </main>

@@ -19,14 +19,7 @@ export function AboutUs () {
 
         <Container>
 
-            <Grid
-              className={tidyTw({
-                layout: `
-                  == gap-y-8
-                  lg:gap-x-5
-                `,
-              })}
-            >
+            <Grid className="gap-y-8">
                         
                 <Col 
                   className={tidyTw({
@@ -34,7 +27,7 @@ export function AboutUs () {
                       == col-span-4
                       md:col-span-6 md:col-start-2
                       lg:col-span-6
-                      xl:col-span-7
+                      xl:col-span-7 
                     `,
                   })} 
                 >
@@ -84,22 +77,16 @@ export function AboutUs () {
                           == place-items-center
                           lg:place-items-start lg:place-content-center
                         `,
-                        typography: `
-                          == text-center
-                          lg:text-left
-                        `,
                       })}
                     >
 
                         <h2 
                           className={tidyTw({
-                            typography: {
-                              common: 'font-semibold text-secondary-90',
-                              responsive: `
-                                == text-heading-3
-                                lg:text-heading-1
-                              `,
-                            }
+                            typography: `
+                              font-semibold text-secondary-90
+                              == text-heading-3 text-center
+                              lg:text-heading-1 lg:text-left
+                            `,
                           })} 
                         >
                           About Us
@@ -107,13 +94,11 @@ export function AboutUs () {
 
                         <p 
                           className={tidyTw({
-                            typography: {
-                              common: 'font-normal text-secondary-50',
-                              responsive: `
-                                == text-body-2
-                                lg:text-body-1
-                              `,
-                            },
+                            typography: `
+                              font-normal text-secondary-50
+                              == text-body-2 text-center
+                              lg:text-body-1 lg:text-left
+                            `,
                             layout: 'mt-4',
                           })} 
                         >
