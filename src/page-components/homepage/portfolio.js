@@ -3,21 +3,30 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import Image from 'next/image'
+import { Button } from '../../components/button'
 import { Section, Container, Grid, Col } from '../../components/layout'
 
 import dummyImg from '../../../public/img/appProject.png'
 
 
-export function Projects () {
+export function Portfolio () {
   return (
 
-    <Section>
+    <Section id="portfolio">
 
         <Container className="py-12">
 
-            {[1,2].map(x => (
+            {/* {[1,2].map(x => ( */}
 
-            <Grid className="mt-24 first:mt-0">
+            <Grid
+              className={tidyTw({
+                layout: `
+                  == mt-16
+                  md:mt-24
+                  first:mt-0
+                `,
+              })}
+            >
 
                 <Col
                   className={tidyTw({
@@ -91,7 +100,7 @@ export function Projects () {
                       role="wrapper"
                       className={tidyTw({
                         typography: `
-                          font-medium
+                          font-medium text-secondary-30
                           == text-body-4
                           lg:text-body-3 lg:text-right
                         `,
@@ -112,8 +121,8 @@ export function Projects () {
                             
                             <br />
 
-                            <span className="text-secondary-30">
-                              Figma, Adobe XD
+                            <span>
+                              Figma <br /> Adobe XD
                             </span>
 
                         </div>
@@ -126,7 +135,7 @@ export function Projects () {
 
                             <br />
 
-                            <span className="text-secondary-30">
+                            <span>
                               lexend deca
                             </span>
 
@@ -149,7 +158,14 @@ export function Projects () {
 
                     <div
                       role="image-wrapper"
-                      className="w-full aspect-[3/4] [@media(min-width:540px)]:aspect-video rounded-3xl overflow-hidden bg-secondary-10"
+                      className={tidyTw({
+                        size: `
+                          aspect-[3/4]
+                          [@media(min-width:540px)]:aspect-video
+                        `,
+                        style: 'rounded-3xl bg-secondary-10/30',
+                        layout: 'overflow-hidden',
+                      })}
                     >
 
                         <Image
@@ -171,7 +187,11 @@ export function Projects () {
 
                     <div
                       role="image-wrapper"
-                      className="w-full aspect-square rounded-3xl overflow-hidden bg-secondary-10"
+                      className={tidyTw({
+                        size: 'aspect-square',
+                        style: 'rounded-3xl bg-secondary-10/30',
+                        layout: 'overflow-hidden',
+                      })}
                     >
 
                         <Image
@@ -193,7 +213,11 @@ export function Projects () {
 
                     <div
                       role="image-wrapper"
-                      className="w-full aspect-square rounded-3xl overflow-hidden bg-secondary-10"
+                      className={tidyTw({
+                        size: 'aspect-square',
+                        style: 'rounded-3xl bg-secondary-10/30',
+                        layout: 'overflow-hidden',
+                      })}
                     >
 
                         <Image
@@ -215,7 +239,11 @@ export function Projects () {
 
                     <div
                       role="image-wrapper"
-                      className="w-full aspect-square rounded-3xl overflow-hidden bg-secondary-10"
+                      className={tidyTw({
+                        size: 'aspect-square',
+                        style: 'rounded-3xl bg-secondary-10/30',
+                        layout: 'overflow-hidden',
+                      })}
                     >
 
                         <Image
@@ -230,13 +258,18 @@ export function Projects () {
 
             </Grid>
 
-            ))}
+            {/* ))} */}
 
+            <div className="mt-8">
 
+                <Button 
+                  theme="secondary"
+                  href=""
+                  text="Load More"
+                  className="mx-auto"
+                />
 
-
-
-            
+            </div>
 
         </Container>
 

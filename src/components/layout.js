@@ -4,8 +4,8 @@ import { tidyTw } from "../utilts/tidy-tailwind"
 export function Section ({id, className, children}) {
 
   const twClassName = tidyTw({
-    size: 'w-full',
     layout: `
+      scroll-mt-16
       == py-9
       md:py-12
       lg:py-14
@@ -28,7 +28,6 @@ export function Section ({id, className, children}) {
 export function Container ({id, className, children, fluid}) {
 
   const containerWidth = {
-    fluid: 'w-full',
     fixed: `
       container m-auto
       == px-5

@@ -62,7 +62,7 @@ export function Navbar () {
 
             <div 
               className={tidyTw({
-                size: 'w-full h-16',
+                size: 'h-16',
                 layout: 'flex justify-between'
               })}
             >

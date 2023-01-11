@@ -39,7 +39,7 @@ export function Blog () {
 
   return (
 
-    <Section className='bg-primary-10'>
+    <Section id="blog" className='bg-primary-10'>
 
         <Container>
 
@@ -50,7 +50,7 @@ export function Blog () {
                     <Col
                       key={article.id}
                       className={tidyTw({
-                        size: ` 
+                        size: `
                           == col-span-4
                           md:col-span-6 md:col-start-2
                           lg:col-span-8 lg:col-start-3
@@ -115,26 +115,19 @@ export function Blog () {
                 
                 ))}
 
-                <Col
-                  className={tidyTw({
-                    size: ` 
-                      == col-span-4
-                      md:col-span-8
-                      lg:col-span-12
-                    `,
-                  })}
-                >
-                    
-                    <Button 
-                      theme="secondary"
-                      href=""
-                      text="Load More"
-                      className="mx-auto pt-6"
-                    />
-
-                </Col>
 
             </Grid>
+
+            <div className=" mt-8">
+
+                <Button 
+                  theme="secondary"
+                  href=""
+                  text="Load More"
+                  className="mx-auto"
+                />
+
+            </div>
 
         </Container>
 

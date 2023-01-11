@@ -67,7 +67,7 @@ export function HeroSection () {
         </Container>
 
         <div 
-          role="background" 
+          role="container-background" 
           className={tidyTw({
             size: wrapperSize,
             layout: `

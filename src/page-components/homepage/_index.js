@@ -6,7 +6,7 @@ import { AboutUs } from "./about-us";
 import { VisiMisi } from "./visi-misi";
 import { Characteristic } from "./characteristic";
 import { Blog } from "./blogs";
-import { Projects } from "./projects";
+import { Portfolio } from "./portfolio";
 
 export default function Homepage () {
   return (
@@ -19,7 +19,7 @@ export default function Homepage () {
         <VisiMisi />
         <Characteristic />
         <Blog />
-        <Projects />
+        <Portfolio />
         {/* <Footer /> */}
       </main>
     </>

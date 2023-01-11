@@ -71,7 +71,7 @@ export function AboutUs () {
 
                     <div 
                       className={tidyTw({
-                        size: 'w-full h-full',
+                        size: 'h-full',
                         layout: `
                           grid
                           == place-items-center

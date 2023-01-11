@@ -23,7 +23,7 @@ export function VisiMisi () {
 
         <Container className="md:hidden">
 
-          <div className="w-full">
+          <div className="">
               
                 <h2 
                   className={tidyTw({
@@ -61,7 +61,7 @@ export function VisiMisi () {
                   })}
                 >
                   
-                    <div className="w-full relative">
+                    <div className="relative">
 
                         <span 
                           role="stepper-dash-horizontal"
@@ -105,7 +105,7 @@ export function VisiMisi () {
                   })}
                 >
 
-                    <div className="w-full h-full relative">
+                    <div className="relative">
 
                         <span 
                           role="stepper-dash-vertical"
@@ -184,7 +184,7 @@ export function VisiMisi () {
                   })}
                 >
                   
-                    <div className="w-full h-full relative">
+                    <div className="relative">
 
                         <span 
                           role="stepper-dash-horizontal"
@@ -228,7 +228,7 @@ export function VisiMisi () {
                   })}
                 >
 
-                    <div className="w-full h-full relative">
+                    <div className="relative">
 
                         <span 
                           role="stepper-dash-vertical"
