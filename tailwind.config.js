@@ -60,7 +60,10 @@ module.exports = {
           90: '#666666',
         },
 
-      }
+      },
+      transitionProperty: {
+        'size': 'width height'
+      },
     },
   },
   plugins: [

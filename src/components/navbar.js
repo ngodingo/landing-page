@@ -1,30 +1,34 @@
+// hooks
 import { useState } from "react"
 
-
+// components
 import Link from "next/link"
-import { Container } from "../../components/layout"
-import { tidyTw } from "../../utilts/tidy-tailwind"
+import { Spin as Hamburger } from "hamburger-react"
+import { Container } from "./layout"
+import { tidyTw } from "../utilts/tidy-tailwind"
+
 
 
 export function Navbar () {
+
   const [isOpen, setOpen] = useState(false)
 
   const menus = [
     {
       name: 'About',
-      url: '#about',
+      url: '/#about',
     },
     {
       name: 'Blog',
-      url: '#blog',
+      url: '/blog',
     },
     {
       name: 'Portfolio',
-      url: '#portfolio',
+      url: '/#portfolio',
     },
     {
       name: 'Contact',
-      url: '#contact',
+      url: '/#contact',
     },
   ]
 
@@ -52,7 +56,7 @@ export function Navbar () {
 
     <nav 
       className={tidyTw({
-        size: 'w-full',
+        size: `w-full`,
         layout: 'fixed z-30',
         style: 'bg-white/70 backdrop-blur-md',
       })}
@@ -63,15 +67,15 @@ export function Navbar () {
             <div 
               className={tidyTw({
                 size: 'h-16',
-                layout: 'flex justify-between'
+                layout: 'flex justify-between !items-center'
               })}
             >
 
-                <div className="h-full">
+                <div className="">
                   logo
                 </div>
 
-                <div className="h-full hidden lg:flex">
+                <div className="hidden lg:flex">
 
                     {menus.map((menu, i) => (
 
@@ -97,12 +101,21 @@ export function Navbar () {
 
                 </div>
 
-                <div className="h-full hidden lg:flex">
+                <div className="hidden lg:flex">
                   icon
                 </div>
 
-                <div className="h-full flex lg:hidden">
-                  mobile nav
+                <div className="block lg:hidden">
+                      
+                    <div className="relative z-40">
+
+                      <Hamburger 
+                        toggled={isOpen} 
+                        toggle={setOpen}
+                      />
+
+                    </div>
+
                 </div>
 
             </div>
@@ -127,3 +140,11 @@ export function Navbar () {
     </>
   )
 }
+
+
+                    /* 
+                    <div className={`transition-size ease-in rounded-xl fixed top-0 right-0 bg-white/50 ${isOpen ? 'w-full' : 'w-0 '} h-screen `}>
+                    </div>
+
+                    <div className={`transition-size ease-in rounded-xl fixed top-0 right-0 bg-primary-10 ${isOpen ? 'w-2/3' : 'w-0 '} h-screen `}>
+                    </div> */
