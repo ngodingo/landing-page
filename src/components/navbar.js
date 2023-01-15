@@ -51,14 +51,17 @@ export function Navbar () {
   ]
 
   return (
-
     <>
 
     <nav 
       className={tidyTw({
-        size: `w-full`,
-        layout: 'fixed z-30',
-        style: 'bg-white/70 backdrop-blur-md',
+        size: 'w-full',
+        layout: 'fixed z-30 overflow-hidden',
+        style: 'lg:bg-white/70 backdrop-blur-md',
+        transition: {
+          color: isOpen ? 'bg-white delay-150' : 'bg-white/70',
+          prop: 'transition-color ease-in-out duration-500'
+        },
       })}
     >
 
@@ -67,35 +70,33 @@ export function Navbar () {
             <div 
               className={tidyTw({
                 size: 'h-16',
-                layout: 'flex justify-between !items-center'
+                layout: 'flex justify-between items-center'
               })}
             >
 
                 <div className="">
-                  logo
+                  [O] ngodingo
                 </div>
 
                 <div className="hidden lg:flex">
 
                     {menus.map((menu, i) => (
 
-                        <Link
-                          key={i}
-                          href={menu.url}
-                          className="block h-full py-4 px-5 group"
-                        >
-                          
-                            <span
-                              className={tidyTw(`
-                                text-body-2 
-                                text-secondary-90
-                                group-hover:text-accent-50
-                              `)}  
-                            >
-                              {menu.name}
-                            </span>
-
-                        </Link>
+                    <Link
+                      key={i}
+                      href={menu.url}
+                      className={tidyTw({
+                        layout: 'block py-4 px-5',
+                        typography: `
+                          text-body-2 
+                          text-secondary-90
+                          hover:text-accent-50
+                          active:text-primary-50
+                        `,
+                      })}
+                    >
+                      {menu.name}
+                    </Link>
 
                     ))}
 
@@ -106,19 +107,69 @@ export function Navbar () {
                 </div>
 
                 <div className="block lg:hidden">
-                      
-                    <div className="relative z-40">
 
-                      <Hamburger 
-                        toggled={isOpen} 
-                        toggle={setOpen}
-                      />
-
-                    </div>
+                    <Hamburger 
+                      toggled={isOpen} 
+                      toggle={setOpen}
+                    />
 
                 </div>
 
             </div>
+
+        </Container>
+
+        <Container fluid 
+          role="mobile-nav-menus-container"
+          className={tidyTw({
+            layout: `lg:hidden overflow-hidden`,
+            transition: {
+              slideDown: isOpen ? 'h-[calc(100vh-64px)]' : 'h-0 delay-100',
+              prop: 'transition-all ease-in-out duration-500'
+            },
+          })}
+        >
+
+            <div 
+              className={tidyTw({
+                size: 'h-full max-h-[540px]',
+                layout: 'grid place-items-center',
+                transition: {
+                  fadeInOut: isOpen ? 'opacity-100 delay-300' : 'opacity-0',
+                  prop: 'transition-opacity ease-linear duration-200',
+                },
+              })}
+            >
+              
+                <div className="flex flex-col items-center ">
+
+                    {menus.map((menu, i) => (
+
+                    <Link
+                      key={i}
+                      href={menu.url}
+                      onClick={() => setOpen(state => !state)}
+                      className={tidyTw({
+                        size: 'w-max',
+                        layout: 'p-5',
+                        typography: `
+                          text-body-2 font-bold text-center
+                          text-primary-90
+                          hover:underline
+                          active:text-primary-50
+                        `,
+                      })}
+                    >
+                      {menu.name}
+                    </Link>
+
+                    ))}
+
+                </div>
+
+            </div>
+
+            <div className="w-20 h-20 bg-red-300 absolute right-[-5%] top-48 -z-10"></div>
 
         </Container>
 
@@ -127,24 +178,20 @@ export function Navbar () {
     <span
       role="circle-blur-shadow"
       className={tidyTw({
-        size: 'w-80 h-80',
+        size: `
+          == w-32 h-32 
+          lg:w-80 lg:h-80
+        `,
         style: 'bg-primary-30/50 rounded-[50%] blur-[50px]',
         layout: `
-          fixed left-[calc(50%-160px)] top-[-250px] z-20
-          == hidden 
-          lg:block
-        `,
+          fixed z-20
+          top-[-72px] left-[calc(50%-64px)]
+          lg:top-[-250px] lg:left-[calc(50%-160px)] 
+          `,
       })}
     />
 
     </>
+
   )
 }
-
-
-                    /* 
-                    <div className={`transition-size ease-in rounded-xl fixed top-0 right-0 bg-white/50 ${isOpen ? 'w-full' : 'w-0 '} h-screen `}>
-                    </div>
-
-                    <div className={`transition-size ease-in rounded-xl fixed top-0 right-0 bg-primary-10 ${isOpen ? 'w-2/3' : 'w-0 '} h-screen `}>
-                    </div> */
