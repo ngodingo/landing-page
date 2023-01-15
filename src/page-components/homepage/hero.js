@@ -9,7 +9,7 @@ import { Button } from '../../components/button'
 
 export function HeroSection () {
 
-  const wrapperSize = 'w-full h-[85vh] min-h-[480px] max-h-[768px]'
+  const wrapperSize = 'h-[85vh] min-h-[480px] max-h-[768px]'
 
   return (
 
@@ -66,7 +66,7 @@ export function HeroSection () {
 
         </Container>
 
-        <div 
+        <Container fluid 
           role="container-background" 
           className={tidyTw({
             size: wrapperSize,
@@ -76,6 +76,11 @@ export function HeroSection () {
             `,
           })}
         >
+
+            <div
+              role="overlay-white-top" 
+              className="absolute top-0 right-0 left-0 h-24 bg-white/80 blur-xl z-10" 
+            />
 
             <div 
               className={tidyTw({
@@ -117,7 +122,7 @@ export function HeroSection () {
             
             </div>
         
-        </div>
+        </Container>
 
     </section>
     

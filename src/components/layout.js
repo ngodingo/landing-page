@@ -25,33 +25,27 @@ export function Section ({id, className, children}) {
 }
 
 
-export function Container ({id, className, children, fluid}) {
-
-  const containerWidth = {
-    fixed: `
-      container m-auto
-      == px-5
-      sm:px-5
-      md:px-6
-      lg:px-8
-      xl:px-[70px]
-      2xl:px-[198px]
-    `,
-  }
-
-  function getLayout () {
-    return fluid ? containerWidth.fluid : containerWidth.fixed
-  }
-
+export function Container ({id, className, children, fluid, role}) {
 
   const twClassName = tidyTw({
-    layout: getLayout(),
+    containerType: {
+      fluid: fluid && 'w-full',
+      fixed: !fluid && `
+        container m-auto
+        == px-5
+        sm:px-5
+        md:px-6
+        lg:px-8
+        xl:px-[70px]
+        2xl:px-[198px]
+      `,
+    },
     custom: className,
   })
 
   return (
     <div 
-      role="container" 
+      role={`container ${role ? role : ''}`} 
       id={id} 
       className={twClassName} 
     >
