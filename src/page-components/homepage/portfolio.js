@@ -16,8 +16,6 @@ export function Portfolio () {
 
         <Container className="py-12">
 
-            {/* {[1,2].map(x => ( */}
-
             <Grid
               className={tidyTw({
                 layout: `
@@ -258,7 +256,6 @@ export function Portfolio () {
 
             </Grid>
 
-            {/* ))} */}
 
             <div className="mt-8">
 

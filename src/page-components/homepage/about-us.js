@@ -95,7 +95,7 @@ export function AboutUs () {
                         <p 
                           className={tidyTw({
                             typography: `
-                              font-normal text-secondary-50
+                              font-light text-secondary-50
                               == text-body-2 text-center
                               lg:text-body-1 lg:text-left
                             `,

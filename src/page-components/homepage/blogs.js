@@ -11,7 +11,7 @@ export function Blog () {
 
   const articleList = [
     {
-      id: '',
+      id: '0',
       title: 'JavaScript learning roadmap 2023 — The Ultimate Guide',
       desc: 'What is JavaScript? — A high-level definition JavaScript is a scripting or programming language that allows you to implement complex featur ...',
       image: '',
@@ -19,7 +19,7 @@ export function Blog () {
       slug: '',
     },
     {
-      id: '',
+      id: '1',
       title: 'Mastering Dart & Flutter DevTools — Part 1: Introduction & Installation',
       desc: 'After building a full-fledged feature rich Flutter app, you might experience an urge to build a release bundle, upload it on the app store or play store and share it with the world ...',
       image: '',
@@ -27,7 +27,7 @@ export function Blog () {
       slug: '',
     },
     {
-      id: '',
+      id: '2',
       title: 'Basic concepts that every rookie data scientist should know!',
       desc: 'When we are dealing with data, no matter the volume, the better it’s mapped out the easier for us to handle it. In data science there is a term called Estimates of Location ...',
       image: '',

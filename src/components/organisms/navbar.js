@@ -3,11 +3,13 @@ import { useState } from "react"
 
 // components
 import Link from "next/link"
-import Image from "next/image"
 import { Spin as Hamburger } from "hamburger-react"
 import { Container } from "../atoms/layout"
 import { tidyTw } from "../../utilts/tidy-tailwind"
 
+import GithubIcon from "../../assets/icons/githubIcon"
+import InstagramIcon from "../../assets/icons/instagramIcon"
+import TwitterIcon from "../../assets/icons/twitterIcon"
 
 
 export function Navbar () {
@@ -35,19 +37,19 @@ export function Navbar () {
 
   const socials = [
     {
-      name: '',
-      icon: '',
-      url: '',
+      name: 'instagram',
+      icon: InstagramIcon,
+      url: 'https://instagram.com/ngodingo.id',
     },
     {
-      name: '',
-      icon: '',
-      url: '',
+      name: 'twitter',
+      icon: TwitterIcon,
+      url: 'https://twitter.com/ngodingo_id',
     },
     {
-      name: '',
-      icon: '',
-      url: '',
+      name: 'github',
+      icon: GithubIcon,
+      url: 'https://github.com/ngodingo',
     }
   ]
 
@@ -75,7 +77,7 @@ export function Navbar () {
               })}
             >
 
-                <div className="">
+                <div className="font-bold text-medium">
                   [O] logo
                 </div>
 
@@ -90,7 +92,7 @@ export function Navbar () {
                         layout: 'block py-4 px-5',
                         typography: `
                           text-body-2 
-                          text-secondary-90
+                          text-black
                           hover:text-accent-50
                           active:text-primary-50
                         `,
@@ -104,7 +106,28 @@ export function Navbar () {
                 </div>
 
                 <div className="hidden lg:flex">
-                  icon
+                  
+                    {socials.map((social, i) => (
+
+                    <a
+                      key={i}
+                      href={social.url}
+                      target="_blank"
+                      className={tidyTw({
+                        size: 'w-12 h-12',
+                        layout: 'grid place-items-center',
+                        style: `
+                          text-black
+                          hover:text-accent-50
+                          active:text-primary-50
+                        `
+                      })}
+                    >
+                      <social.icon />
+                    </a>
+
+                    ))}
+
                 </div>
 
                 <div className="block lg:hidden">
@@ -120,7 +143,8 @@ export function Navbar () {
 
         </Container>
 
-        <Container fluid 
+        <Container 
+          fluid 
           role="mobile-nav-menus-container"
           className={tidyTw({
             layout: `lg:hidden overflow-auto`,
@@ -133,7 +157,7 @@ export function Navbar () {
 
             <div 
               className={tidyTw({
-                size: 'h-full max-h-[540px]',
+                size: 'h-full max-h-[640px]',
                 layout: 'flex flex-col justify-center items-center',
                 transition: {
                   fadeInOut: isOpen ? 'opacity-100 delay-300' : 'opacity-0',
@@ -173,12 +197,30 @@ export function Navbar () {
 
                 <div 
                   role="social-icons-wrapper"
-                  className="flex"
+                  className="flex gap-x-2 mt-12"
                 >
 
-                  <div>O</div>
-                  <div>O</div>
-                  <div>O</div>
+                    {socials.map((social, i) => (
+
+                    <a
+                      key={i}
+                      href={social.url}
+                      target="_blank"
+                      className={tidyTw({
+                        size: 'w-12 h-12',
+                        layout: 'grid place-items-center',
+                        style: `
+                          text-primary-90
+                          active:text-primary-50
+                        `
+                      })}
+                    >
+                      <social.icon />
+                    </a>
+
+                    ))}
+                  
+                  
                 </div>
 
             </div>
