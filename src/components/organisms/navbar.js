@@ -3,9 +3,10 @@ import { useState } from "react"
 
 // components
 import Link from "next/link"
+import Image from "next/image"
 import { Spin as Hamburger } from "hamburger-react"
-import { Container } from "./layout"
-import { tidyTw } from "../utilts/tidy-tailwind"
+import { Container } from "../atoms/layout"
+import { tidyTw } from "../../utilts/tidy-tailwind"
 
 
 
@@ -75,7 +76,7 @@ export function Navbar () {
             >
 
                 <div className="">
-                  [O] ngodingo
+                  [O] logo
                 </div>
 
                 <div className="hidden lg:flex">
@@ -122,9 +123,9 @@ export function Navbar () {
         <Container fluid 
           role="mobile-nav-menus-container"
           className={tidyTw({
-            layout: `lg:hidden overflow-hidden`,
+            layout: `lg:hidden overflow-auto`,
             transition: {
-              slideDown: isOpen ? 'h-[calc(100vh-64px)]' : 'h-0 delay-100',
+              slideY: isOpen ? 'h-[calc(100vh-64px)]' : 'h-0 delay-100',
               prop: 'transition-all ease-in-out duration-500'
             },
           })}
@@ -133,7 +134,7 @@ export function Navbar () {
             <div 
               className={tidyTw({
                 size: 'h-full max-h-[540px]',
-                layout: 'grid place-items-center',
+                layout: 'flex flex-col justify-center items-center',
                 transition: {
                   fadeInOut: isOpen ? 'opacity-100 delay-300' : 'opacity-0',
                   prop: 'transition-opacity ease-linear duration-200',
@@ -141,7 +142,10 @@ export function Navbar () {
               })}
             >
               
-                <div className="flex flex-col items-center ">
+                <div 
+                  role="nav-menus-wrapper"
+                  className="flex flex-col items-center "
+                >
 
                     {menus.map((menu, i) => (
 
@@ -165,11 +169,69 @@ export function Navbar () {
 
                     ))}
 
+                </div>                
+
+                <div 
+                  role="social-icons-wrapper"
+                  className="flex"
+                >
+
+                  <div>O</div>
+                  <div>O</div>
+                  <div>O</div>
                 </div>
 
             </div>
 
-            <div className="w-20 h-20 bg-red-300 absolute right-[-5%] top-48 -z-10"></div>
+            <div 
+              role="mobile-nav-bg-wrapper"
+              className={tidyTw({
+                size: 'w-full h-full ',
+                layout: 'absolute bottom-0 -z-10 overflow-hidden grid place-items-center pt-16',
+                transition: {
+                  fadeInOut: isOpen ? 'opacity-80 delay-300' : 'opacity-0',
+                  prop: 'transition-opacity ease-linear duration-500',
+                },
+              })}
+            >
+
+                <div
+                  className={tidyTw({
+                    size: 'min-w-full ',
+                    layout: 'flex items-end gap-[20vw]',
+                  })}
+                >
+
+                    <span 
+                      role="blurred-circle" 
+                      className={tidyTw({
+                        size: `
+                          == w-[80vw] h-[80vw]
+                        `,
+                        style: `
+                          rounded-full
+                          bg-accent-50/[.7] blur-[calc(80vw*0.15)]
+                        `,
+                        layout: 'mb-[15vh]'
+                      })}
+                    />
+
+                    <span 
+                      role="blurred-circle" 
+                      className={tidyTw({
+                        size: `
+                          == w-[60vw] h-[60vw]
+                        `,
+                        style: `
+                          rounded-full
+                          bg-primary-50/[.5] blur-[calc(60vw*0.15)]
+                        `,
+                      })}
+                    />
+
+                </div>
+
+            </div>
 
         </Container>
 

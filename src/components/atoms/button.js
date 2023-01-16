@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { tidyTw } from "../utilts/tidy-tailwind"
+import { tidyTw } from "../../utilts/tidy-tailwind"
 
 
 export function Button ({text, href, theme, className}) {

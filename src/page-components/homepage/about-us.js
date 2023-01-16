@@ -3,11 +3,11 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import Image from 'next/image'
-import { Section, Container, Grid, Col } from '../../components/layout'
-import { Button } from '../../components/button'
+import { Section, Container, Grid, Col } from '../../components/atoms/layout'
+import { Button } from '../../components/atoms/button'
 
 // images
-import teamworkImg from '../../../public/img/teamwork.svg'
+import teamworkImg from '../../../public/images/teamwork.svg'
 
 
 

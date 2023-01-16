@@ -1,4 +1,4 @@
-import { tidyTw } from "../utilts/tidy-tailwind"
+import { tidyTw } from "../../utilts/tidy-tailwind"
 
 
 export function Section ({id, className, children}) {

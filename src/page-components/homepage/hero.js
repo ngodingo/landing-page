@@ -2,8 +2,8 @@
 import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
-import { Container } from '../../components/layout'
-import { Button } from '../../components/button'
+import { Container } from '../../components/atoms/layout'
+import { Button } from '../../components/atoms/button'
 
 
 

@@ -2,7 +2,7 @@
 import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
-import { Section, Container, Grid, Col } from '../../components/layout'
+import { Section, Container, Grid, Col } from '../../components/atoms/layout'
 
 
 

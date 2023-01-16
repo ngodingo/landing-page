@@ -3,10 +3,10 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import Image from 'next/image'
-import { Button } from '../../components/button'
-import { Section, Container, Grid, Col } from '../../components/layout'
+import { Button } from '../../components/atoms/button'
+import { Section, Container, Grid, Col } from '../../components/atoms/layout'
 
-import dummyImg from '../../../public/img/appProject.png'
+import dummyImg from '../../../public/images/appProject.png'
 
 
 export function Portfolio () {

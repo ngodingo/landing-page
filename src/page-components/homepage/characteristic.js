@@ -3,7 +3,7 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import Image from 'next/image'
-import { Section, Container } from '../../components/layout'
+import { Section, Container } from '../../components/atoms/layout'
 
 // icons
 import coffeeIcon from '../../../public/icons/characteristic/coffee.svg'
