@@ -2,56 +2,37 @@
 import { useState } from "react"
 
 // components
+import { tidyTw } from "../../utilts/tidy-tailwind"
+
 import Link from "next/link"
 import { Spin as Hamburger } from "hamburger-react"
 import { Container } from "../atoms/layout"
-import { tidyTw } from "../../utilts/tidy-tailwind"
+import { SocialLinks } from "../molecules/socialLinks"
 
-import GithubIcon from "../../assets/icons/githubIcon"
-import InstagramIcon from "../../assets/icons/instagramIcon"
-import TwitterIcon from "../../assets/icons/twitterIcon"
+
+export const navMenus = [
+  {
+    name: 'About',
+    url: '/#about',
+  },
+  {
+    name: 'Blog',
+    url: '/blog',
+  },
+  {
+    name: 'Portfolio',
+    url: '/#portfolio',
+  },
+  {
+    name: 'Contact',
+    url: '/#contact',
+  },
+]
 
 
 export function Navbar () {
 
   const [isOpen, setOpen] = useState(false)
-
-  const menus = [
-    {
-      name: 'About',
-      url: '/#about',
-    },
-    {
-      name: 'Blog',
-      url: '/blog',
-    },
-    {
-      name: 'Portfolio',
-      url: '/#portfolio',
-    },
-    {
-      name: 'Contact',
-      url: '/#contact',
-    },
-  ]
-
-  const socials = [
-    {
-      name: 'instagram',
-      icon: InstagramIcon,
-      url: 'https://instagram.com/ngodingo.id',
-    },
-    {
-      name: 'twitter',
-      icon: TwitterIcon,
-      url: 'https://twitter.com/ngodingo_id',
-    },
-    {
-      name: 'github',
-      icon: GithubIcon,
-      url: 'https://github.com/ngodingo',
-    }
-  ]
 
   return (
     <>
@@ -83,7 +64,7 @@ export function Navbar () {
 
                 <div className="hidden lg:flex">
 
-                    {menus.map((menu, i) => (
+                    {navMenus.map((menu, i) => (
 
                     <Link
                       key={i}
@@ -106,27 +87,8 @@ export function Navbar () {
                 </div>
 
                 <div className="hidden lg:flex">
-                  
-                    {socials.map((social, i) => (
 
-                    <a
-                      key={i}
-                      href={social.url}
-                      target="_blank"
-                      className={tidyTw({
-                        size: 'w-12 h-12',
-                        layout: 'grid place-items-center',
-                        style: `
-                          text-black
-                          hover:text-accent-50
-                          active:text-primary-50
-                        `
-                      })}
-                    >
-                      <social.icon />
-                    </a>
-
-                    ))}
+                    <SocialLinks className="text-black hover:text-accent-50 active:text-primary-50" /> 
 
                 </div>
 
@@ -171,7 +133,7 @@ export function Navbar () {
                   className="flex flex-col items-center "
                 >
 
-                    {menus.map((menu, i) => (
+                    {navMenus.map((menu, i) => (
 
                     <Link
                       key={i}
@@ -200,26 +162,7 @@ export function Navbar () {
                   className="flex gap-x-2 mt-12"
                 >
 
-                    {socials.map((social, i) => (
-
-                    <a
-                      key={i}
-                      href={social.url}
-                      target="_blank"
-                      className={tidyTw({
-                        size: 'w-12 h-12',
-                        layout: 'grid place-items-center',
-                        style: `
-                          text-primary-90
-                          active:text-primary-50
-                        `
-                      })}
-                    >
-                      <social.icon />
-                    </a>
-
-                    ))}
-                  
+                    <SocialLinks className="text-primary-90 active:text-primary-50" />               
                   
                 </div>
 

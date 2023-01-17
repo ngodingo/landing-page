@@ -1,11 +1,12 @@
 import { HtmlHead } from "./htmlHead";
 import { Navbar } from "../../components/organisms/navbar";
 import { HeroSection } from "./hero";
-import { AboutUs } from "./about-us";
-import { VisiMisi } from "./visi-misi";
+import { AboutUs } from "./aboutUs";
+import { VisiMisi } from "./visiMisi";
 import { Characteristic } from "./characteristic";
 import { Blog } from "./blogs";
 import { Portfolio } from "./portfolio";
+import { Footer } from "../../components/organisms/footer";
 
 export default function Homepage () {
   return (
@@ -19,7 +20,7 @@ export default function Homepage () {
       <Characteristic />
       <Blog />
       <Portfolio />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
