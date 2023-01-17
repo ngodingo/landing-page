@@ -16,7 +16,7 @@ export function Blog () {
       desc: 'What is JavaScript? — A high-level definition JavaScript is a scripting or programming language that allows you to implement complex featur ...',
       image: '',
       date: 'Desember 2022',
-      slug: '',
+      slug: '/blog',
     },
     {
       id: '1',
@@ -24,7 +24,7 @@ export function Blog () {
       desc: 'After building a full-fledged feature rich Flutter app, you might experience an urge to build a release bundle, upload it on the app store or play store and share it with the world ...',
       image: '',
       date: 'Desember 2022',
-      slug: '',
+      slug: '/blog',
     },
     {
       id: '2',
@@ -32,7 +32,7 @@ export function Blog () {
       desc: 'When we are dealing with data, no matter the volume, the better it’s mapped out the easier for us to handle it. In data science there is a term called Estimates of Location ...',
       image: '',
       date: 'Desember 2022',
-      slug: '',
+      slug: '/blog',
     }
   ]
 
@@ -58,7 +58,7 @@ export function Blog () {
                       })}
                     >
 
-                        <Link href="#hello">
+                        <Link href={article.slug}>
                         
                             <div 
                               className={tidyTw({

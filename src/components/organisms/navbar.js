@@ -58,8 +58,15 @@ export function Navbar () {
               })}
             >
 
-                <div className="font-bold text-medium">
-                  [O] logo
+                <div>
+
+                    <Link
+                      href="/"
+                      className="font-semibold text-body-2 hover:text-primary-50"
+                    >
+                      Ngodingo
+                    </Link>
+
                 </div>
 
                 <div className="hidden lg:flex">
