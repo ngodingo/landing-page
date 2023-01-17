@@ -123,7 +123,7 @@ export function VisiMisi () {
                         <div
                           className={tidyTw({
                             layout: `
-                              flex gap-x-4
+                              flex
                               == pb-5 
                               sm:pb-8
                               md:pb-10 
@@ -149,6 +149,7 @@ export function VisiMisi () {
                                   == text-body-3 
                                   lg:text-body-2
                                 `,
+                                layout: 'pl-4',
                               })}
                             >
                               {visiMisi.visi}
@@ -249,7 +250,7 @@ export function VisiMisi () {
                           key={i}
                           className={tidyTw({
                             layout: `
-                              flex gap-x-4
+                              flex
                               == pb-5 
                               sm:pb-8
                               md:pb-10 
@@ -286,6 +287,7 @@ export function VisiMisi () {
                                   == text-body-3 
                                   lg:text-body-2
                                 `,
+                                layout: 'pl-4',
                               })}
                             >
                               {value}

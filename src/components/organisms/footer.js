@@ -115,7 +115,7 @@ export function Footer () {
                     <div
                       className={tidyTw({
                         layout: `
-                          flex mt-8 gap-y-4
+                          flex mt-8 lg:mt-0 gap-y-4
                           == flex-col-reverse items-center
                           sm:flex-row sm:justify-between
                           lg:flex-col lg:items-end

@@ -261,7 +261,7 @@ export function Portfolio () {
 
                 <Button 
                   theme="secondary"
-                  href=""
+                  href="#portfolio"
                   text="Load More"
                   className="mx-auto"
                 />

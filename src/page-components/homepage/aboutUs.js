@@ -109,7 +109,7 @@ export function AboutUs () {
                         </p>
 
                         <Button 
-                          href="#" 
+                          href="#about" 
                           theme="primary" 
                           text="Learn More" 
                           className="mt-7"

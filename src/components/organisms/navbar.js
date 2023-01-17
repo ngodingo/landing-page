@@ -62,9 +62,9 @@ export function Navbar () {
 
                     <Link
                       href="/"
-                      className="font-semibold text-body-2 hover:text-primary-50"
+                      className="font-semibold text-body-1 text-primary-50"
                     >
-                      Ngodingo
+                      ngodingo 
                     </Link>
 
                 </div>
@@ -126,7 +126,7 @@ export function Navbar () {
 
             <div 
               className={tidyTw({
-                size: 'h-full max-h-[640px]',
+                size: 'min-h-max h-full max-h-[640px]',
                 layout: 'flex flex-col justify-center items-center',
                 transition: {
                   fadeInOut: isOpen ? 'opacity-100 delay-300' : 'opacity-0',
@@ -137,7 +137,7 @@ export function Navbar () {
               
                 <div 
                   role="nav-menus-wrapper"
-                  className="flex flex-col items-center "
+                  className="flex flex-col items-center"
                 >
 
                     {navMenus.map((menu, i) => (

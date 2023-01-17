@@ -5,8 +5,8 @@ import { tidyTw } from "../../utilts/tidy-tailwind"
 export function Button ({text, href, theme, className}) {
   
   const wrapperTwClassName = tidyTw({
-    common: 'w-max group p-0.5',
     custom: className,
+    common: 'w-max group p-0.5',
   })
 
   const btnTwClassName = tidyTw({

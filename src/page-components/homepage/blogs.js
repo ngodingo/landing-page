@@ -122,7 +122,7 @@ export function Blog () {
 
                 <Button 
                   theme="secondary"
-                  href=""
+                  href="/blog"
                   text="Load More"
                   className="mx-auto"
                 />
