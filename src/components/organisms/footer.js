@@ -112,55 +112,55 @@ export function Footer () {
                     `
                 })}>
 
-                  <div
-                    className={tidyTw({
-                      layout: `
-                        flex mt-8 gap-y-4
-                        == flex-col-reverse items-center
-                        sm:flex-row sm:justify-between
-                        lg:flex-col lg:items-end
-                      `
-                    })}
-                  >
+                    <div
+                      className={tidyTw({
+                        layout: `
+                          flex mt-8 gap-y-4
+                          == flex-col-reverse items-center
+                          sm:flex-row sm:justify-between
+                          lg:flex-col lg:items-end
+                        `
+                      })}
+                    >
 
-                    <div className="hidden lg:block pr-3">
+                        <div className="hidden lg:block pr-3">
 
-                      <span className="text-heading-4 text-white"> 
-                        ngodingo
-                      </span>
+                            <span className="text-heading-4 text-white"> 
+                              ngodingo
+                            </span>
+
+                        </div>
+
+                        <div className="w-fit flex lg:flex-col">
+
+                            {navMenus.map((menu, i) => (
+                            <Link
+                              key={i}
+                              href={menu.url}
+                              className={tidyTw({
+                                layout: 'block py-1 px-3',
+                                typography: `
+                                  text-body-2 
+                                  text-primary-30
+                                  hover:text-white
+                                  active:text-primary-50
+                                  lg:text-end
+                                `,
+                              })}
+                            >
+                              {menu.name}
+                            </Link>
+                            ))}
+
+                        </div>
+                        
+                        <div className="w-fit flex">
+                          
+                            <SocialLinks className="text-white" />
+
+                        </div>
 
                     </div>
-
-                    <div className="w-fit flex lg:flex-col">
-
-                        {navMenus.map((menu, i) => (
-                        <Link
-                          key={i}
-                          href={menu.url}
-                          className={tidyTw({
-                            layout: 'block py-1 px-3',
-                            typography: `
-                              text-body-2 
-                              text-primary-30
-                              hover:text-white
-                              active:text-primary-50
-                              lg:text-end
-                            `,
-                          })}
-                        >
-                          {menu.name}
-                        </Link>
-                        ))}
-
-                    </div>
-                    
-                    <div className="w-fit flex">
-                      
-                      <SocialLinks className="text-white" />
-
-                    </div>
-
-                  </div>
                   
                 </Col>
 
@@ -169,11 +169,15 @@ export function Footer () {
         </Container>
 
         <Container fluid>
+
           <div className="h-12 grid place-items-center border-t border-primary-70 mt-8 md:mt-14">
+            
             <span className="text-body-4 font-light text-primary-70">
               Copyright © 2022 Ngodingo. All rights reserved
             </span>
+
           </div>
+
         </Container>
 
     </Section>

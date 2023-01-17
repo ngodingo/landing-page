@@ -34,6 +34,7 @@ export function SocialLinks ({className}) {
       key={i}
       href={social.url}
       target="_blank"
+      rel="noreferrer"
       className={tidyTw({
         size: 'w-12 h-12',
         layout: 'grid place-items-center',
