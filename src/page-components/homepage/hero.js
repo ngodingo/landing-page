@@ -50,13 +50,13 @@ export function HeroSection () {
 
                     <Button 
                       theme="primary" 
-                      href="#1"
+                      href=""
                       text="Join Us"  
                     />
 
                       <Button 
                       theme="secondary"  
-                      href="#2"
+                      href="/#about"
                       text="Learn More" 
                     />
 
