@@ -76,7 +76,7 @@ export function Portfolio () {
                             layout: 'mt-4',
                           })}
                         >
-                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                          Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
                           when an unknown printer took a galley.
                         </p>
 
