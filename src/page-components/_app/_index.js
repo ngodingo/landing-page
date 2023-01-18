@@ -5,6 +5,8 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 import { Lexend_Deca } from '@next/font/google'
 const lexendDeca = Lexend_Deca({
   subsets: ['latin'],
+  preload: true,
+  display: 'swap',
   weight: 'variable',
   variable: '--font-lexend-deca',
 })
