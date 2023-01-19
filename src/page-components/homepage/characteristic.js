@@ -41,8 +41,7 @@ export function Characteristic () {
       })}
     >
 
-        <Container 
-          fluid 
+        <Container
           className={tidyTw({
             layout: `
               == py-6
@@ -54,7 +53,7 @@ export function Characteristic () {
             <div 
               className={tidyTw({
                 layout: `
-                  flex gap-y-14 
+                  flex gap-y-14 gap-x-16
                   == flex-col items-center
                   lg:flex-row lg:items-start lg:justify-evenly
                 `,
@@ -66,15 +65,10 @@ export function Characteristic () {
                     <div 
                       key={i}
                       className={tidyTw({
-                        size: `
-                          h-max
-                          == max-w-[380px] 
-                          sm:max-w-[480px]
-                        `,
+                        size: 'h-max max-w-[360px]',
                         layout: `
                           grid gap-y-5 
-                          == px-4
-                          lg:px-8 lg:basis-1/3
+                          lg:basis-1/3
                         `,
                         typography: 'text-center',
                       })}
