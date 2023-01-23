@@ -3,7 +3,7 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import { Container } from '../../components/atoms/layout'
-import { Button } from '../../components/atoms/button'
+import { Button } from '../../components/atoms/Button/Button'
 
 
 
@@ -44,21 +44,17 @@ export function HeroSection () {
 
                 <div 
                   className={tidyTw({
-                    layout: 'flex flex-wrap justify-center gap-x-1 gap-y-2 mt-9',
+                    layout: 'flex flex-wrap justify-center gap-x-2 gap-y-2 mt-9',
                   })}
                 >
 
-                    <Button 
-                      theme="primary" 
-                      href=""
-                      text="Join Us"  
-                    />
+                    <Button variant="primary" href="">
+                      Join Us
+                    </Button>
 
-                      <Button 
-                      theme="secondary"  
-                      href="/#about"
-                      text="Learn More" 
-                    />
+                    <Button variant="secondary" href="/#about">
+                      Learn More
+                    </Button>
 
                 </div>
 

@@ -1,11 +1,11 @@
 import { HtmlHead } from "./htmlHead";
 import { Navbar } from "../../components/organisms/navbar";
-import { HeroSection } from "./hero";
-import { AboutUs } from "./aboutUs";
-import { VisiMisi } from "./visiMisi";
-import { Characteristic } from "./characteristic";
-import { Blog } from "./blogs";
-import { Portfolio } from "./portfolio";
+import { HeroSection } from "./Hero";
+import { AboutUs } from "./AboutUs";
+import { VisiMisi } from "./VisiMisi";
+import { Characteristic } from "./Characteristic";
+import { Blog } from "./Blogs";
+import { Portfolio } from "./Portfolio";
 import { Footer } from "../../components/organisms/footer";
 
 export default function Homepage () {

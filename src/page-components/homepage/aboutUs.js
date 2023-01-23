@@ -4,7 +4,7 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 // components
 import Image from 'next/image'
 import { Section, Container, Grid, Col } from '../../components/atoms/layout'
-import { Button } from '../../components/atoms/button'
+import { Button } from '../../components/atoms/Button/Button'
 
 // images
 import teamworkImg from '../../../public/images/teamwork.svg'
@@ -113,7 +113,9 @@ export function AboutUs () {
                           theme="primary" 
                           text="Learn More" 
                           className="mt-7"
-                        />
+                        >
+                          Learn More
+                        </Button>
 
                     </div>
 

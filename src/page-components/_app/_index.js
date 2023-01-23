@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 // hooks
 import { tidyTw } from '../../utilts/tidy-tailwind'
 
@@ -20,8 +22,22 @@ export default function AppWrapper ({children}) {
   })
 
   return (
-    <main className={globalTwStyles} >
-      {children}
-    </main>
+    <>
+      <DefaultHtmlHead />
+      <main className={globalTwStyles} >
+        {children}
+      </main>
+    </>
+  )
+}
+
+
+function DefaultHtmlHead () {
+  return (
+    <Head>
+      <title>Ngodingo</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
   )
 }

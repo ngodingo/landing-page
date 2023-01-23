@@ -3,7 +3,7 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import Link from 'next/link'
-import { Button } from '../../components/atoms/button'
+import { Button } from '../../components/atoms/Button/Button'
 import { Section, Container, Grid, Col } from '../../components/atoms/layout'
 
 

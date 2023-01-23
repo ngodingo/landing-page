@@ -3,7 +3,7 @@ import { tidyTw } from '../../utilts/tidy-tailwind'
 
 // components
 import Image from 'next/image'
-import { Button } from '../../components/atoms/button'
+import { Button } from '../../components/atoms/Button/Button'
 import { Section, Container, Grid, Col } from '../../components/atoms/layout'
 
 import dummyImg from '../../../public/images/appProject.png'
