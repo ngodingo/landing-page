@@ -1,5 +1,5 @@
-import ComingSoon from "../../page-components/others/ComingSoon"
-import BlogPage from "../../page-components/blog/_index"
+import ComingSoon from "../../App/others/ComingSoon"
+import BlogPage from "../../App/blog"
 
 export default function Blog () {
   return (

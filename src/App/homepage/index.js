@@ -1,4 +1,4 @@
-import { HtmlHead } from "./htmlHead";
+import { HtmlHead } from "./HtmlHead";
 import { Navbar } from "../../components/organisms/navbar";
 import { HeroSection } from "./Hero";
 import { AboutUs } from "./AboutUs";
@@ -12,7 +12,6 @@ export default function Homepage () {
   return (
     <>
       <HtmlHead />
-      
       <Navbar />
       <HeroSection />
       <AboutUs />
@@ -24,4 +23,3 @@ export default function Homepage () {
     </>
   )
 }
-

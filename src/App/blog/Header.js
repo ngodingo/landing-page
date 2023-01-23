@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Section, Container, Grid, Col } from "../../components/atoms/layout"
-import { Button } from '../../components/atoms/Button/Button'
+// import { Button } from '../../components/atoms/Button/Button'
+import { Button } from "../../components/atoms/Button";
 
 
 
@@ -35,7 +36,7 @@ function Card () {
         How To Keep Consistency As Learning Web Development (or anything)
       </h3>
       <p id="desc" className="font-normal text-secondary-50 text-body-4 mt-4">
-        Hello, So Youre the one who wants to learn web development (or anything) but can’t keep the consistency while learning it. 
+        Hello, So Youre the one who wants to learn web development (or anything) but can't keep the consistency while learning it. 
       </p>
       <div id="button-wrapper" className="flex pt-7 gap-x-2">
         <Button variant="primary" href="">

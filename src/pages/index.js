@@ -1,4 +1,4 @@
-import Homepage from "../page-components/homepage/_index"
+import Homepage from "../App/homepage"
 
 export default function Home() {
   return (
