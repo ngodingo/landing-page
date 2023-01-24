@@ -1,6 +1,4 @@
-// styles
-import '../styles/globals.css'
-import AppWrapper from '../App/_app/'
+import AppWrapper from './_app/app-wrapper'
 
 export default function App({ Component, pageProps }) {
   return (

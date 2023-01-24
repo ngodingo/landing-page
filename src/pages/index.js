@@ -1,7 +1,9 @@
-import Homepage from "../App/homepage"
+import { Hero } from "./home/hero"
 
 export default function Home() {
   return (
-    <Homepage />
+    <>
+      <Hero />
+    </>
   )
 }
