@@ -4,12 +4,6 @@ import { ttw } from "@utilts"
 import Head from "next/head"
 
 export default function AppWrapper ({children}) {
-
-  const attr = {
-    Main: {}
-  }
-  attr.Main.className = ttw(styles.Global)
-
   return (
     <>
       <Head>
@@ -18,7 +12,7 @@ export default function AppWrapper ({children}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main {...attr.Main}>
+      <main className={ttw(styles.Global)}>
         {children}
       </main> 
     </>

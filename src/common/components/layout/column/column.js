@@ -6,6 +6,7 @@ export function Column ({size, start, end, className, children, ...props}) {
     Column: {}
   }
 
+  attr.Column.id = 'grid-col'
   attr.Column.className = ttw([
     className,
     size,
