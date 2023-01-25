@@ -1,20 +1,19 @@
 
 const styles = {
-  Title: {
-    Mobile: [
-      'font-semibold text-secondary-90 text-center',
-      'text-heading-3',
-    ],
-    Default: [
-      'font-semibold text-secondary-90',
-      'text-heading-3 lg:text-heading-1',
-      'bg-white w-fit pr-4'
-    ],
-  },
+  Title: [
+    // common
+    'font-semibold text-secondary-90 ',
+    // base - md
+    'text-center text-heading-3',
+    // >= lg
+    'lg:text-right lg:text-heading-1',
+    'lg:bg-white lg:w-fit lg:pr-4',
+    'lg:relative lg:-top-1.5'
+  ],
   Lists: {
     Wrapper: [
       'flex relative',
-      'pb-5 sm:pb-8 md:pb-10 lg:pb-14 xl:pb-18',
+      'pb-5 sm:pb-5 md:pb-6 lg:pb-14 xl:pb-18',
     ],
     Bullet: {
       Solid: [
@@ -36,12 +35,17 @@ const styles = {
       'font-normal text-secondary-50',
       'text-body-3 lg:text-body-2',
     ],
-    DashVertical: [
+  },
+  Dash: {
+    Vertical: [
       'h-full absolute left-[15px] lg:left-[23px] -z-40',
       'border-l-[3px] border-dashed border-primary-30',
     ],
+    Horizontal: [
+      'w-full absolute md:top-[15px] lg:top-[23px] -right-5 -z-40',
+      'border-t-[3px] border-dashed border-primary-30'
+    ]
   }
-  
 }
 
 export default styles

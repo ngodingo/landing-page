@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@components/ui"
 import { Section, Container, Grid, Column } from "@components/layout"
 
-import teamworkIllustration from "@public/db/home/images/teamwork.svg"
+import teamworkIllustration from "@public/static-db/home/images/teamwork.svg"
 
 
 export function About () {

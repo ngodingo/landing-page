@@ -15,6 +15,8 @@ module.exports = {
         10: 'span 10 / span 10',
         11: 'span 11 / span 11',
         12: 'span 12 / span 12',
+        full: '1 / -1',
+        auto: 'auto',
       }
     }
   },
