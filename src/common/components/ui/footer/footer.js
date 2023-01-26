@@ -61,8 +61,9 @@ export function Footer () {
                     key={i}
                     href={navMenu.url}
                     className={ttw(styles.NavMenus)}
-                    children={navMenu.name}
-                  />
+                  >
+                    {navMenu.name}
+                  </Link>
                 ))}
               </div>
               <div className={ttw(styles.SocialLinksWrapper)}>

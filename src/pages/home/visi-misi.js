@@ -53,7 +53,9 @@ export function VisiMisi () {
             'Menyalurkan anggota ke project berbayar untuk dapat mendapat penghasilan dari hasil kerja kerasnya sendiri',
           ].map((misi, i, v) => (
             <div className={ttw(styles.Lists.Wrapper)} key={i}>
-              <span className={ttw(styles.Lists.Bullet.Solid)} children={i+1} />
+              <span className={ttw(styles.Lists.Bullet.Solid)}>
+                {i+1}
+              </span>
               <p className={ttw(styles.Lists.Desc)}>
                 {misi}
               </p>

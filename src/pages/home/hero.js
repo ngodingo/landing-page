@@ -12,7 +12,7 @@ export function Hero () {
         <div className={ttw(styles.Wrapper)}>
           <h1 className={ttw(styles.DisplayText)}>
             Learn Together, Make
-            <span className="inline sm:hidden" children={" "} />
+            <span className="inline sm:hidden">{' '}</span>
             <br className='hidden sm:inline' />
             it Flexible
           </h1>

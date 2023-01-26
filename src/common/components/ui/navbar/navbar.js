@@ -77,8 +77,10 @@ export function Navbar () {
                 href={navMenu.url}
                 onClick={() => setOpen(false)}
                 className={ttw(styles.NavMenus)}
-                children={navMenu.name}
-              />
+              >
+                {navMenu.name}
+              </Link>
+
             ))}
           </div>
           <div className={ttw(attr.SocialLinksWrapper.className)}>
