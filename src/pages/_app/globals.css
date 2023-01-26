@@ -5,5 +5,6 @@
 @layer base {
   html {
     @apply !scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 }

@@ -1,5 +1,7 @@
+import { ComingSoon } from "@components/custom/empty-state/coming-soon"
+
 export default function Posts () {
   return (
-    <h1>post</h1>
+    <ComingSoon />
   )
 }

@@ -35,22 +35,21 @@ const styles = {
     },
     Image: {
       Main: [
-        'w-full rounded-3xl',
+        'w-full rounded-3xl object-cover',
+        'aspect-[3/4] [@media(min-width:540px)]:aspect-video',
         'bg-primary-10',
-        'aspect-[3/4] [@media(min-width:540px)]:aspect-video object-cover',
-        'mt-8',
+        'mt-6 sm:mt-8'
+      ],
+      SecondaryWrapper: [
+        'grid grid-cols-2 [@media(min-width:540px)]:grid-cols-3',
+        'gap-x-4 lg:gap-x-5',
+        'mt-4 lg:mt-5'
       ],
       Secondary: [
-        'w-full rounded-3xl',
-        'bg-primary-10',
-        'aspect-square object-cover',
+        'aspect-square rounded-3xl object-cover',
+        'last:hidden [@media(min-width:540px)]:last:block',
+        'bg-primary-10'
       ],
-      SecondaryGrid: [
-        'grid grid-cols-2 [@media(min-width:540px)]:grid-cols-3',
-        'gap-x-4 lg:gap-x-5 gap-y-4',
-        'mt-4 lg:mt-5',
-        'h-[calc((100vw-56px)/2)] [@media(min-width:540px)]:h-auto overflow-hidden'
-      ]
     }
   },
   Button: [

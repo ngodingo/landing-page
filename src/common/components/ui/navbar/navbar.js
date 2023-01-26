@@ -1,251 +1,91 @@
-// hooks
 import { useState } from "react"
 
-// components
-import { tidyTw } from "../../../../utilts/tidy-tailwind"
+import styles from "./navbar-style"
+import { ttw } from "@utilts"
 
+import Image from "next/image"
 import Link from "next/link"
 import { Spin as Hamburger } from "hamburger-react"
-import { Container } from "../../../../components/atoms/layout"
-import { SocialLinks } from "../../../../components/molecules/socialLinks"
+import { Container } from "@components/layout"
+import { SocialLinks } from "@components/custom/social-links/social-links"
 
+import navMenus from '@components/ui/navbar/nav-menus'
 
-export const navMenus = [
-  {
-    name: 'About',
-    url: '/#about',
-  },
-  {
-    name: 'Blog',
-    url: '/blog',
-  },
-  {
-    name: 'Portfolio',
-    url: '/#portfolio',
-  },
-  {
-    name: 'Contact',
-    url: '/#contact',
-  },
-]
+import ngodingoLogoSm from '@public/assets/logo/ngodingo-logo-basic-primary.png'
+import ngodingoLogoLg from '@public/assets/logo/ngodingo-logo-horizontal-primary.png'
 
 
 export function Navbar () {
+  const [ isOpen, setOpen ] = useState(false) 
 
-  const [isOpen, setOpen] = useState(false)
+  const attr = {
+    Nav: {},
+    NavMenusWrapper: {},
+    SocialLinksWrapper: {},
+  }
+
+  attr.Nav.className = ttw([
+    styles.Nav.common,
+    isOpen 
+      ? styles.Nav.state.open
+      : styles.Nav.state.close
+  ])
+
+  attr.NavMenusWrapper.className = ttw([
+    styles.NavMenusWrapper,
+    styles.transition.fadeInOutMenus(isOpen)
+  ])
+
+  attr.SocialLinksWrapper.className = ttw([
+    styles.SocialLinksWrapper,
+    styles.transition.fadeInOutMenus(isOpen)
+  ])
+
 
   return (
-    <>
-
-    <nav 
-      className={tidyTw({
-        size: 'w-full',
-        layout: 'fixed z-30 overflow-hidden',
-        style: 'lg:bg-white/70 backdrop-blur-md',
-        transition: {
-          color: isOpen ? 'bg-white delay-150' : 'bg-white/70',
-          prop: 'transition-color ease-in-out duration-500'
-        },
-      })}
-    >
-
-        <Container>
-
-            <div 
-              className={tidyTw({
-                size: 'h-16',
-                layout: 'flex justify-between items-center'
-              })}
-            >
-
-                <div>
-
-                    <Link
-                      href="/"
-                      className="font-semibold text-body-1 text-primary-50"
-                    >
-                      ngodingo 
-                    </Link>
-
-                </div>
-
-                <div className="hidden lg:flex">
-
-                    {navMenus.map((menu, i) => (
-
-                    <Link
-                      key={i}
-                      href={menu.url}
-                      className={tidyTw({
-                        layout: 'block py-4 px-5',
-                        typography: `
-                          text-body-2 
-                          text-black
-                          hover:text-accent-50
-                          active:text-primary-50
-                        `,
-                      })}
-                    >
-                      {menu.name}
-                    </Link>
-
-                    ))}
-
-                </div>
-
-                <div className="hidden lg:flex">
-
-                    <SocialLinks className="text-black hover:text-accent-50 active:text-primary-50" /> 
-
-                </div>
-
-                <div className="block lg:hidden">
-
-                    <Hamburger 
-                      toggled={isOpen} 
-                      toggle={setOpen}
-                    />
-
-                </div>
-
+    <nav className={attr.Nav.className}>
+      <Container className={ttw(styles.Container)}>
+        <div className={ttw(styles.Wrapper)}>
+          <div className={ttw(styles.NavLogoHamburgerGroup)}>
+            <Link href="/" className={ttw(styles.LogoWrapper)}>
+              <Image 
+                src={ngodingoLogoSm}
+                alt="logo"
+                className={ttw(styles.Logo, 'block sm:hidden')}
+                onClick={() => setOpen(false)}
+                priority
+              />
+              <Image 
+                src={ngodingoLogoLg}
+                alt="logo"
+                className={ttw(styles.Logo, 'hidden sm:block')}
+                onClick={() => setOpen(false)}
+                priority
+              />
+            </Link>
+            <div className={ttw(styles.HamburgerWrapper)}>
+              <Hamburger 
+                toggled={isOpen} 
+                toggle={setOpen}
+              />
             </div>
-
-        </Container>
-
-        <Container 
-          fluid 
-          role="mobile-nav-menus-container"
-          className={tidyTw({
-            layout: `lg:hidden overflow-auto`,
-            transition: {
-              slideY: isOpen ? 'h-[calc(100vh-64px)]' : 'h-0 delay-100',
-              prop: 'transition-all ease-in-out duration-500'
-            },
-          })}
-        >
-
-            <div 
-              className={tidyTw({
-                size: 'min-h-max h-full max-h-[640px]',
-                layout: 'flex flex-col justify-center items-center',
-                transition: {
-                  fadeInOut: isOpen ? 'opacity-100 delay-300' : 'opacity-0',
-                  prop: 'transition-opacity ease-linear duration-200',
-                },
-              })}
-            >
-              
-                <div 
-                  role="nav-menus-wrapper"
-                  className="flex flex-col items-center"
-                >
-
-                    {navMenus.map((menu, i) => (
-
-                    <Link
-                      key={i}
-                      href={menu.url}
-                      onClick={() => setOpen(state => !state)}
-                      className={tidyTw({
-                        size: 'w-max',
-                        layout: 'p-5',
-                        typography: `
-                          text-body-2 font-bold text-center
-                          text-primary-90
-                          hover:underline
-                          active:text-primary-50
-                        `,
-                      })}
-                    >
-                      {menu.name}
-                    </Link>
-
-                    ))}
-
-                </div>                
-
-                <div 
-                  role="social-icons-wrapper"
-                  className="flex gap-x-2 mt-12"
-                >
-
-                    <SocialLinks className="text-primary-90 active:text-primary-50" />               
-                  
-                </div>
-
-            </div>
-
-            <div 
-              role="mobile-nav-bg-wrapper"
-              className={tidyTw({
-                size: 'w-full h-full ',
-                layout: 'absolute bottom-0 -z-10 overflow-hidden grid place-items-center pt-16',
-                transition: {
-                  fadeInOut: isOpen ? 'opacity-80 delay-300' : 'opacity-0',
-                  prop: 'transition-opacity ease-linear duration-500',
-                },
-              })}
-            >
-
-                <div
-                  className={tidyTw({
-                    size: 'min-w-full ',
-                    layout: 'flex items-end gap-[20vw]',
-                  })}
-                >
-
-                    <span 
-                      role="blurred-circle" 
-                      className={tidyTw({
-                        size: `
-                          == w-[80vw] h-[80vw]
-                        `,
-                        style: `
-                          rounded-full
-                          bg-accent-50/[.7] blur-[calc(80vw*0.15)]
-                        `,
-                        layout: 'mb-[15vh]'
-                      })}
-                    />
-
-                    <span 
-                      role="blurred-circle" 
-                      className={tidyTw({
-                        size: `
-                          == w-[60vw] h-[60vw]
-                        `,
-                        style: `
-                          rounded-full
-                          bg-primary-50/[.5] blur-[calc(60vw*0.15)]
-                        `,
-                      })}
-                    />
-
-                </div>
-
-            </div>
-
-        </Container>
-
+          </div>
+          <div className={ttw(attr.NavMenusWrapper.className)}>
+            {navMenus.map((navMenu, i) => (
+              <Link 
+                key={i}
+                href={navMenu.url}
+                onClick={() => setOpen(false)}
+                className={ttw(styles.NavMenus)}
+                children={navMenu.name}
+              />
+            ))}
+          </div>
+          <div className={ttw(attr.SocialLinksWrapper.className)}>
+            <SocialLinks className={ttw(styles.SocialLinks)} />
+          </div>
+        </div>
+      </Container>
     </nav>
-
-    <span
-      role="circle-blur-shadow"
-      className={tidyTw({
-        size: `
-          == w-32 h-32 
-          lg:w-80 lg:h-80
-        `,
-        style: 'bg-primary-30/50 rounded-[50%] blur-[50px]',
-        layout: `
-          fixed z-20
-          top-[-72px] left-[calc(50%-64px)]
-          lg:top-[-250px] lg:left-[calc(50%-160px)] 
-          `,
-      })}
-    />
-
-    </>
-
   )
 }

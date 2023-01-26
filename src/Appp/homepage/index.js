@@ -1,5 +1,5 @@
 import { HtmlHead } from "./HtmlHead";
-import { Navbar } from "../../common/components/ui/navbar/navbar";
+import { Navbar } from "../../common/components/ui/navbar/navbar-old";
 import { HeroSection } from "./Hero";
 import { AboutUs } from "./AboutUs";
 import { VisiMisi } from "./VisiMisi";

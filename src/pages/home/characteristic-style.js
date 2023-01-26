@@ -23,7 +23,6 @@ const styles = {
     'text-body-3 lg:text-body-2',
     'mt-4'
   ]
-
 }
 
 export default styles

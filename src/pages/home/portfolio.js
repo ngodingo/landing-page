@@ -53,28 +53,30 @@ export function Portfolio () {
             </Column>
           </Grid>
           <div>
-            <Image 
-              src={dummyImage}
-              alt="project"
-              className={ttw(styles.Project.Image.Main)}
-            />
-          </div>
-          <div className={ttw(styles.Project.Image.SecondaryGrid)}>
-            <Image 
-              src={dummyImage}
-              alt="project"
-              className={ttw(styles.Project.Image.Secondary)}
-            />
-            <Image 
-              src={dummyImage}
-              alt="project"
-              className={ttw(styles.Project.Image.Secondary)}
-            />
-            <Image 
-              src={dummyImage}
-              alt="project"
-              className={ttw(styles.Project.Image.Secondary)}
-            />
+            <div>
+              <Image 
+                src={dummyImage}
+                alt="project"
+                className={ttw(styles.Project.Image.Main)}
+              />
+            </div>
+            <div className={ttw(styles.Project.Image.SecondaryWrapper)}>
+              <Image 
+                src={dummyImage}
+                alt="project"
+                className={ttw(styles.Project.Image.Secondary)}
+              />
+              <Image 
+                src={dummyImage}
+                alt="project"
+                className={ttw(styles.Project.Image.Secondary)}
+              />
+              <Image 
+                src={dummyImage}
+                alt="project"
+                className={ttw(styles.Project.Image.Secondary)}
+              />
+            </div>
           </div>
         </div>
         ))}
