@@ -35,7 +35,8 @@ const styles = {
     'w-fit h-14 lg:h-12 rounded-3xl hover:bg-primary-10/30'
   ],
   HamburgerWrapper: [
-    'lg:hidden'
+    'lg:hidden',
+    'active:bg-primary-10 rounded-3xl'
   ],
 
   NavMenusWrapper: [

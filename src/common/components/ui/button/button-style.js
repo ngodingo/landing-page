@@ -5,7 +5,7 @@ const styles = {
   Button: {
     common: [
       'font-body-2 font-bold',
-      'w-full min-w-[48px] min-h-[48px] px-4 rounded-3xl',
+      'w-full min-w-[48px] min-h-[48px] px-4 py-2 rounded-3xl',
       'relative flex items-center',
       'group-hover:-top-1 group-hover:-left-1 group-hover:shadow-[4px_4px]',
       'group-active:top-0 group-active:left-0 group-active:shadow-none',

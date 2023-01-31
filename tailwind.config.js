@@ -4,9 +4,6 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/common/components/**/*.{js,ts,jsx,tsx}',
   ],
-  presets: [
-    require('./src/common/components/layout/column/column-tw-config'),
-  ],
   theme: {
     extend: {
       fontFamily: {

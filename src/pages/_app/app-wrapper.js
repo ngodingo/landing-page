@@ -1,4 +1,4 @@
-import './globals.css'
+import './tw-global.css'
 import styles from "./global-style"
 import { ttw } from "@utilts"
 import Head from "next/head"

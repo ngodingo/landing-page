@@ -48,7 +48,7 @@ export function Footer () {
           </Column>
           <Column size="col-4 md:col-6 md:col-start-2 lg:col-4">
             <div className={ttw(styles.Wrapper)}>
-              <div>
+              <div className={ttw(styles.LogoWrapper)}>
                 <Image 
                   src={ngodingoLogo}
                   alt="logo"

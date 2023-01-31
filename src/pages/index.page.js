@@ -8,7 +8,9 @@ import { Portfolio } from "./home/portfolio"
 import { Navbar } from "@components/ui"
 import { Footer } from "@components/ui"
 
-export default function Home () {
+import { getAllPostLists } from "@features/blog"
+
+export default function Home ({posts}) {
   return (
     <>
       <Navbar />
@@ -16,9 +18,19 @@ export default function Home () {
       <About />
       <VisiMisi />
       <Characteristic />
-      <Blog />
+      <Blog posts={posts} />
       <Portfolio />
       <Footer />
     </>
   )
+}
+
+
+export async function getStaticProps () {
+  const posts = getAllPostLists()
+  return {
+    props: {
+      posts
+    }
+  }
 }

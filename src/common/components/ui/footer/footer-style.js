@@ -9,7 +9,8 @@ const styles = {
     'text-center lg:text-left'
   ],
   Form: [
-    'block mt-8 lg:mt-0'
+    'block mt-8 lg:mt-0',
+    'max-w-md mx-auto md:max-w-none'
   ],
   Input: [
     'w-full',
@@ -34,10 +35,13 @@ const styles = {
     'flex-col-reverse items-center',
     'sm:flex-row sm:justify-between',
     'lg:flex-col lg:items-end',
+    'max-w-md mx-auto md:max-w-none'
+  ],
+  LogoWrapper: [
+    'hidden lg:block'
   ],
   Logo: [
     'h-12 w-fit',
-    'hidden lg:block'
   ],
   NavMenusWrapper: [
     'w-fit flex lg:flex-col'

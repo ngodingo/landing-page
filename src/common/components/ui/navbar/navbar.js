@@ -47,19 +47,21 @@ export function Navbar () {
       <Container className={ttw(styles.Container)}>
         <div className={ttw(styles.Wrapper)}>
           <div className={ttw(styles.NavLogoHamburgerGroup)}>
-            <Link href="/" className={ttw(styles.LogoWrapper)}>
+            <Link 
+              href="/" 
+              className={ttw(styles.LogoWrapper)} 
+              onClick={() => setOpen(false)}
+              >
               <Image 
                 src={ngodingoLogoSm}
                 alt="logo"
                 className={ttw(styles.Logo, 'block sm:hidden')}
-                onClick={() => setOpen(false)}
                 priority
               />
               <Image 
                 src={ngodingoLogoLg}
                 alt="logo"
                 className={ttw(styles.Logo, 'hidden sm:block')}
-                onClick={() => setOpen(false)}
                 priority
               />
             </Link>
@@ -67,6 +69,7 @@ export function Navbar () {
               <Hamburger 
                 toggled={isOpen} 
                 toggle={setOpen}
+                hideOutline={false}
               />
             </div>
           </div>

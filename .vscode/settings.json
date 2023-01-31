@@ -1,0 +1,8 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "tailwindCSS.experimental.classRegex": [
+    ["styles \\=([^;]*);", "'([^']*)'"],
+    ["styles \\=([^;]*);", "\"([^\"]*)\""],
+    ["styles \\=([^;]*);", "\\`([^\\`]*)\\`"]
+  ]
+}
