@@ -31,7 +31,7 @@ export async function getStaticProps ({params}) {
 
 export default function Posts ({post}) {
 
-  const isUnderConstruction = true
+  const isUnderConstruction = false
   if (isUnderConstruction) return <ComingSoon />
 
   return (
