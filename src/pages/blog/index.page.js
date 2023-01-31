@@ -20,7 +20,7 @@ export async function getStaticProps () {
 
 export default function Blog ({posts}) {
 
-  console.log(posts)
+  // console.log(posts)
 
   const isUnderConstruction = false
   if (isUnderConstruction) return <ComingSoon />
