@@ -48,7 +48,7 @@ function PostLists ({posts}) {
   return (
     <div className={ttw(styles.Main.Container)}>
       {posts.map(post => (
-        <Link href={`blog/${post.slug}`} className={ttw(styles.Main.List.Container)}>
+        <Link href={`blog/${post.slug}`} className={ttw(styles.Main.List.Container)} key={post.slug}>
           <div className={ttw(styles.Main.List.Group.Wrapper)}>
             <Image 
               src={post.author.image}
@@ -96,7 +96,7 @@ function SideBar ({posts}) {
       </h4>
       <div>
         {continueReading.map(post => (
-          <Link href={`blog/${post.slug}`} className={ttw(styles.Sidebar.List.Container)}>
+          <Link href={`blog/${post.slug}`} className={ttw(styles.Sidebar.List.Container)} key={post.slug}>
             <div className={ttw(styles.Main.List.Group.Wrapper)}>
               <Image 
                 src={post.author.image}
