@@ -2,10 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/common/components/*"],
-      "@features/*": ["src/features/*"],
+      "@components": ["common/components"],
+      "@layouts": ["common/layouts"],
+      "@hooks": ["common/hooks"],
+      "@utilts": ["common/utilts"],
       "@public/*": ["public/*"],
-      "@utilts": ["src/common/utilts"]
+      "@static-db/*": ["public/static-db/*"],
+      "@services/*": ["services/*"]
     }
   }
 }
