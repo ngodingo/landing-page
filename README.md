@@ -35,7 +35,7 @@ website ini menggunakan skema layered architecture dan terdiri dari 2 layer/lapi
 referensi: [Software Architecture Patterns — Layered Architecture](https://priyalwalpita.medium.com/software-architecture-patterns-layered-architecture-a3b89b71a057)
 
 direktori lain:
-- `public/static-db` untuk menyimpan data statis
+- `public/static-db/` untuk menyimpan data statis
 - `common/` berisi reusable code
 
 ## Run Project
