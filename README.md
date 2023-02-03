@@ -1,6 +1,6 @@
 # Website Ngodingo
 ...
-## struktur
+## Struktur
 ```md
 .
 ├── common/
@@ -28,16 +28,17 @@
     ├── document.page.js
     └── index.page.js
 ```
-website ini menggunakan skema layered architecture yang mana memiliki 3 layer/lapisan:
+website ini menggunakan skema layered architecture dan terdiri dari 2 layer/lapisan:
 - **view-layer** `pages/` sebagai user-interface dan routing
-- **logic-layer** `services/` untuk abstraksi logika program, misal: memfilter data atau mengambil data dari data-layer
-- **data-layer** `public/static-db/` sebagai penyimpanan data statis
+- **logic-layer** `services/` untuk abstraksi logika program (business logic)
 
-note: setiap request yang dikirim harus melewati layer per layer secara berurutan (data -> logic -> view atau sebaliknya)
+referensi: [Software Architecture Patterns — Layered Architecture](https://priyalwalpita.medium.com/software-architecture-patterns-layered-architecture-a3b89b71a057)
 
-direktori `common/` berisi kode reusable
+direktori lain:
+- `public/static-db` untuk menyimpan data statis
+- `common/` berisi reusable code
 
-## setup di workspace
+## Run Project
 pastikan komputer sudah terinstall nodejs dan git
 ```
 node --version
@@ -60,9 +61,9 @@ menjalankan development server
 npm run dev
 ```
 
-## menambahkan halaman
+## Menambahkan Halaman
 ...
-## styling
+## Styling
 ...
 
 
