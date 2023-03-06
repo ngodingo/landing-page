@@ -1,15 +1,35 @@
 import styles from "./posts-style"
 import { ttw } from "@utilts"
 
-
-
-import { Chip } from "@components"
-
 import Image from "next/image"
 import Link from "next/link"
+import { Chip } from "@components"
+import { Pagination } from "@components"
 import { Section, Container, Grid, Column } from "@layouts"
+import { useState } from "react"
 
 export function Posts ({posts}) {
+  // console.log(posts[0].excerpt)
+  // dummy
+  // const postsX = Array.from({length: 100}, (_,i) => posts[i%3])
+
+  // filter
+  // ...
+
+  // pagination
+  const [currentPage, setCurrentPage] = useState(1)
+  const pageSize = 10
+  
+  const paginatedPosts = paginate({
+    items: posts,
+    currentPage,
+    pageSize
+  })
+  
+  function onPageChange (page) {
+    setCurrentPage(page)
+  }
+
   return (
     <Section id="posts">
       <Container>
@@ -22,17 +42,20 @@ export function Posts ({posts}) {
         </Grid>
         <Grid>
           <Column size="col-4 md:col-8 lg:col-8">
-            <PostLists posts={posts}/>
+            <PostLists posts={paginatedPosts} />
           </Column>
           <Column size="col-0 md:col-0 lg:col-4">
-            <SideBar posts={posts} />
+            {/* <SideBar posts={posts} /> */}
           </Column>
         </Grid>
         <Grid>
           <Column size="col-full">
-            {/* <div className="w-full h-20 bg-orange-300">
-              pagination
-            </div> */}
+            <Pagination 
+              itemSize={posts.length}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={onPageChange}
+            />
           </Column>
         </Grid>
       </Container>
@@ -43,15 +66,15 @@ export function Posts ({posts}) {
 
 function PostLists ({posts}) {
 
-  // console.log(posts[0].tags)
+  if (posts.length <= 0) return <div>loading</div>
 
   return (
     <div className={ttw(styles.Main.Container)}>
-      {posts.map(post => (
-        <Link href={`blog/${post.slug}`} className={ttw(styles.Main.List.Container)} key={post.slug}>
+      {posts.map((post, i) => (
+        <Link href={`blog/${post.slug}`} className={ttw(styles.Main.List.Container)} key={i}>
           <div className={ttw(styles.Main.List.Group.Wrapper)}>
-            <Image 
-              src={post.author.image}
+            <img 
+              src={post.image}
               alt="avatar"
               className={ttw(styles.Main.List.Group.AuthorImage)}
               width={24}
@@ -59,11 +82,11 @@ function PostLists ({posts}) {
               loading="lazy"
             />
             <span className={ttw(styles.Main.List.Group.AuthorName)}>
-              {post.author.name}
+              {post.author}
             </span>
             <span className={ttw(styles.Main.List.Group.Divider)} />
             <span className={ttw(styles.Main.List.Group.Tags)}>
-              {post.tags[0]}
+              {post.category[0]}
             </span>
             <span className={ttw(styles.Main.List.Group.Divider)} />
             <span className={ttw(styles.Main.List.Group.Date)} >
@@ -124,3 +147,12 @@ function SideBar ({posts}) {
     </div>
   )
 }
+
+
+// helper
+function paginate ({items, currentPage, pageSize}) {
+  const startIndex = (currentPage - 1) * pageSize
+  const endIndex = startIndex + pageSize
+  return items.slice(startIndex, endIndex)
+}
+

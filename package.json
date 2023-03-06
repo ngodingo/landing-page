@@ -14,10 +14,12 @@
     "eslint-config-next": "13.1.0",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.0",
+    "html-react-parser": "^3.0.9",
     "marked": "^4.2.12",
     "next": "13.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "rss-to-json": "^2.1.1"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",

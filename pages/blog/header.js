@@ -20,8 +20,9 @@ export function Header ({posts}) {
           </Column>
           <Column size="col-0 md:col-3 lg:col-5" >
             <div className={ttw(styles.SecondaryCardsGroup)}>
-              <SecondaryCard post={posts[1]} />
-              <SecondaryCard post={posts[2]} />
+              {posts.map((post,index) => (index >= 1) && (
+                <SecondaryCard post={post} key={index} />
+              ))}
             </div>
           </Column>
         </Grid>
@@ -36,8 +37,8 @@ function MainCard ({post}) {
   return (
     <div className={ttw(styles.MainCard.Container)}>
       <div className={ttw(styles.MainCard.Author.Wrapper)}>
-        <Image 
-          src={post.author.image}
+        <img 
+          src={post.image}
           alt="avatar"
           className={ttw(styles.MainCard.Author.Image)}
           width={24}
@@ -45,7 +46,7 @@ function MainCard ({post}) {
           loading="lazy"
         />
         <span className={ttw(styles.MainCard.Author.Name)}>
-          {post.author.name}
+          {post.author}
         </span>
       </div>
       <h3 className={ttw(styles.MainCard.Title)}>
@@ -71,8 +72,8 @@ function SecondaryCard ({post}) {
   return (
     <Link href={`blog/${post.slug}`} className={ttw(styles.SecondaryCard.Container)}>
       <div className={ttw(styles.MainCard.Author.Wrapper)}>
-        <Image 
-          src={post.author.image}
+        <img 
+          src={post.image}
           alt="avatar"
           className={ttw(styles.MainCard.Author.Image)}
           width={24}
@@ -80,7 +81,7 @@ function SecondaryCard ({post}) {
           loading="lazy"
         />
         <span className={ttw(styles.MainCard.Author.Name)}>
-          {post.author.name}
+          {post.author}
         </span>
       </div>
       <h3 className={ttw(styles.SecondaryCard.Title)}>

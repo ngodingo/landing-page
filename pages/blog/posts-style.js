@@ -46,7 +46,7 @@ const styles = {
         'group-active:underline group-active:decoration-primary-30/50 group-active:text-primary-30'
       ],
       Excerpt: [
-        'font-light text-secondary-30',
+        'font-light text-secondary-30 !line-clamp-2',
         'text-body-2',
         'hidden md:inline'
       ]
@@ -77,7 +77,7 @@ const styles = {
         'group-active:underline group-active:decoration-primary-30/50 group-active:text-primary-30'
       ]
     }
-  }
+  },
 };
 
 export default styles
