@@ -25,7 +25,7 @@ export function Posts ({posts}) {
             <PostLists posts={posts}/>
           </Column>
           <Column size="col-0 md:col-0 lg:col-4">
-            <SideBar posts={posts} />
+            {/* <SideBar posts={posts} /> */}
           </Column>
         </Grid>
         <Grid>

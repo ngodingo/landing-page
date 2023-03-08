@@ -1,4 +1,7 @@
-import { ComingSoon } from "@components"
+import { ComingSoon, Footer, Navbar } from "@components"
+
+
+import { Content } from "./content"
 
 import { getAllPostLists, getPostBySlug } from "@services/blog"
 
@@ -31,12 +34,16 @@ export async function getStaticProps ({params}) {
 
 export default function Posts ({post}) {
 
-  const isUnderConstruction = true
+  // console.log(post)
+
+  const isUnderConstruction = false
   if (isUnderConstruction) return <ComingSoon />
 
   return (
     <>
-      <div dangerouslySetInnerHTML={{__html: post.content}}/>
+      <Navbar />
+      <Content post={post} />
+      <Footer />
     </>
   )
 }

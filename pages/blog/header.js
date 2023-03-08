@@ -20,8 +20,8 @@ export function Header ({posts}) {
           </Column>
           <Column size="col-0 md:col-3 lg:col-5" >
             <div className={ttw(styles.SecondaryCardsGroup)}>
-              <SecondaryCard post={posts[1]} />
-              <SecondaryCard post={posts[2]} />
+              {posts.length > 1 && <SecondaryCard post={posts[1]} />}
+              {posts.length > 2 && <SecondaryCard post={posts[2]} />}
             </div>
           </Column>
         </Grid>

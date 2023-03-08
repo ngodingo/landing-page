@@ -48,4 +48,51 @@
   .col-auto {
     @apply block col-span-auto;
   }
+
+  /* 
+    markdown content style
+    at pages/blog/[post_slug]
+  */
+  .markdown h1, 
+  .markdown h2, 
+  .markdown h3,
+  .markdown h4 {
+    @apply font-medium text-primary-90;
+    @apply mt-8 lg:mt-10;
+  }
+
+  .markdown h1 *, 
+  .markdown h2 *, 
+  .markdown h3 *,
+  .markdown h4 * {
+    @apply font-medium no-underline;
+  }
+
+  .markdown h1 {
+    @apply text-heading-2 lg:text-display-2;
+  }
+
+  .markdown h2 {
+    @apply text-heading-3 lg:text-heading-1;
+  }
+
+  .markdown h3 {
+    @apply text-heading-4 lg:text-heading-2;
+  }
+
+  .markdown p {
+    @apply font-light text-secondary-50;
+    @apply text-body-3 lg:text-body-1;
+    @apply mt-4 lg:mt-6;
+  }
+
+  .markdown a {
+    @apply font-light text-primary-50;
+    @apply text-body-3 lg:text-body-1;
+    @apply mt-4 lg:mt-6;
+  }
+
+  .markdown img {
+    @apply w-full rounded-2xl lg:rounded-3xl;
+  }
 }
