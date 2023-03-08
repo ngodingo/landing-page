@@ -6,7 +6,7 @@ excerpt: "Setelah mempelajari tentang pengkondisian atau percabangan pada artike
 tags: ['JavaScript', 'Web Development']
 author: 
   name: 'Ngodingo Admin'
-  image: '/static-db/blog/authors/author-1.jpg'
+  image: '/static-db/blog/authors/admin-ngodingo.png'
 ---
 
 ![""](https://cdn-images-1.medium.com/max/1024/1*luJMjtGODEDCIauBtv_NGg.png)
