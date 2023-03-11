@@ -8,8 +8,14 @@ import { Chip } from "@components"
 import Image from "next/image"
 import Link from "next/link"
 import { Section, Container, Grid, Column } from "@layouts"
+import { formatDate } from "@utilts"
 
-export function Posts ({posts}) {
+export function Posts({ posts }) {
+
+  // const postdate = posts[0].date;
+  // const date = new Date( Date.parse(postdate))
+
+  // console.log(date.getDate(), date.getMonth(), date.getFullYear())
   return (
     <Section id="posts">
       <Container>
@@ -22,7 +28,7 @@ export function Posts ({posts}) {
         </Grid>
         <Grid>
           <Column size="col-4 md:col-8 lg:col-8">
-            <PostLists posts={posts}/>
+            <PostLists posts={posts} />
           </Column>
           <Column size="col-0 md:col-0 lg:col-4">
             {/* <SideBar posts={posts} /> */}
@@ -41,7 +47,7 @@ export function Posts ({posts}) {
 }
 
 
-function PostLists ({posts}) {
+function PostLists({ posts }) {
 
   // console.log(posts[0].tags)
 
@@ -50,7 +56,7 @@ function PostLists ({posts}) {
       {posts.map(post => (
         <Link href={`blog/${post.slug}`} className={ttw(styles.Main.List.Container)} key={post.slug}>
           <div className={ttw(styles.Main.List.Group.Wrapper)}>
-            <Image 
+            <Image
               src={post.author.image}
               alt="avatar"
               className={ttw(styles.Main.List.Group.AuthorImage)}
@@ -67,7 +73,7 @@ function PostLists ({posts}) {
             </span>
             <span className={ttw(styles.Main.List.Group.Divider)} />
             <span className={ttw(styles.Main.List.Group.Date)} >
-              {post.date}
+              {formatDate(post.date)}
             </span>
             <span className={ttw(styles.Main.List.Group.Overflow)} />
           </div>
@@ -85,7 +91,7 @@ function PostLists ({posts}) {
 }
 
 
-function SideBar ({posts}) {
+function SideBar({ posts }) {
 
   const continueReading = [posts[0], posts[1]]
 
@@ -98,7 +104,7 @@ function SideBar ({posts}) {
         {continueReading.map(post => (
           <Link href={`blog/${post.slug}`} className={ttw(styles.Sidebar.List.Container)} key={post.slug}>
             <div className={ttw(styles.Main.List.Group.Wrapper)}>
-              <Image 
+              <Image
                 src={post.author.image}
                 alt="avatar"
                 className={ttw(styles.Main.List.Group.AuthorImage)}

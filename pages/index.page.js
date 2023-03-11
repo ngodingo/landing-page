@@ -10,7 +10,7 @@ import { Footer } from "@components"
 
 import { getAllPostLists } from "@services/blog"
 
-export default function Home ({posts}) {
+export default function Home({ posts }) {
   return (
     <>
       <Navbar />
@@ -26,7 +26,7 @@ export default function Home ({posts}) {
 }
 
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const posts = getAllPostLists()
   return {
     props: {

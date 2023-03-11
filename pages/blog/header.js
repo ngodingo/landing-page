@@ -7,7 +7,7 @@ import { Button } from "@components"
 import { Section, Container, Grid, Column } from "@layouts"
 
 
-export function Header ({posts}) {
+export function Header({ posts }) {
 
   return (
     <Section className="relative !pt-24">
@@ -27,16 +27,16 @@ export function Header ({posts}) {
         </Grid>
       </Container>
       <Background />
-    </Section>  
+    </Section>
   )
 }
 
 
-function MainCard ({post}) {
+function MainCard({ post }) {
   return (
     <div className={ttw(styles.MainCard.Container)}>
       <div className={ttw(styles.MainCard.Author.Wrapper)}>
-        <Image 
+        <Image
           src={post.author.image}
           alt="avatar"
           className={ttw(styles.MainCard.Author.Image)}
@@ -55,10 +55,10 @@ function MainCard ({post}) {
         {post.excerpt}
       </p>
       <div className={ttw(styles.MainCard.ButtonGroup)}>
-        <Button href={`blog/${post.slug}`} variant="primary"> 
+        <Button href={`blog/${post.slug}`} variant="primary">
           Read Now
         </Button>
-        <Button href="#posts" variant="secondary"> 
+        <Button href="#posts" variant="secondary">
           Load More
         </Button>
       </div>
@@ -67,11 +67,11 @@ function MainCard ({post}) {
 }
 
 
-function SecondaryCard ({post}) {
+function SecondaryCard({ post }) {
   return (
     <Link href={`blog/${post.slug}`} className={ttw(styles.SecondaryCard.Container)}>
       <div className={ttw(styles.MainCard.Author.Wrapper)}>
-        <Image 
+        <Image
           src={post.author.image}
           alt="avatar"
           className={ttw(styles.MainCard.Author.Image)}
@@ -91,7 +91,7 @@ function SecondaryCard ({post}) {
 }
 
 
-function Background () {
+function Background() {
   return (
     <div className={ttw(styles.Background.Container)}>
       <div className={ttw(styles.Background.Wrapper)}>

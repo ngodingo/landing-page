@@ -53,6 +53,10 @@
     markdown content style
     at pages/blog/[post_slug]
   */
+  .markdown > * {
+    @apply mt-4 lg:mt-6;
+  }
+
   .markdown h1, 
   .markdown h2, 
   .markdown h3,
@@ -80,19 +84,57 @@
     @apply text-heading-4 lg:text-heading-2;
   }
 
-  .markdown p {
-    @apply font-light text-secondary-50;
+  .markdown p,
+  .markdown a,
+  .markdown li,
+  .markdown pre,
+  .markdown code,
+  .markdown td,
+  .markdown th,
+  .markdown blockquote {
     @apply text-body-3 lg:text-body-1;
-    @apply mt-4 lg:mt-6;
+  }
+
+  .markdown p {
+    @apply text-secondary-50;
+    @apply font-light;
   }
 
   .markdown a {
-    @apply font-light text-primary-50;
-    @apply text-body-3 lg:text-body-1;
-    @apply mt-4 lg:mt-6;
+    @apply text-primary-50;
+    @apply hover:underline;
   }
 
   .markdown img {
     @apply w-full rounded-2xl lg:rounded-3xl;
+  }
+
+  .markdown code,
+  .markdown pre {
+    @apply font-mono rounded-md bg-primary-10 text-secondary-50;
+  }
+
+  .markdown code {
+    @apply px-1.5 py-0.5;
+  }
+
+  .markdown pre {
+    @apply p-3 lg:p-6;
+  }
+
+  .markdown blockquote {
+    @apply pl-4 py-2 border-l-2 border-primary-50 text-secondary-50 bg-secondary-10/10;
+  }
+
+  .markdown ul {
+    @apply list-inside list-disc;
+  }
+
+  .markdown ol {
+    @apply list-inside list-decimal;
+  }
+
+  .markdown li p {
+    @apply inline;
   }
 }

@@ -8,7 +8,7 @@ import { ComingSoon } from "@components"
 import { getAllPostLists } from "@services/blog"
 
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const posts = getAllPostLists()
   return {
     props: {
@@ -18,7 +18,7 @@ export async function getStaticProps () {
 }
 
 
-export default function Blog ({posts}) {
+export default function Blog({ posts }) {
   // console.log(posts)
 
   const isUnderConstruction = false

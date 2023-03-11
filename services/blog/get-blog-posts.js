@@ -19,6 +19,7 @@ export function getAllPostLists () {
 
       const fileContent = fs.readFileSync(filePath, 'utf-8')
       const {data: markdownMetadata} = matter(fileContent)
+
       markdownMetadata.slug = filename.replace(/\.md$/, '')
 
       return markdownMetadata
