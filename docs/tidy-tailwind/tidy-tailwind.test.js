@@ -1,4 +1,4 @@
-import { ttw } from "./tidy-tailwind"
+import { ttw } from "../tidy-tailwind"
 
 const x = true
 

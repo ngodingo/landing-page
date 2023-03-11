@@ -1,5 +1,5 @@
 import styles from "./blog-style"
-import { ttw } from "@utilts"
+import { ttw, formatDate } from "@utilts"
 
 import Link from "next/link"
 import { Button } from "@components"
@@ -16,7 +16,7 @@ export function Blog ({posts}) {
             <Link href={`blog/${post.slug}`} key={i}>
               <div className={ttw(styles.PostList.Wrapper)}>  
                 <span className={ttw(styles.PostList.Date)}>
-                  {post.date}
+                  {formatDate(post.date)}
                 </span>
                 <h3 className={ttw(styles.PostList.Title)}>
                   {post.title}

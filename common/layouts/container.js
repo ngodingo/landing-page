@@ -1,5 +1,16 @@
-import styles from "./container-style"
 import { ttw } from "@utilts"
+
+const styles = {
+  Container: {
+    size: {
+      default: [
+        'container m-auto',
+        'px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]',
+      ],
+      fluid: 'w-full'
+    }
+  }
+}
 
 export function Container ({id, className, children, fluid, role, ...props}) {
 
@@ -16,7 +27,7 @@ export function Container ({id, className, children, fluid, role, ...props}) {
   ])
 
   return (
-    <div {...attr.Container}>
+    <div {...attr.Container} {...props}>
       {children}
     </div>
   )
