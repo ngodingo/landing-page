@@ -1,5 +1,5 @@
 import styles from "./content-style"
-import { ttw } from "@utilts"
+import { ttw, formatDate } from "@utilts"
 import { Section, Container, Grid, Column } from "@layouts"
 
 export function Content({ post }) {
@@ -12,6 +12,9 @@ export function Content({ post }) {
               <h1 className={ttw(styles.Title)}>{post.metadata.title}</h1>
             </div>
           </Column>
+          <Column size="col-4 md:col-8 lg:col-2">
+            <Card post={post}/>
+          </Column>
           <Column size="col-4 md:col-6 md:col-start-2 lg:col-8 lg:col-start-3">
             <article
               className="markdown"
@@ -21,5 +24,28 @@ export function Content({ post }) {
         </Grid>
       </Container>
     </Section>
+  )
+}
+
+function Card ({post}) {
+  return (
+    <div className={ttw(styles.Card.Container)}>
+      <img  
+        className={ttw(styles.Card.AuthorImage)}
+        src={post.metadata.author.image} 
+        alt="" 
+      /> 
+      <div>
+        <p className={ttw(styles.Card.AuthorName)}>
+          {post.metadata.author.name}
+        </p>
+        <p className={ttw(styles.Card.Info)}>
+          {formatDate(post.metadata.date)}
+        </p>
+        <p className={ttw(styles.Card.Info)}>
+          {post.metadata.tags[0]}
+        </p>
+      </div>
+    </div>
   )
 }
