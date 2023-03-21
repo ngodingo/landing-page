@@ -48,6 +48,7 @@ const styles = {
       Excerpt: [
         'font-light text-secondary-30',
         'text-body-2',
+        'md:line-clamp-2 lg:line-clamp-3',
         'hidden md:inline'
       ]
     }

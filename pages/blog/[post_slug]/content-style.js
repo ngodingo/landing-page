@@ -14,7 +14,7 @@ const styles = {
       'border border-primary-30',
       'flex flex-row lg:flex-col gap-4 lg:items-center m-auto',
       'lg:text-center',
-      'p-4 md:p-7 mb-5 lg:mb-0'
+      'p-4 md:p-7 mb-5 lg:mb-0 lg:mt-6'
     ],
     AuthorImage: [
       'w-8 h-8 md:w-12 md:h-12',
