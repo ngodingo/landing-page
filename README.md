@@ -1,5 +1,8 @@
-# Website Ngodingo
-...
+# Landing Page Ngodingo
+
+Landing Page Komunitas Ngodingo adalah sebuah proyek yang bertujuan untuk memperkenalkan Ngodingo, sebuah komunitas programmer di Indonesia kepada masyarakat luas.
+[Kunjungi Halaman >](https://ngodingo-landing-page.vercel.app/)
+
 ## Struktur
 ```md
 .
@@ -61,10 +64,10 @@ menjalankan development server
 npm run dev
 ```
 
-## Menambahkan Halaman
+## Kontribusi
+
 ...
-## Styling
-...
+
 
 
 <details>
