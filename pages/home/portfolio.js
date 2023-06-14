@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@components"
 import { Section, Container, Grid, Column } from "@layouts"
 
-import dummyImage from "@public/static-db/home/images/app-project.png"
+import dummyImage from "@assets/images/app-project.png"
 
 export function Portfolio () {
   const styles = twStyles()

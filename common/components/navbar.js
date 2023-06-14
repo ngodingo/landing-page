@@ -8,8 +8,8 @@ import { Spin as Hamburger } from "hamburger-react"
 import { Container } from "@layouts"
 import { SocialLinks } from "@components"
 
-import ngodingoLogoSm from '@static-db/assets/logo/ngodingo-logo-basic-primary.png'
-import ngodingoLogoLg from '@static-db/assets/logo/ngodingo-logo-horizontal-primary.png'
+import ngodingoLogoSm from '@assets/logo/ngodingo-logo-basic-primary.png'
+import ngodingoLogoLg from '@assets/logo/ngodingo-logo-horizontal-primary.png'
 
 
 export function Navbar({navMenus}) {
