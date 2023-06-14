@@ -1,4 +1,4 @@
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
 export function Column ({size, start, end, className, children, ...props}) {
 

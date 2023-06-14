@@ -5,8 +5,9 @@
       "@components": ["common/components"],
       "@layouts": ["common/layouts"],
       "@hooks": ["common/hooks"],
-      "@utilts": ["common/utilts"],
+      "@utils": ["common/utils"],
       "@public/*": ["public/*"],
+      "@pages/*": ["pages/*"],
       "@static-db/*": ["public/static-db/*"],
       "@services/*": ["services/*"]
     }

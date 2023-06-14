@@ -5,5 +5,6 @@
     ["styles \\=([^;]*);", "\"([^\"]*)\""],
     ["styles \\=([^;]*);", "\\`([^\\`]*)\\`"]
   ],
-  "explorer.sortOrder": "default"
+  "explorer.sortOrder": "default",
+  "editor.tabSize": 2
 }

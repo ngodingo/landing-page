@@ -1,5 +1,5 @@
 import styles from "./posts-style"
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
 
 
@@ -8,7 +8,7 @@ import { Chip } from "@components"
 import Image from "next/image"
 import Link from "next/link"
 import { Section, Container, Grid, Column } from "@layouts"
-import { formatDate } from "@utilts"
+import { formatDate } from "common/utils"
 
 export function Posts({ posts }) {
 

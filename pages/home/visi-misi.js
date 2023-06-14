@@ -1,5 +1,5 @@
 import styles from "./visi-misi-style"
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
 import { Section, Container, Grid, Column } from "@layouts"
 

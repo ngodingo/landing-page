@@ -1,5 +1,5 @@
 import styles from "./content-style"
-import { ttw, formatDate } from "@utilts"
+import { ttw, formatDate } from "common/utils"
 import { Section, Container, Grid, Column } from "@layouts"
 
 export function Content({ post }) {

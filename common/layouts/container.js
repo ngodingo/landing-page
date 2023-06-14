@@ -1,18 +1,7 @@
-import { ttw } from "@utilts"
-
-const styles = {
-  Container: {
-    size: {
-      default: [
-        'container m-auto',
-        'px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]',
-      ],
-      fluid: 'w-full'
-    }
-  }
-}
+import { ttw } from "common/utils"
 
 export function Container ({id, className, children, fluid, role, ...props}) {
+  const styles = twStyles()
 
   const attr = {
     Container: {}
@@ -31,4 +20,18 @@ export function Container ({id, className, children, fluid, role, ...props}) {
       {children}
     </div>
   )
+}
+
+function twStyles () {
+  return ({
+    Container: {
+      size: {
+        default: [
+          'container m-auto',
+          'px-5 md:px-6 lg:px-8 xl:px-[70px] 2xl:px-[198px]',
+        ],
+        fluid: 'w-full'
+      }
+    }
+  })
 }

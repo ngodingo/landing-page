@@ -5,6 +5,7 @@ import { Characteristic } from "./home/characteristic"
 import { Blog } from "./home/blog"
 import { Portfolio } from "./home/portfolio"
 
+import { navMenus } from "@pages/_app/navigation"
 import { Navbar } from "@components"
 import { Footer } from "@components"
 
@@ -13,14 +14,14 @@ import { getAllPostLists } from "@services/blog"
 export default function Home({ posts }) {
   return (
     <>
-      <Navbar />
+      <Navbar navMenus={navMenus} />
       <Hero />
       <About />
       <VisiMisi />
       <Characteristic />
       <Blog posts={posts} />
       <Portfolio />
-      <Footer />
+      <Footer navMenus={navMenus} />
     </>
   )
 }

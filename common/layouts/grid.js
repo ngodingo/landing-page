@@ -1,16 +1,7 @@
-import { ttw } from "@utilts"
-
-const styles = {
-  Grid: {
-    common: [
-      'grid',
-      'grid-cols-4 md:grid-cols-8 lg:grid-cols-12',
-      'gap-x-4 xl:gap-x-5', 
-    ]
-  }
-}
+import { ttw } from "common/utils"
 
 export function Grid ({className, children, ...props}) {
+  const styles = twStyles()
 
   const attr = {
     Grid: {}
@@ -27,4 +18,16 @@ export function Grid ({className, children, ...props}) {
       {children}
     </div>
   )
+}
+
+function twStyles () {
+  return ({
+    Grid: {
+      common: [
+        'grid',
+        'grid-cols-4 md:grid-cols-8 lg:grid-cols-12',
+        'gap-x-4 xl:gap-x-5', 
+      ]
+    }
+  })
 }

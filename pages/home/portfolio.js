@@ -1,5 +1,5 @@
 import styles from "./portfolio-style"
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
 import Image from "next/image"
 import { Section, Container, Grid, Column } from "@layouts"
