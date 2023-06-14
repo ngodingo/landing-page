@@ -1,5 +1,5 @@
 import styles from "./hero-style"
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
 import { Container} from "@layouts"
 import { Button } from "@components"

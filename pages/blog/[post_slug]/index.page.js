@@ -1,5 +1,5 @@
+import { navMenus } from "@pages/_app/navigation"
 import { ComingSoon, Footer, Navbar } from "@components"
-
 
 import { Content } from "./content"
 
@@ -33,9 +33,9 @@ export default function Posts({ post }) {
 
   return (
     <>
-      <Navbar />
+      <Navbar navMenus={navMenus} />
       <Content post={post} />
-      <Footer />
+      <Footer navMenus={navMenus} />
     </>
   )
 }

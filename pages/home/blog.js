@@ -1,5 +1,5 @@
 import styles from "./blog-style"
-import { ttw, formatDate } from "@utilts"
+import { ttw, formatDate } from "common/utils"
 
 import Link from "next/link"
 import { Button } from "@components"

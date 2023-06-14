@@ -11,7 +11,7 @@ Landing Page Komunitas Ngodingo adalah sebuah proyek yang bertujuan untuk memper
 │   ├── components/
 │   ├── layouts/
 │   ├── hooks/
-│   └── utilts/
+│   └── utils/
 ├── public/
 │   └── static-db/
 │       ├── assets/

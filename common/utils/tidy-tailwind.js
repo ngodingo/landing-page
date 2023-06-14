@@ -20,30 +20,3 @@ export function ttw (...input) {
 
   return result
 }
-
-/* 
-  TIDY-TAILWIND v2
-  tidy up tailwind className
-
-  - usage:
-    <div 
-      className={ttw({
-        key: value,
-        key: value,
-        key: {
-          key: value,
-          key: value,
-        },
-        key: [
-          value,
-          value,
-          {
-            key: value,
-            key: value,
-          }
-        ]
-      })} 
-    >
-      hello world
-    </div>
-*/

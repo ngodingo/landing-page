@@ -1,5 +1,5 @@
 import styles from "./about-style"
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
 import Image from "next/image"
 import { Button } from "@components"
