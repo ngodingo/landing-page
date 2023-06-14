@@ -1,8 +1,9 @@
-import styles from "./content-style"
-import { ttw, formatDate } from "common/utils"
+import { ttw, formatDate } from "@utils"
 import { Section, Container, Grid, Column } from "@layouts"
 
 export function Content({ post }) {
+  const styles = twStyles()
+
   return (
     <Section>
       <Container>
@@ -28,6 +29,8 @@ export function Content({ post }) {
 }
 
 function Card ({post}) {
+  const styles = twStyles()
+
   return (
     <div className={ttw(styles.Card.Container)}>
       <img  
@@ -48,4 +51,39 @@ function Card ({post}) {
       </div>
     </div>
   )
+}
+
+
+function twStyles () {
+  return ({
+    TitleWrapper: [
+      'grid place-items-center',
+      'py-16 lg:py-36'
+    ],
+    Title: [
+      'font-medium text-primary-90 text-center',
+      'text-heading-1 lg:text-display-2'
+    ],
+    Card: {
+      Container: [
+        'max-w-fit bg-white rounded-3xl',
+        'border border-primary-30',
+        'flex flex-row lg:flex-col gap-4 lg:items-center m-auto',
+        'lg:text-center',
+        'p-4 md:p-7 mb-5 lg:mb-0 lg:mt-6'
+      ],
+      AuthorImage: [
+        'w-8 h-8 md:w-12 md:h-12',
+        'mt-1 lg:mt-0'
+      ],
+      AuthorName: [
+        'font-semibold text-secondary-50',
+        'text-body-4 md:text-body-3'
+      ],
+      Info: [
+        'font-light text-secondary-30',
+        'text-body-4 md:text-body-3'
+      ]
+    }
+  })
 }

@@ -1,12 +1,6 @@
-
-const styles = {
-  Section: 'w-full h-screen bg-primary-30 grid place-items-center',
-  Wrapper: 'text-center text-white',
-  Heading: 'font-semibold text-display-3 sm:text-display-2 md:text-display-1',
-  Desc: 'text-body-2'
-}
-
 export default function Custom404 () {
+  const styles = twStyles()
+
   return (
     <section className={styles.Section}>
       <div className={styles.Wrapper}>
@@ -15,4 +9,13 @@ export default function Custom404 () {
       </div>
     </section>
   )
+}
+
+function twStyles () {
+  return ({
+    Section: 'w-full h-screen bg-primary-30 grid place-items-center',
+    Wrapper: 'text-center text-white',
+    Heading: 'font-semibold text-display-3 sm:text-display-2 md:text-display-1',
+    Desc: 'text-body-2'
+  })
 }

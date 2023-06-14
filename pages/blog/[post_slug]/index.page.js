@@ -25,7 +25,6 @@ export async function getStaticProps({ params }) {
 
 
 export default function Posts({ post }) {
-
   // console.log(post)
 
   const isUnderConstruction = false
