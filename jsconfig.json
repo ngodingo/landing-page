@@ -6,8 +6,9 @@
       "@layouts": ["common/layouts"],
       "@hooks": ["common/hooks"],
       "@utils": ["common/utils"],
-      "@public/*": ["public/*"],
       "@pages/*": ["pages/*"],
+      "@public/*": ["public/*"],
+      "@assets/*": ["public/assets/*"],
       "@static-db/*": ["public/static-db/*"],
       "@services/*": ["services/*"]
     }

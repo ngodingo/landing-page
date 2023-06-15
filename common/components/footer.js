@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Section, Container, Grid, Column } from "@layouts"
 import { SocialLinks } from "@components"
 
-import ngodingoLogo from '@static-db/assets/logo/ngodingo-logo-horizontal-white.png'
+import ngodingoLogo from '@assets/logo/ngodingo-logo-horizontal-white.png'
 
 
 export function Footer ({navMenus}) {

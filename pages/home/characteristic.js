@@ -3,9 +3,9 @@ import { ttw } from '@utils'
 import Image from 'next/image'
 import { Section, Container, Grid, Column } from '@layouts'
 
-import coffeeIcon from '@public/static-db/home/icons/coffee.svg'
-import smartIcon from '@public/static-db/home/icons/smart.svg'
-import timeIcon from '@public/static-db/home/icons/time.svg'
+import coffeeIcon from '@assets/pictograms/coffee.svg'
+import smartIcon from '@assets/pictograms/smart.svg'
+import timeIcon from '@assets/pictograms/time.svg'
 
 
 export function Characteristic () {
