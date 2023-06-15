@@ -1,5 +1,5 @@
+import { navMenus } from "@pages/_app/navigation"
 import { ComingSoon, Footer, Navbar } from "@components"
-
 
 import { Content } from "./content"
 
@@ -25,7 +25,6 @@ export async function getStaticProps({ params }) {
 
 
 export default function Posts({ post }) {
-
   // console.log(post)
 
   const isUnderConstruction = false
@@ -33,9 +32,9 @@ export default function Posts({ post }) {
 
   return (
     <>
-      <Navbar />
+      <Navbar navMenus={navMenus} />
       <Content post={post} />
-      <Footer />
+      <Footer navMenus={navMenus} />
     </>
   )
 }

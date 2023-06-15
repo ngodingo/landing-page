@@ -25,7 +25,7 @@ ttw('mixed', ['foo','bar'])
 ## Contoh Penggunaan
 ```jsx
 // components/circle.js
-import { ttw } from "@utilts"
+import { ttw } from "@utils"
 import styles from "./circle-style"
 
 function Circle () {

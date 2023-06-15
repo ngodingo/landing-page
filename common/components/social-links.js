@@ -1,31 +1,30 @@
-import styles from './social-links-style'
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 
-import InstagramIcon from "./icons/instagram-icon"
-import TwitterIcon from "./icons/twitter-icon"
-import GithubIcon from "./icons/github-icon"
+import GithubIcon24 from "@assets/icons/github.icon.svg"
+import InstagramIcon24 from "@assets/icons/instagram.icon.svg"
+import TwitterIcon24 from "@assets/icons/twitter.icon.svg"
 
 
-export function SocialLinks ({className, ...props}) {
-  
+export function SocialLinks({ className, ...props }) {
+  const styles = twStyles()
+
   const socials = [
     {
       name: 'instagram',
-      icon: InstagramIcon,
+      icon: InstagramIcon24,
       url: 'https://instagram.com/ngodingo.id',
     },
     {
       name: 'twitter',
-      icon: TwitterIcon,
+      icon: TwitterIcon24,
       url: 'https://twitter.com/ngodingo_id',
     },
     {
       name: 'github',
-      icon: GithubIcon,
+      icon: GithubIcon24,
       url: 'https://github.com/ngodingo',
     }
   ]
-
 
   return (
     <>
@@ -43,4 +42,13 @@ export function SocialLinks ({className, ...props}) {
       ))}
     </>
   )
+}
+
+function twStyles() {
+  return ({
+    Icon: [
+      'w-12 h-12',
+      'grid place-items-center'
+    ]
+  })
 }

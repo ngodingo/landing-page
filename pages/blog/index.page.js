@@ -1,6 +1,7 @@
 import { Header } from "./header"
 import { Posts } from "./posts"
 
+import { navMenus } from "@pages/_app/navigation"
 import { Navbar } from "@components"
 import { Footer } from "@components"
 import { ComingSoon } from "@components"
@@ -27,10 +28,10 @@ export default function Blog({ posts }) {
 
   return (
     <>
-      <Navbar />
+      <Navbar navMenus={navMenus} />
       <Header posts={posts} />
       <Posts posts={posts} />
-      <Footer />
+      <Footer navMenus={navMenus} />
     </>
   )
 }

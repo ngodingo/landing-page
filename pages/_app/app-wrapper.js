@@ -1,6 +1,6 @@
 import './tw-global.css'
 import styles from "./global-style"
-import { ttw } from "@utilts"
+import { ttw } from "common/utils"
 import Head from "next/head"
 
 export default function AppWrapper ({children}) {
