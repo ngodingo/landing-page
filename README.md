@@ -1,6 +1,6 @@
 # Landing Page Ngodingo
 
-Landing Page Komunitas Ngodingo adalah sebuah proyek yang bertujuan untuk memperkenalkan Ngodingo, sebuah komunitas programmer di Indonesia kepada masyarakat luas.
+Landing Page Ngodingo adalah sebuah proyek yang bertujuan untuk memperkenalkan Ngodingo, sebuah komunitas programmer di Indonesia kepada masyarakat luas.
 
 [Kunjungi Halaman >](https://ngodingo-landing-page.vercel.app/)
 
@@ -12,35 +12,43 @@ Landing Page Komunitas Ngodingo adalah sebuah proyek yang bertujuan untuk memper
 │   ├── layouts/
 │   ├── hooks/
 │   └── utils/
-├── public/
-│   └── static-db/
-│       ├── assets/
-│       ├── home/
-│       ├── blog/
-│       └── portfolio/
+├── pages/
+│   ├── _app/
+│   ├── home/
+│   ├── blog/
+│   │   └── [post_slug]/
+│   ├── portfolio/
+│   │   └── [project_slug]/
+│   ├── _app.page.js
+│   ├── _document.page.js
+│   ├── index.page.js
+│   └── 404.page.js
 ├── services/
 │   ├── blog/
 │   └── portfolio/
-└── pages/
-    ├── _app/
-    ├── home/
-    ├── blog/
-    │   └── [post_slug]/
-    ├── portfolio/
-    │   └── [project_slug]/
-    ├── _app.page.js
-    ├── document.page.js
-    └── index.page.js
+├── public/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── icons/
+│   │   ├── pictograms/
+│   │   └── logo/
+│   ├── static-db/
+│   │   ├── blog/
+│   │   │   ├── authors/
+│   │   │   ├── images/
+│   │   │   └── posts/
+│   │   └── portfolio/
+│   │       ├── projects/
+│   │       └── images/
+│   └── favicon.ico
+└── readme.md
 ```
-website ini menggunakan skema layered architecture dan terdiri dari 2 layer/lapisan:
+website ini menggunakan skema layered architecture dan terdiri dari 3 layer/lapisan:
 - **view-layer** `pages/` sebagai user-interface dan routing
 - **logic-layer** `services/` untuk abstraksi logika program (business logic)
+- **data-layer** `public/static-db/` sebagai tempat penyimpanan data statis
 
 referensi: [Software Architecture Patterns — Layered Architecture](https://priyalwalpita.medium.com/software-architecture-patterns-layered-architecture-a3b89b71a057)
-
-direktori lain:
-- `public/static-db/` untuk menyimpan data statis
-- `common/` berisi reusable code
 
 ## Run Project
 pastikan komputer sudah terinstall nodejs dan git
