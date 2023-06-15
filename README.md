@@ -46,7 +46,7 @@ Landing Page Ngodingo adalah sebuah proyek yang bertujuan untuk memperkenalkan N
 website ini menggunakan skema layered architecture dan terdiri dari 3 layer/lapisan:
 - **view-layer** `pages/` sebagai user-interface dan routing
 - **logic-layer** `services/` untuk abstraksi logika program (business logic)
-- **data-layer** `public/static-db/` sebagai tempat penyimapanan data statis
+- **data-layer** `public/static-db/` sebagai tempat penyimpanan data statis
 
 referensi: [Software Architecture Patterns — Layered Architecture](https://priyalwalpita.medium.com/software-architecture-patterns-layered-architecture-a3b89b71a057)
 
