@@ -18,7 +18,7 @@ export function Content({ post }) {
             <Card post={post} />
           </Column>
           <Column size="col-4 md:col-6 md:col-start-2 lg:col-8 lg:col-start-3">
-            <ReactMarkdown className="markdown" children={post.content} />
+            <ReactMarkdown className="markdown">{post.content}</ReactMarkdown>
           </Column>
         </Grid>
       </Container>
