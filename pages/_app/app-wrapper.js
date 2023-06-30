@@ -1,9 +1,9 @@
-import './tw-global.css'
-import styles from "./global-style"
-import { ttw } from "common/utils"
-import Head from "next/head"
+import "./tw-global.css";
+import styles from "./global-style";
+import { ttw } from "common/utils";
+import Head from "next/head";
 
-export default function AppWrapper ({children}) {
+export default function AppWrapper({ children }) {
   return (
     <>
       <Head>
@@ -12,9 +12,7 @@ export default function AppWrapper ({children}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={ttw(styles.Global)}>
-        {children}
-      </main> 
+      <main className={ttw(styles.Global)}>{children}</main>
     </>
-  )
+  );
 }
