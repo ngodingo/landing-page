@@ -3,44 +3,44 @@
     column grid system
     at @layouts/column 
   */
-  .col-0 { 
-    @apply hidden; 
+  .col-0 {
+    @apply hidden;
   }
-  .col-1 { 
-    @apply block col-span-1; 
+  .col-1 {
+    @apply block col-span-1;
   }
-  .col-2 { 
-    @apply block col-span-2; 
+  .col-2 {
+    @apply block col-span-2;
   }
-  .col-3 { 
-    @apply block col-span-3; 
+  .col-3 {
+    @apply block col-span-3;
   }
-  .col-4 { 
-    @apply block col-span-4; 
+  .col-4 {
+    @apply block col-span-4;
   }
-  .col-5 { 
-    @apply block col-span-5; 
+  .col-5 {
+    @apply block col-span-5;
   }
-  .col-6 { 
-    @apply block col-span-6; 
+  .col-6 {
+    @apply block col-span-6;
   }
-  .col-7 { 
-    @apply block col-span-7; 
+  .col-7 {
+    @apply block col-span-7;
   }
-  .col-8 { 
-    @apply block col-span-8; 
+  .col-8 {
+    @apply block col-span-8;
   }
-  .col-9 { 
-    @apply block col-span-9; 
+  .col-9 {
+    @apply block col-span-9;
   }
-  .col-10 { 
-    @apply block col-span-10; 
+  .col-10 {
+    @apply block col-span-10;
   }
-  .col-11 { 
-    @apply block col-span-11; 
+  .col-11 {
+    @apply block col-span-11;
   }
-  .col-12 { 
-    @apply block col-span-12; 
+  .col-12 {
+    @apply block col-span-12;
   }
   .col-full {
     @apply block col-span-full;
@@ -57,16 +57,16 @@
     @apply mt-4 lg:mt-6;
   }
 
-  .markdown h1, 
-  .markdown h2, 
+  .markdown h1,
+  .markdown h2,
   .markdown h3,
   .markdown h4 {
     @apply font-medium text-primary-90;
     @apply mt-8 lg:mt-10;
   }
 
-  .markdown h1 *, 
-  .markdown h2 *, 
+  .markdown h1 *,
+  .markdown h2 *,
   .markdown h3 *,
   .markdown h4 * {
     @apply font-medium no-underline;
@@ -115,7 +115,7 @@
   }
 
   .markdown code {
-    @apply px-1.5 py-0.5;
+    @apply py-0.5;
   }
 
   .markdown pre {

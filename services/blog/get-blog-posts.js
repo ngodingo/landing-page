@@ -1,43 +1,36 @@
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
-import { marked } from "marked"
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
+const postsDirectory = path.join(process.cwd(), "public/static-db/blog/posts");
 
-const postsDirectory = path.join(
-  process.cwd(),
-  'public/static-db/blog/posts'
-)
-
-
-export function getAllPostLists () {
-  const files = fs.readdirSync(postsDirectory) // type: array
+export function getAllPostLists() {
+  const files = fs.readdirSync(postsDirectory); // type: array
   const posts = files
-    .filter(filename => filename.includes(".md"))
-    .map(filename => {
-      const filePath = path.join(postsDirectory, filename) 
+    .filter((filename) => filename.includes(".md"))
+    .map((filename) => {
+      const filePath = path.join(postsDirectory, filename);
 
-      const fileContent = fs.readFileSync(filePath, 'utf-8')
-      const {data: markdownMetadata} = matter(fileContent)
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+      const { data: markdownMetadata } = matter(fileContent);
 
-      markdownMetadata.slug = filename.replace(/\.md$/, '')
+      markdownMetadata.slug = filename.replace(/\.md$/, "");
 
-      return markdownMetadata
-    })
+      return markdownMetadata;
+    });
 
-  return posts
+  return posts;
 }
 
+export function getPostBySlug(slug) {
+  const filename = `${slug}.md`;
+  const filePath = path.join(postsDirectory, filename);
 
-export function getPostBySlug (slug) {
-  const filename = `${slug}.md`
-  const filePath = path.join(postsDirectory, filename)
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data: markdownMetadata, content } = matter(fileContent);
 
-  const fileContent = fs.readFileSync(filePath, 'utf-8')
-  const {data: markdownMetadata, content} = matter(fileContent)
-  
   return {
     metadata: markdownMetadata,
-    content: marked(content),
-  }
+    content: content,
+  };
 }
