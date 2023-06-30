@@ -1,15 +1,13 @@
 ---
-id: '2a5411a897ce'
-title: 'Perulangan For, While, dan Do While pada Javascript'
-date: '2023-01-30T02:51:46.000Z'
+id: "2a5411a897ce"
+title: "Perulangan For, While, dan Do While pada Javascript"
+date: "2023-01-30T02:51:46.000Z"
 excerpt: "Setelah mempelajari tentang pengkondisian atau percabangan pada artikel sebelumnya, maka artikel kali ini akan membahas tentang perulangan. Tetapi sebelum membahas lebih lanjut tentang apa itu perulangan, mari kita mulai dengan satu pertanyaan sederhana."
-tags: ['JavaScript', 'Web Development']
-author: 
-  name: 'Ngodingo Admin'
-  image: '/static-db/blog/authors/admin-ngodingo.png'
+tags: ["JavaScript", "Web Development"]
+author:
+  name: "Ngodingo Admin"
+  image: "/static-db/blog/authors/admin-ngodingo.png"
 ---
-
-![""](https://cdn-images-1.medium.com/max/1024/1*luJMjtGODEDCIauBtv_NGg.png)
 
 Setelah mempelajari tentang pengkondisian atau percabangan pada artikel sebelumnya, maka artikel kali ini akan membahas tentang perulangan. Tetapi sebelum membahas lebih lanjut tentang apa itu perulangan, mari kita mulai dengan satu pertanyaan sederhana.
 
@@ -41,43 +39,109 @@ Secara umum perulangan pada javascript dapat dibagi menjadi 2 jenis, yaitu :
 
 · **Post statement** dieksekusi di akhir setiap perulangan.
 
-![""](https://cdn-images-1.medium.com/max/946/1*Nqth_IJB6Jd1ZucXl0GVYg.png)
+```js
+for (init statement; kondisi; post statement) {
+    // blok kode perulangan
+}
+```
 
 Sintaks Perulangan For
 
 Contoh perulangan _for_ :
 
-![""](https://cdn-images-1.medium.com/max/960/1*KPewPv44nq0sbIxvU7Lutg.png)
+```js
+for (let index = 1; index <= 10; index++) {
+  document.writeln("<p>Contoh perulangan For</p>");
+}
+
+let batas = 10;
+for (let i = 0; i < batas; i++) {
+  document.writeln(`<p> Nomer ke-${i} </p>`);
+}
+```
 
 Contoh Perulangan For
 
 Output :
 
-![""](https://cdn-images-1.medium.com/max/469/1*Cp61MAf5mdQ8DEBb3rPfjQ.png)
+```txt
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
+Contoh perulangan For
 
-![""](https://cdn-images-1.medium.com/max/468/1*ZQdVeL7YebKytX1GB2Rnxw.png)
-
-Output
+Nomer ke-0
+Nomer ke-1
+Nomer ke-2
+Nomer ke-3
+Nomer ke-4
+Nomer ke-5
+Nomer ke-6
+Nomer ke-7
+Nomer ke-8
+Nomer ke-9
+```
 
 ### **Perulangan While**
 
 **Perulangan while** termasuk dalam jenis _uncountable loop_. Perulangan ini lebih sederhana dibandingkan perulangan _for_, menggunakan kata kunci _while_ diikuti _expression_ kondisi dalam tanda kurung tanpa ada _init statement_ dan _post statement_. Sama seperti perulangan _for_, pengecekan kondisi pada perulangan ini dilakukan sebelum perulangan dieksekusi. Jika perulangan cukup sederhana dan hanya membutuhkan kondisi saja, maka perulangan _while_ lebih baik digunakan daripada _for_.
 
-![""](https://cdn-images-1.medium.com/max/960/1*WnafiOJytHF2yE0dg8GF6Q.png)
+```js
+while (kondisi) {
+  // blok kode perulangan
+}
+```
 
 Sintaks Perulangan While
 
 Contoh perulangan _while_ :
 
-![""](https://cdn-images-1.medium.com/max/960/1*g_BWuhKcRDchqoL-jDhGYg.png)
+```js
+let ulang = 1;
+while (ulang <= 10) {
+  document.writeln(`<p>Contoh perulangan While</p>`);
+  ulang++;
+}
 
-Contoh Perulangan While
+let j = 0;
+let limit = 10;
+while (j < limit) {
+  document.writeln(`<p>Angka ke : ${j}</p>`);
+  j++;
+}
+```
 
 Output :
 
-![""](https://cdn-images-1.medium.com/max/471/1*bEaz-Vvb8TxcgX6ovvMAYg.png)
+```txt
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
+Contoh perulangan While
 
-![""](https://cdn-images-1.medium.com/max/470/1*vKSpVkQwPefs05q7OWvgGw.png)
+Angka ke : 0
+Angka ke : 1
+Angka ke : 2
+Angka ke : 3
+Angka ke : 4
+Angka ke : 5
+Angka ke : 6
+Angka ke : 7
+Angka ke : 8
+Angka ke : 9
+```
 
 Output
 
@@ -85,18 +149,52 @@ Output
 
 **Perulangan do while** termasuk dalam jenis _uncountable loop_. Perulangan ini mirip dengan perulangan _while_, tetapi berbeda pada pengecekan kondisinya. Pengecekan kondisi pada perulangan while dilakukan di awal sebelum perulangan dan blok kode belum dieksekusi, sedangkan pada do while dilakukan setelah perulangan. Oleh karena itu pada perulangan _do while_ pasti perulangan dan blok kode dieksekusi minimal sekali sebelum pengecekan kondisi _true_ atau _false_.
 
-![""](https://cdn-images-1.medium.com/max/960/1*m6_IRuoK4lRpVR3Ad0COqA.png)
+```js
+do {
+  // blok kode perulangan
+} while (kondisi);
+```
 
 Sintaks Perulangan Do While
 
 Contoh perulangan _do while_ :
 
-![""](https://cdn-images-1.medium.com/max/960/1*j1NJRL2fN8OyBTOAzzaOsw.png)
+```js
+let count = 1;
+do {
+  document.writeln(`<p>Contoh perulangan Do While</p>`);
+  count++;
+} while (count <= 10);
 
-Contoh Perulangan Do While
+let k = 1;
+let maks = 10;
+do {
+  document.writeln(`<p>Nomer : ${k}</p>`);
+  k++;
+} while (k < maks);
+```
 
 Output :
 
-![""](https://cdn-images-1.medium.com/max/464/1*DgD-F-6owNBzyPHeMjWOxQ.png)
+```txt
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
+Contoh perulangan Do While
 
-![""](https://cdn-images-1.medium.com/max/458/1*mE3LflFOOvwzJEmi9NH07A.png)
+Nomer : 1
+Nomer : 2
+Nomer : 3
+Nomer : 4
+Nomer : 5
+Nomer : 6
+Nomer : 7
+Nomer : 8
+Nomer : 9
+```
