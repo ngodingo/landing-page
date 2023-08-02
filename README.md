@@ -1,122 +1,50 @@
-# Landing Page Ngodingo
+# Ngodingo Landing Page
+The Ngodingo Landing Page project is a way to introduce Ngodingo, a programming community in Indonesia, to the general public. The landing page will provide information about Ngodingo, such as its mission, goals, and activities. 
 
-Landing Page Ngodingo adalah sebuah proyek yang bertujuan untuk memperkenalkan Ngodingo, sebuah komunitas programmer di Indonesia kepada masyarakat luas.
+[Visit the Page >](https://ngodingo.vercel.app/)
 
-[Kunjungi Halaman >](https://ngodingo-landing-page.vercel.app/)
 
-## Struktur
+## Folder Structure
+
 ```md
 .
-├── common/
-│   ├── components/
-│   ├── layouts/
-│   ├── hooks/
-│   └── utils/
-├── pages/
-│   ├── _app/
-│   ├── home/
-│   ├── blog/
-│   │   └── [post_slug]/
-│   ├── portfolio/
-│   │   └── [project_slug]/
-│   ├── _app.page.js
-│   ├── _document.page.js
-│   ├── index.page.js
-│   └── 404.page.js
-├── services/
-│   ├── blog/
-│   └── portfolio/
-├── public/
-│   ├── assets/
-│   │   ├── images/
-│   │   ├── icons/
-│   │   ├── pictograms/
-│   │   └── logo/
-│   ├── static-db/
-│   │   ├── blog/
-│   │   │   ├── authors/
-│   │   │   ├── images/
-│   │   │   └── posts/
-│   │   └── portfolio/
-│   │       ├── projects/
-│   │       └── images/
-│   └── favicon.ico
-└── readme.md
+├── common/             # contains shared codes:
+│   ├── components/     # -- reusable React components.
+│   ├── layouts/        # -- layout components that are used to define the overall structure of pages.
+│   ├── hooks/          # -- custom React hooks that are used to simplify code.
+│   └── utils/          # -- utility functions that are used to simplify code.
+├── pages/              # contains the pages that make up the website.
+├── services/           # contains the business logic of the website.
+└── public/             # contains static files:
+    ├── assets/         # -- static assets such as images and icons.
+    └── static-db/      # -- static data such as blog post and project data.
 ```
-website ini menggunakan skema layered architecture dan terdiri dari 3 layer/lapisan:
-- **view-layer** `pages/` sebagai user-interface dan routing
-- **logic-layer** `services/` untuk abstraksi logika program (business logic)
-- **data-layer** `public/static-db/` sebagai tempat penyimpanan data statis
 
-referensi: [Software Architecture Patterns — Layered Architecture](https://priyalwalpita.medium.com/software-architecture-patterns-layered-architecture-a3b89b71a057)
+Note: This project is created using Next.js, a React framework for building web applications. To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Run Project
-pastikan komputer sudah terinstall nodejs dan git
-```
-node --version
-git --version
-```
-clone repo
-```
+
+## Architecture
+
+This website is designed using a layered architecture schema, which has three main layers
+- **View layer** at `pages/` directory: This layer is responsible for rendering the UI of the website. It contains the React components that are used to display the content of the website.
+- **Logic layer** at `services/` directory: This layer is responsible for handling the business logic of the website. It contains the code that is used to interact with the database, fetch data from third-party APIs, and perform other tasks.
+- **Data layer** at `public/static-db/` directory: This layer stores the static data of the website, such as blog posts and projects.
+
+
+## Getting Started
+
+To get started running the project locally, please follow the steps below.
+1. First, clone the repository
+```bash
 git clone https://github.com/ngodingo/landing-page.git
 ```
-masuk ke direktori
-```
-cd landing-page
-```
-install dependency yang dibutuhkan
-```
+2. Install dependencies and fetch data to your local machine
+```bash
 npm install
 ```
-menjalankan development server
-```
+3. Then, Running your app
+```bash
 npm run dev
 ```
-
-## Kontribusi
-
-...
-
-
-
-<details>
-  <summary>nextjs readme</summary>
-  
-  This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-  ## Getting Started
-
-  First, run the development server:
-
-  ```bash
-  npm run dev
-  # or
-  yarn dev
-  ```
-
-  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-  You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-  [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-  The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-  This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-  ## Learn More
-
-  To learn more about Next.js, take a look at the following resources:
-
-  - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-  - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-  You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-  ## Deploy on Vercel
-
-  The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-  Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-</details>
